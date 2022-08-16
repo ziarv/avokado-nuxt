@@ -1,0 +1,71 @@
+.banner {
+    background-image: linear-gradient(to right, #7CB118 40%, #A2CE53 80%);
+    padding: 60px 0px 0px 0px;
+}
+
+.set {
+    margin-bottom: 30px;
+}
+
+.subscribe {
+    width: 64%;
+    text-align: left;
+}
+
+.subscribe_img {
+    width: 36%;
+}
+
+/* .subscribe>h1 {
+    font-family: "futur-heavy";
+    font-size: 55px;
+    font-weight: bolder;
+    line-height: 65px;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+} */
+
+/* .subscribe>h5 {
+    font-family: "futura_medium";
+    font-size: 30px;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+} */
+
+/* .input-setting {
+    background-color: #d9d9d980;
+    display: flex;
+    width: 60%;
+    height: 55px;
+    position: relative;
+    border-radius: 20px;
+    padding: 3px;
+} */
+
+/* .input-setting>img {
+    position: absolute;
+    top: 35%;
+    left: 4%;
+    z-index: 100;
+    width: 18px;
+    height: 18px;
+} */
+
+/* .input-setting>input {
+    width: 100%;
+    background-color: transparent;
+    padding-left: 45px;
+    color: #FFFFFF;
+} */
+
+/* .input-setting>input::placeholder {
+    color: #FFFFFF;
+} */
+
+/* .input-setting>button {
+    background-color: #CCA052;
+    color: #FFFFFF;
+    padding: 14px;
+    border-radius: 0px 20px 20px 0px;
+    line-height: 1;
+} */

@@ -1,3 +1,491 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#side_bar_id_menu > div > .side_bar {
+  box-shadow: none !important;
+}
+
+.option_setting_px {
+  position: relative;
+}
+
+.none_input {
+  visibility: hidden;
+  background-color: #ECECEC;
+  padding: 15px 15px 15px 15px;
+  border-radius: 5px;
+  transform: translateY(100px);
+  opacity: 0;
+  z-index: 100;
+  transition: 0.4s all;
+  width: 100%;
+  position: absolute;
+  top: 95%;
+  left: 0%;
+}
+
+.none_input > input {
+  border: 1px solid #898989;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  padding: 5px 15px 5px 10px;
+}
+
+@media (max-width: 1330px) {
+  .option_setting_px {
+    margin-left: 30px !important;
+    margin-right: 30px !important;
+  }
+
+  .setting_heading {
+    font-size: 50px !important;
+  }
+
+  .bara_px_setting {
+    justify-content: center !important;
+    flex-flow: column;
+    align-items: end;
+  }
+}
+
+@media (max-width: 1200px) {
+  .bara_px_setting {
+    justify-content: end !important;
+  }
+
+  .option_setting_px {
+    margin: 0px 0px !important;
+    width: 100%;
+  }
+
+  .px_main_bara {
+    flex-flow: column !important;
+    align-items: flex-start;
+  }
+
+  .setting_heading {
+    font-size: 40px !important;
+  }
+
+  h1.setting_heading ~ h5 {
+    font-size: 20px !important;
+  }
+
+  .laiba-iqbal {
+    width: 59% !important;
+  }
+
+  .input-setting > input {
+    font-size: 15px;
+  }
+
+  .input-setting > button {
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  .card > img {
+    width: 100% !important;
+    height: 85% !important;
+  }
+
+  .cardse {
+    height: 60%;
+  }
+
+  .new_item {
+    background-position: left 50% top 25%, right 0% top 0%;
+    background-size: 104% 120%, 25%;
+  }
+
+  .best_card {
+    width: 30%;
+  }
+
+  #side_bar_time,
+  #side_bar_date,
+  #side_bar_promo,
+  #side_bar_id,
+  #side_bar_id_pl,
+  #side_bar_id_menu,
+  #side_bar_pay {
+    width: 35%;
+  }
+}
+
+@media (max-width: 992px) {
+  .setting_heading {
+    font-size: 30px !important;
+  }
+
+  .card > img {
+    width: 53% !important;
+    height: 85% !important;
+  }
+
+  .best_card {
+    width: 32%;
+    flex-flow: row wrap;
+  }
+
+  .heading_cart {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+
+  .footer_link {
+    width: 100%;
+  }
+
+  .laiba-iqbal_09 {
+    width: 60%;
+  }
+
+  .laiba-iqbal {
+    width: 61% !important;
+  }
+
+  .team__condition_us {
+    height: 375px !important;
+  }
+
+  .team__condition_us > h1 {
+    text-align: center !important;
+    font-size: 40px;
+  }
+
+  #side_bar_time,
+  #side_bar_date,
+  #side_bar_promo,
+  #side_bar_id,
+  #side_bar_id_pl,
+  #side_bar_id_menu,
+  #side_bar_pay {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .bara_px_setting {
+    justify-content: end !important;
+  }
+
+  .option_setting_px {
+    width: 80%;
+  }
+
+  .px_main_bara {
+    flex-flow: row wrap !important;
+    align-items: center;
+  }
+
+  .setting_heading {
+    font-size: 27px !important;
+  }
+
+  h1.setting_heading ~ h5 {
+    font-size: 15px !important;
+  }
+
+  .laiba-iqbal {
+    width: 59% !important;
+  }
+
+  .input-setting {
+    padding-left: 15px;
+    height: 35px !important;
+  }
+
+  .input-setting > img {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  .input-setting > input {
+    font-size: 12px;
+  }
+
+  .input-setting > button {
+    font-size: 12px;
+    line-height: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .card > img {
+    width: 65% !important;
+    height: 100% !important;
+  }
+
+  .cardse {
+    height: 55%;
+  }
+
+  .buy_now > button {
+    padding: 3px 5px 3px 5px !important;
+    width: 80px !important;
+    height: 30px !important;
+  }
+
+  .new_item {
+    background-position: left 50% top 25%, right 0% top 0%;
+    background-size: 104% 120%, 25%;
+  }
+
+  .new_item > button {
+    width: 85px !important;
+    padding: 3px 10px 3px 10px !important;
+  }
+
+  .new_item > button > span > img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .footer_link {
+    width: 100%;
+  }
+
+  .best_card {
+    width: 30%;
+  }
+
+  .location-img {
+    width: 30%;
+  }
+
+  .bara_px_setting {
+    flex-flow: row wrap !important;
+  }
+
+  .laiba-iqbal_09 {
+    justify-content: end !important;
+  }
+
+  .team__condition_us {
+    height: 250px !important;
+  }
+
+  #side_bar_time,
+  #side_bar_date,
+  #side_bar_promo,
+  #side_bar_id,
+  #side_bar_id_pl,
+  #side_bar_id_menu,
+  #side_bar_pay {
+    width: 45%;
+  }
+
+  .block_input {
+    visibility: visible;
+    transform: translateY(0px);
+    opacity: 1;
+    box-shadow: 0px 3px 24px #b3b3b4;
+  }
+}
+
+@media (max-width: 640px) {
+  .card > img {
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  .card {
+    /* width: 106px !important; */
+    height: 82px !important;
+  }
+
+  .mySwiper_1 {
+    padding: 0px 12px 70px 12px !important;
+  }
+
+  .mySwiper_7 {
+    padding: 0px 12px 80px 12px !important;
+  }
+
+  .subscribe_img > img {
+    object-fit: fill !important;
+  }
+
+  #side_bar_time,
+  #side_bar_date,
+  #side_bar_promo,
+  #side_bar_id,
+  #side_bar_id_pl,
+  #side_bar_id_menu,
+  #side_bar_pay {
+    width: 55%;
+  }
+}
+
+@media (max-width: 580px) {
+  .option_setting_px {
+    width: 60%;
+  }
+
+  .location-img {
+    width: 50%;
+  }
+
+  .setting_heading {
+    font-size: 13px !important;
+  }
+
+  h1.setting_heading ~ h5 {
+    font-size: 10px !important;
+  }
+
+  .laiba-iqbal_09 {
+    justify-content: end;
+  }
+
+  .input-setting > input {
+    font-size: 8px;
+  }
+
+  .input-setting > button {
+    font-size: 8px;
+    line-height: 1;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  .input-setting {
+    width: 75% !important;
+  }
+
+  .input-setting > img {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  .input-setting {
+    padding-left: 15px;
+    height: 25px !important;
+  }
+
+  .option_setting_px {
+    width: 70%;
+  }
+
+  #side_bar_time,
+  #side_bar_date,
+  #side_bar_promo,
+  #side_bar_id,
+  #side_bar_id_pl,
+  #side_bar_id_menu,
+  #side_bar_pay {
+    width: 70%;
+  }
+}
+
+@media (max-width: 420px) {
+
+  #side_bar_time,
+  #side_bar_date,
+  #side_bar_promo,
+  #side_bar_id,
+  #side_bar_id_pl,
+  #side_bar_id_menu,
+  #side_bar_pay {
+    position: fixed !important;
+    top: auto !important;
+    bottom: 0% !important;
+    right: 0% !important;
+    height: 60vh !important;
+    max-height: 100vh !important;
+    width: 100% !important;
+    display: none;
+    z-index: 100;
+    border-radius: 10px !important;
+    overflow-y: auto;
+  }
+
+  #side_bar_id_menu {
+    height: 100vh !important;
+  }
+
+  .main_card {
+    height: 190px !important;
+  }
+
+  .best_card {
+    width: 100% !important;
+  }
+
+  .card {
+    /* width: 106px !important; */
+    height: 82px !important;
+  }
+
+  .card > img {
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  .new_item_1 {
+    background-size: 120%, 25% !important;
+  }
+
+  .mySwiper_7 {
+    padding: 0px 12px 80px 12px !important;
+  }
+
+  .mySwiper_1 {
+    padding: 0px 12px 70px 12px !important;
+  }
+
+  .footer_icon > div {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer_icon > div > i {
+    font-size: 15px;
+  }
+
+  .product > h5 {
+    font-size: 16px !important;
+  }
+
+  .summary_heading > h6 {
+    font-size: 12px !important;
+  }
+
+  .summary_input {
+    width: 65% !important;
+  }
+
+  .background_setting {
+    background-size: 100% 100% !important;
+  }
+
+  .summary_heading > .summary_heading_input_box_avokado {
+    font-size: 14px !important;
+    margin-top: 10px !important;
+  }
+
+  .complaints_form {
+    margin-bottom: -200px !important;
+  }
+
+  .complaints_call {
+    margin-top: -25px !important;
+  }
+
+  .new_item > button {
+    width: 70px !important;
+    padding: 3px 5px 3px 5px !important;
+    font-size: 10px;
+  }
+
+  .option_setting_px {
+    width: 57%;
+  }
+}
