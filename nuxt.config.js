@@ -1,4 +1,5 @@
 export default {
+  mode: 'universal',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Avokado.sa',
@@ -8,16 +9,26 @@ export default {
       {hid: 'description', name: 'description', content: ''},
       {name: 'format-detection', content: 'telephone=no'}
     ],
-    link: [{rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}]
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      }, {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: 'https://kit.fontawesome.com/fbfaa2cb57.js'
+      },
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/css/main.css',
-    '@/assets/css/home-section-1.css',
+    '@/assets/css/slider.css',
     '@/assets/css/banner.css',
-    '@/assets/css/direction_change.css',
-    '@/assets/css/slider.css'
+    '@/assets/css/home-section-1.css',
+    '@/assets/css/main.css',
+    // '@/assets/css/direction_change.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

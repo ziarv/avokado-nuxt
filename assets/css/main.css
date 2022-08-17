@@ -290,7 +290,7 @@
 @media (max-width: 640px) {
   .card > img {
     width: 45px !important;
-    height: 45px !important;
+    /*height: 45px !important;*/
   }
 
   .card {
@@ -417,7 +417,7 @@
   }
 
   .card {
-    /* width: 106px !important; */
+     width: 106px !important;
     height: 82px !important;
   }
 

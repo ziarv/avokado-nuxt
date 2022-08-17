@@ -1,12 +1,15 @@
 <template>
   <div>
-    <h1 class="text-3xl">Home Page</h1>
-    <NuxtLink to="/about">About</NuxtLink>
+    <app-slider></app-slider>
+    <explore-category></explore-category>
   </div>
 </template>
 
 <script>
+import AppSlider from "~/components/AppSlider";
+import ExploreCategory from "~/components/ExploreCategory";
 export default {
   name: 'IndexPage',
+  components: {ExploreCategory, AppSlider},
 }
 </script>

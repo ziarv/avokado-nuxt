@@ -1,9 +1,7 @@
 <template>
   <div>
     <app-header/>
-    <div class="container mx-auto py-[100px] px-[100px]">
       <Nuxt/>
-    </div>
     <app-footer/>
   </div>
 </template>
