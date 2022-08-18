@@ -4,10 +4,10 @@
       class="2xl:mx-20 2xl:flex 2xl:flex-row 2xl:flex-wrap xs:flex xs:flex-wrap sm:flex sm:flex-wrap justify-center xs:!mx-5 sm:!mx-5 explore_categories">
       <h1 class="xs:!text-[16px] xs:!mb-[30px] sm:!text-[20px] sm:!mb-[30px]">Explore Categories</h1>
       <div ref="swiper" class="swiper mySwiper_1">
-        <div class="swiper-wrapper">
+        <div v-if="menu.length > 0" class="swiper-wrapper">
           <div
-v-for="(category,index) in categories" :key="index"
-               :style="{'background-color': category.menu_icon_background_color}" class="card swiper-slide">
+            v-for="(category,index) in menu" :key="index"
+            :style="{'background-color': category.menu_icon_background_color}" class="card swiper-slide">
             <img :src="category.menu_icon" class="xs:!w-[45] xs:!h-[45] sm:!w-[45] sm:!h-[45]" alt="">
             <p class="xs:!text-[12px] sm:!text-[14px]">{{ category.name }}</p>
           </div>
@@ -27,6 +27,7 @@ v-for="(category,index) in categories" :key="index"
 <script>
 import Swiper from 'swiper/swiper-bundle.min';
 import 'swiper/swiper-bundle.min.css';
+import {mapActions} from "vuex";
 
 export default {
   name: "ExploreCategory",
@@ -35,10 +36,18 @@ export default {
       categories: []
     }
   },
+  computed: {
+    menu() {
+      return this.$store.state.home.menu;
+    }
+  },
   mounted() {
-    this.loadCategories()
+    this.fetchHomeData().then(() => {
+      this.initSwiper()
+    });
   },
   methods: {
+    ...mapActions('home', ['fetchHomeData']),
     async initSwiper() {
       await this.$nextTick();
       // eslint-disable-next-line no-new
@@ -65,23 +74,6 @@ export default {
             spaceBetween: 30,
           },
         },
-      });
-    },
-    loadCategories() {
-      this.$axios.$get('/v3/home', {
-        params: {
-          key: '9826303f4605da20405c87cb5b4e4230',
-          city_id: '1',
-          district_id: '1',
-          country_id: '1',
-          warehouse_id: '1',
-          storeLanguageId: '1',
-          requestSource: 'web',
-        },
-        progress: false
-      }).then((response) => {
-        this.categories = response.menu;
-        this.initSwiper();
       });
     }
   }

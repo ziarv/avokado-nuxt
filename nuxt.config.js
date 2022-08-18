@@ -71,7 +71,8 @@ export default {
     baseURL: 'http://localhost:3000'
   },
   proxy: {
-    '/v3': {target: 'https://avokado.sa'}
+    '/v3': {target: 'https://avokado.sa'},
+    '/jeddah-en': {target: 'https://avokado.sa'}
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
