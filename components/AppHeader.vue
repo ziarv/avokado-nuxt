@@ -15,11 +15,11 @@
         <div
           class="option_setting_px flex items-center input-set 2xl:mx-[48px] xs:mx-[0px] sm:mx-[0px] relative p-[9px] w-[56.7%] 2xl:bg-[#ECECEC] xs:bg-[transparent] sm:bg-[transparent] rounded-[2px] h-[42px] flex-row">
           <select id="" name="" class="bg-[transparent] font-semibold text-[14px] xs:hidden sm:hidden">
-            <option value="categories">All Categories</option>
-            <option value="categories">categories</option>
-            <option value="categories">categories</option>
-            <option value="categories">categories</option>
-            <option value="categories">categories</option>
+            <option value="">All Categories</option>
+            <option value="1">categories</option>
+            <option value="2">categories</option>
+            <option value="3">categories</option>
+            <option value="4">categories</option>
           </select>
           <span class="2xl:flex items-center mx-[12px] xs:hidden sm:hidden"> | </span>
           <input
@@ -77,11 +77,11 @@
             <select
               id="side_bar_id_block_1" name="service"
               class="bg-[transparent] 2xl:mb-[11px] ml-[5px] xs:mb-[0px] xs:w-[10%] xs:block sm:block sm:mb-[0px] sm:w-[10%] sm:block">
-              <option value="laiba-iqbal" selected>Laiba Iqbal</option>
-              <option value="laiba-iqbal" selected>Laiba Iqbal</option>
-              <option value="laiba-iqbal" selected>Laiba Iqbal</option>
-              <option value="laiba-iqbal" selected>Laiba Iqbal</option>
-              <option value="laiba-iqbal" selected>Laiba Iqbal</option>
+              <option value="1" selected>Laiba Iqbal</option>
+              <option value="2">Laiba Iqbal</option>
+              <option value="3">Laiba Iqbal</option>
+              <option value="4">Laiba Iqbal</option>
+              <option value="5">Laiba Iqbal</option>
             </select>
           </div>
         </div>

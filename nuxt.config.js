@@ -9,16 +9,17 @@ export default {
       {hid: 'description', name: 'description', content: ''},
       {name: 'format-detection', content: 'telephone=no'}
     ],
+    script: [
+      {
+        src: 'https://kit.fontawesome.com/fbfaa2cb57.js'
+      }
+    ],
     link: [
       {
         rel: 'icon',
         type: 'image/x-icon',
         href: '/favicon.ico'
-      }, {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: 'https://kit.fontawesome.com/fbfaa2cb57.js'
-      },
+      }
     ]
   },
 
