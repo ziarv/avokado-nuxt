@@ -5,13 +5,19 @@
       src="@/assets/img/Vector.svg" alt=""
       class="xs:!w-[14px] xs:!h-[12px] xs:!mr-[8px] sm:!w-[14px mxs:!h-[2mpx] xs:!mr-[8px] sm:!w-[14px] sm:!h-[12px] sm:!mr-[8px]">
     <div class="img-card xs:!pr-[10px mxs:!pr-[10px] sm:!pr-[10px]">
-      <img
-        src="@/assets/img/Packages.png"
-        class="xs:!w-[87px] xs:!h-[87px] sm:!w-[87px mxs:!h-[87px] sm:!w-[87px] sm:!h-[87px]"
-        alt="">
+      <nuxt-link to="/product">
+        <img
+          src="@/assets/img/Packages.png"
+          class="xs:!w-[87px] xs:!h-[87px] sm:!w-[87px mxs:!h-[87px] sm:!w-[87px] sm:!h-[87px]"
+          alt="">
+      </nuxt-link>
     </div>
     <span class="xs:!text-[8px mxs:!text-[8px] sm:!text-[8px]">Vegetables</span>
-    <p class="xs:!text-[10px] xs:!text-[10px] sm:!text-[12px]">Green Beans</p>
+    <p class="xs:!text-[10px] xs:!text-[10px] sm:!text-[12px]">
+      <nuxt-link to="/product">
+        Green Beans
+      </nuxt-link>
+    </p>
     <div class="star">
       <img
         v-for="index in 4" :key="index" src="@/assets/img/star_fill.svg"

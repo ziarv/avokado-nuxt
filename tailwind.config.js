@@ -7,7 +7,7 @@ module.exports = {
     "./nuxt.config.{js,ts}",
   ],
   theme: {
-    screens: {
+
       screens: {
         '2xl': {'max': '2000px'},
         'xl': {'max': '1279px'},
@@ -18,7 +18,7 @@ module.exports = {
         // 'sm': { 'min': '40px' },
         'sm': {'max': '768px', 'min': '430px'},
       },
-    },
+
     extend: {},
   },
   plugins: [],
