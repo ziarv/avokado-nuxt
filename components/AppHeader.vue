@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="2xl:py-[10px] xs:py-[0px] sm:py-[0px]">
+    <header  class="2xl:py-[10px] xs:py-[0px] sm:py-[0px]">
       <div
         class="2xl:mx-20 2xl:flex header_inner 2xl:flex-row 2xl:flex-wrap xs:flex xs:flex-wrap sm:flex sm:flex-wrap xs:flex-col-reverse xs:mx-0 sm:flex-col-reverse sm:mx-0">
         <div
@@ -40,9 +40,11 @@
               <img
                 src="@/assets/img/favrite.svg"
                 class="w-[21px] h-[16px] mx-[5px] 2xl:hidden xs:block sm:block" alt="">
-              <img
-                src="@/assets/img/shopping.svg"
-                class="w-[20px] h-[14px] mx-[5px] 2xl:hidden xs:block sm:block" alt="">
+             <nuxt-link to="/cart">
+               <img
+                 src="@/assets/img/shopping.svg"
+                 class="w-[20px] h-[14px] mx-[5px] 2xl:hidden xs:block sm:block" alt="">
+             </nuxt-link>
             </div>
           </div>
         </div>
@@ -69,7 +71,9 @@
           </div>
           <div class="flex laiba-iqbal_09 w-[50%] xs:w-[50%] sm:w-[50%] items-center">
             <img src="@/assets/img/favrite.svg" class="w-[27px] h-[25px] mx-[5px] xs:hidden sm:hidden" alt="">
-            <img src="@/assets/img/shopping.svg" class="w-[27px] h-[25px] mx-[5px] xs:hidden sm:hidden" alt="">
+            <nuxt-link to="/cart">
+              <img src="@/assets/img/shopping.svg" class="w-[27px] h-[25px] mx-[5px] xs:hidden sm:hidden" alt="">
+            </nuxt-link>
             <div
               class="laiba-iqbal 2xl:w-[52%] justify-end ml-[15px] flex items-center xs:w-[100%] sm:w-[100%]">
               <img
@@ -93,7 +97,8 @@
     <!-- User Sidebar -->
     <div class="side_bar_back z-10" :class=" {side_bar_id_block : user_sidebar}" @click="userSidebar"></div>
     <aside
-      id="side_bar_id_pl" ref="user_sidebar" class="w-64" :class="{side_bar_id_block:user_sidebar}"
+      id="side_bar_id_pl"
+      ref="user_sidebar"  class="w-64" :class="{side_bar_id_block:user_sidebar}"
       aria-label="Sidebar">
       <div class="overflow-y-auto py-4 px-6 bg-[#FFFFFF]">
         <button class="cros" @click="userSidebar">
@@ -106,7 +111,7 @@
               <img src="@/assets/img/camera.svg" alt="">
             </a>
           </div>
-          <button class="w-full font-bold mt-8">User <span class="text-[#7CB118]">EDIT</span></button>
+<!--          <button class="w-full font-bold mt-8">User <span class="text-[#7CB118]">EDIT</span></button>-->
         </div>
         <hr class="mt-10 mb-0">
         <div class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">

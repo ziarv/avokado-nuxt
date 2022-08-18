@@ -1,6 +1,6 @@
 <template>
 
-  <div ref="swiper_main" class="overflow-hidden">
+  <div ref="swiper_main"   class="overflow-hidden">
     <div class="swiper-wrapper">
       <div class="swiper-slide m-1 mb-3">
         <img src="@/assets/img/slides/image.png" alt="">

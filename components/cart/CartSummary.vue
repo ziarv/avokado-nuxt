@@ -1,0 +1,41 @@
+<template>
+  <section>
+    <div class="mx-20 xs:!mx-10 flex sm:!mx-5">
+      <div class="summary">
+        <h1 class="xs:!text-[22px] xs:!mt-[30px]">Summary</h1>
+        <div class="summary_div">
+          <div class="summary_heading">
+            <h6>Subtotal</h6>
+            <h6>SAR 300</h6>
+          </div>
+          <div class="summary_heading">
+            <h6>Delivery charges</h6>
+            <h6>Calculated at checkout</h6>
+          </div>
+          <div class="summary_heading">
+            <h6>VAT(15%)</h6>
+            <h6>SAR 50</h6>
+          </div>
+          <div class="summary_heading">
+            <h4 class="xs:!text-[16px]">Total</h4>
+            <h5 class="xs:!text-[16px]">SAR 400</h5>
+          </div>
+          <div class="summary_coprright">
+            <p><img src="@/assets/img/Info.svg" alt=""> Minimum order amount is 30 SAR</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</template>
+
+<script>
+export default {
+  name: "CartSummary"
+}
+</script>
+
+<style scoped>
+
+</style>

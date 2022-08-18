@@ -7,12 +7,16 @@
 </template>
 
 <script>
+// import AOS from 'aos'
 import AppHeader from "~/components/AppHeader";
 import AppFooter from "~/components/AppFooter";
-
+import 'aos/dist/aos.css'
 export default {
   name: "DefaultLayout",
-  components: {AppFooter, AppHeader}
+  components: {AppFooter, AppHeader},
+  mounted() {
+    // AOS.init();
+  }
 }
 </script>
 
