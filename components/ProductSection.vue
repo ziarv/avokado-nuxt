@@ -30,7 +30,7 @@
 
 <script>
 import Swiper from 'swiper/swiper-bundle.min';
-import 'swiper/swiper-bundle.min.css';
+
 import ProductList from "~/components/ProductList";
 
 export default {

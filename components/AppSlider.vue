@@ -1,15 +1,9 @@
 <template>
 
-  <div ref="swiper_main"   class="overflow-hidden">
+  <div v-if="promo_banners && promo_banners.top && promo_banners.top.length > 0" ref="swiper_main" class="overflow-hidden">
     <div class="swiper-wrapper">
-      <div class="swiper-slide m-1 mb-3">
-        <img src="@/assets/img/slides/image.png" alt="">
-      </div>
-      <div class="swiper-slide m-1 mb-3">
-        <img src="@/assets/img/slides/image.png" alt="">
-      </div>
-      <div class="swiper-slide m-1 mb-3">
-        <img src="@/assets/img/slides/image.png" alt="">
+      <div v-for="(banner,index) in promo_banners.top" :key="index" class="swiper-slide m-1 mb-3">
+        <img :src="banner.image" alt="banner top">
       </div>
     </div>
     <!--      <div class="swiper-button-next swiper-btn"></div>-->
@@ -19,18 +13,41 @@
 
 <script>
 import Swiper from 'swiper/swiper-bundle.min';
-import 'swiper/swiper-bundle.min.css';
 
 export default {
   name: "AppSlider",
-  async mounted() {
-    await this.$nextTick();
-    // eslint-disable-next-line no-new
-    new Swiper(this.$refs.swiper_main, {
-      slidesPerView: 1,
-      loop:true
-    });
+  data() {
+    return {
+      slider: null
+    }
   },
+  computed: {
+    promo_banners() {
+      return this.$store.state.home.promo_banners;
+    }
+  },
+  watch: {
+    promo_banners() {
+      this.initSwiper();
+    }
+  },
+  async mounted() {
+
+  },
+  methods: {
+    async initSwiper() {
+      await this.$nextTick();
+      if (this.slider) {
+        this.slider.reInit();
+        return;
+      }
+      // eslint-disable-next-line no-new
+      this.slider = new Swiper(this.$refs.swiper_main, {
+        slidesPerView: 1,
+        loop: true
+      });
+    }
+  }
 }
 </script>
 

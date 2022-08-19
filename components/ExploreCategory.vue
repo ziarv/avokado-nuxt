@@ -26,13 +26,12 @@
 
 <script>
 import Swiper from 'swiper/swiper-bundle.min';
-import 'swiper/swiper-bundle.min.css';
-import {mapActions} from "vuex";
 
 export default {
   name: "ExploreCategory",
   data() {
     return {
+      slider: null,
       categories: []
     }
   },
@@ -41,17 +40,22 @@ export default {
       return this.$store.state.home.menu;
     }
   },
+  watch: {
+    menu () {
+      this.initSwiper();
+    }
+  },
   mounted() {
-    this.fetchHomeData().then(() => {
-      this.initSwiper()
-    });
   },
   methods: {
-    ...mapActions('home', ['fetchHomeData']),
     async initSwiper() {
       await this.$nextTick();
+      if (this.slider) {
+        this.slider.reInit();
+        return;
+      }
       // eslint-disable-next-line no-new
-      new Swiper(this.$refs.swiper, {
+      this.slider = new Swiper(this.$refs.swiper, {
         slidesPerView: 3,
         spaceBetween: 30,
         loop: true,

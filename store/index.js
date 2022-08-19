@@ -6,7 +6,6 @@ import home from "./modules/home";
 import {KEY} from "@/constants";
 
 
-
 const state = () => ({
   isLoading: false,
   key: KEY,
@@ -18,10 +17,15 @@ const state = () => ({
   requestSource: 'web',
 });
 
-
-// eslint-disable-next-line no-new,import/no-named-as-default-member
-new Vuex.Store({
-  strict: true, state, getters, mutations, actions, modules: {
-    home
-  }
-});
+const createStore = () => {
+  return new Vuex.Store({
+    namespaced: true,
+    strict: true,
+    state,
+    getters,
+    mutations,
+    actions,
+    modules: {home}
+  });
+};
+export default createStore
