@@ -13,7 +13,7 @@ export default {
   },
   [types.UPDATE_QUOTE_ID]: (state, quoteId) => {
     ls.set("quote_id", quoteId);
-    state.quoteId = quoteId;
+    state.quote_id = quoteId;
   },
   [types.UPDATE_CART_REVIEW]: (state, reviewData) => {
     state.cart_review = reviewData;

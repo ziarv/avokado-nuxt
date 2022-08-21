@@ -7,7 +7,7 @@ export default {
     if(!process.client) {
       return defaultValue;
     }
-    let itemStr = localStorage.getItem(key);
+    let itemStr = window.localStorage.getItem(key);
 
     // if the item doesn't exist, return null
     if (!itemStr) {
@@ -44,11 +44,11 @@ export default {
     if (!DEBUG) {
       itemJson = encrypt(itemJson, KEY);
     }
-    localStorage.setItem(key, itemJson);
+    window.localStorage.setItem(key, itemJson);
   },
 
   remove(key) {
-    localStorage.removeItem(key);
+    window.localStorage.removeItem(key);
   },
 
   storeObject(key, obj) {

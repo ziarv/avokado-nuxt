@@ -176,7 +176,6 @@
 
 <script>
 import {mapActions} from "vuex";
-import ls from "@/services/ls";
 
 export default {
   name: "AppHeader",
@@ -189,10 +188,13 @@ export default {
   computed: {
     service_locations() {
       return this.$store.state.home.service_locations;
+    },
+    cityId() {
+      return this.$store.state.local.city_id;
     }
   },
   mounted() {
-    this.city_id = ls.get('city_id', 1);
+    this.city_id = this.cityId;
     this.fetchServiceLocation();
   },
   methods: {
@@ -202,11 +204,11 @@ export default {
       document.body.classList.toggle('overflow_hide')
     },
     updateLocation() {
-      ls.set('city_id', this.city_id);
       const city = this.service_locations.filter((item) => {
         return item.id === this.city_id;
       });
-      ls.set('warehouse_id', city[0].warehouse_id);
+      this.$store.commit('local/UPDATE_CITY_ID', this.city_id);
+      this.$store.commit('local/UPDATE_WAREHOUSE_ID', city[0].warehouse_id);
       location.reload();
     }
   }

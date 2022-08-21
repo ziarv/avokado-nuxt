@@ -10,7 +10,7 @@ export const fetchHomeData = ({commit, rootState}) => {
     params: {
       key: rootState.key,
       country_id: rootState.country_id,
-      city_id: rootState.city_id,
+      city_id: rootState.local.city_id,
       district_id: rootState.district_id,
       warehouse_id: rootState.warehouse_id,
       storeLanguageId: rootState.storeLanguageId,
@@ -33,7 +33,7 @@ export const fetchHomeRecommendedProducts = ({commit, rootState}) => {
     params: {
       key: rootState.key,
       country_id: rootState.country_id,
-      city_id: rootState.city_id,
+      city_id: rootState.local.city_id,
       district_id: rootState.district_id,
       warehouse_id: rootState.warehouse_id,
       storeLanguageId: rootState.storeLanguageId,

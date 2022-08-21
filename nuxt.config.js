@@ -53,11 +53,16 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/i18n',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    ['nuxt-vuex-localstorage', {
+      localStorage: ['local']
+    }]
+
   ],
   i18n: {
     locales: ['en', 'ar'],

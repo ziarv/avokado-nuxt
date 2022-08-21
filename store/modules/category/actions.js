@@ -5,7 +5,7 @@ export const fetchByCategoryId = ({commit, rootState}, payload) => {
   return window.$nuxt.$axios.post(`/jeddah-en/api-v2/category/get/page/${payload.page}`, {
     key: rootState.key,
     country_id: rootState.country_id,
-    city_id: rootState.city_id,
+    city_id: rootState.local.city_id,
     district_id: rootState.district_id,
     warehouse_id: rootState.warehouse_id,
     storeLanguageId: rootState.storeLanguageId,
@@ -21,7 +21,7 @@ export const fetchSliderByCategoryId = ({rootState}, id) => {
   const params = {
     key: rootState.key,
     country_id: rootState.country_id,
-    city_id: rootState.city_id,
+    city_id: rootState.local.city_id,
     district_id: rootState.district_id,
     warehouse_id: rootState.warehouse_id,
     storeLanguageId: rootState.storeLanguageId,
