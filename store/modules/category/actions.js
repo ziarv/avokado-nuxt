@@ -17,7 +17,7 @@ export const fetchByCategoryId = ({commit, rootState}, payload) => {
       commit(types.FETCH_PAGINATION_DATA, response.data);
     });
 };
-export const fetchSliderByCategoryId = ({rootState}, id) => {
+export const fetchSliderByCategoryId = ({commit, rootState}, id) => {
   const params = {
     key: rootState.key,
     country_id: rootState.country_id,
@@ -31,8 +31,5 @@ export const fetchSliderByCategoryId = ({rootState}, id) => {
   if (rootState.cart.quote_id) {
     params.quote_id = rootState.cart.quote_id;
   }
-  window.$nuxt.$axios.post.post(`/jeddah-en/api-v2/home/category`, params)
-    .then(response => {
-
-    });
+  return window.$nuxt.$axios.post(`/jeddah-en/api-v2/home/category`, params);
 };

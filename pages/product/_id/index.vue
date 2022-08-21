@@ -108,7 +108,7 @@
 <!--      </div>-->
 <!--    </section>-->
 
-    <product-section></product-section>
+<!--    <product-section></product-section>-->
     <hr class="m-20 xs:!mt-10 xs:!mb-5 xs:!mx-10 sm:!mt-10 sm:!mb-5 sm:!mx-10">
     <key-values></key-values>
   </div>

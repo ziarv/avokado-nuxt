@@ -3,12 +3,9 @@
     <app-slider></app-slider>
     <explore-category></explore-category>
     <shop-by-recommendation></shop-by-recommendation>
-    <product-section></product-section>
     <promo-slider :slider="promo_banners.middle"></promo-slider>
-    <product-section :title="false"></product-section>
-    <product-section :title="false"></product-section>
+    <product-section v-for="(item, index) in menu" :key="index" :category="item" ></product-section>
     <promo-slider :slider="promo_banners.bottom"></promo-slider>
-    <product-section :title="false"></product-section>
     <key-values></key-values>
   </div>
 </template>
@@ -37,6 +34,9 @@ export default {
   computed: {
     promo_banners() {
       return this.$store.state.home.promo_banners;
+    },
+    menu() {
+      return this.$store.state.home.menu;
     }
   },
   mounted() {
