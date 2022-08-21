@@ -38,8 +38,8 @@ export default {
       type: Boolean
     },
     category: {
-      default: 0,
-      type: () => Object
+      default:  () => {},
+      type:   Object
     }
   },
   data() {
