@@ -8,8 +8,12 @@
           <div
             v-for="(category,index) in menu" :key="index"
             :style="{'background-color': category.menu_icon_background_color}" class="card swiper-slide">
+            <nuxt-link :to="'/category/'+category.id">
             <img :src="category.menu_icon" class="xs:!w-[45] xs:!h-[45] sm:!w-[45] sm:!h-[45]" alt="">
-            <p class="xs:!text-[12px] sm:!text-[14px]">{{ category.name }}</p>
+            </nuxt-link>
+            <nuxt-link :to="'/category/'+category.id">
+              <p class="xs:!text-[12px] sm:!text-[14px]">{{ category.name }}</p>
+            </nuxt-link>
           </div>
         </div>
         <div class="swiper-button-next xs:!w-[20px] xs:!h-[20px] xs:!top-[80%] sm:!w-[20px] sm:!h-[20px] sm:!top-[80%]">
@@ -41,7 +45,7 @@ export default {
     }
   },
   watch: {
-    menu () {
+    menu() {
       this.initSwiper();
     }
   },

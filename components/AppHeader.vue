@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header  class="2xl:py-[10px] xs:py-[0px] sm:py-[0px]">
+    <header class="2xl:py-[10px] xs:py-[0px] sm:py-[0px]">
       <div
         class="2xl:mx-20 2xl:flex header_inner 2xl:flex-row 2xl:flex-wrap xs:flex xs:flex-wrap sm:flex sm:flex-wrap xs:flex-col-reverse xs:mx-0 sm:flex-col-reverse sm:mx-0">
         <div
@@ -40,11 +40,11 @@
               <img
                 src="@/assets/img/favrite.svg"
                 class="w-[21px] h-[16px] mx-[5px] 2xl:hidden xs:block sm:block" alt="">
-             <nuxt-link to="/cart">
-               <img
-                 src="@/assets/img/shopping.svg"
-                 class="w-[20px] h-[14px] mx-[5px] 2xl:hidden xs:block sm:block" alt="">
-             </nuxt-link>
+              <nuxt-link to="/cart">
+                <img
+                  src="@/assets/img/shopping.svg"
+                  class="w-[20px] h-[14px] mx-[5px] 2xl:hidden xs:block sm:block" alt="">
+              </nuxt-link>
             </div>
           </div>
         </div>
@@ -53,20 +53,18 @@
           <div class="flex h-[24px] xs:w-[50%] sm:w-[50%]">
            <span
              class="flex location-img w-[50%] font-[600] items-center xs:text-[#FFFFFF] xs:text-[10px] sm:text-[#FFFFFF] sm:text-[13px]">
-           <img src="@/assets/img/location-icon.svg" class="w-[20px] h-[24px] mr-[10px] xs:hidden sm:hidden" alt="">
-             <img
-               src="@/assets/img/location-icon-white.svg" class="w-[10px] xs:h-[12px] sm:h-[12px] mr-[10px]"
-               alt="">
+             <img src="@/assets/img/location-icon.svg" class="w-[20px] h-[24px] mr-[10px] xs:hidden sm:hidden" alt="">
+             <img src="@/assets/img/location-icon-white.svg" class="w-[10px] xs:h-[12px] sm:h-[12px] mr-[10px]" alt="">
                         Deliver to
-                    </span>
+           </span>
             <select
-              id="" name=""
-              class="w-[51%] font-bold bg-[transparent] 2xl:text-[#7CB118] xs:text-[#FFFFFF] xs:text-[10px] sm:text-[#FFFFFF] sm:text-[13px]">
-              <option value="jaddah">Jeddah,Saudi Arabia</option>
-              <option value="jaddah">jaddah</option>
-              <option value="jaddah">jaddah</option>
-              <option value="jaddah">jaddah</option>
-              <option value="jaddah">jaddah</option>
+              v-model="city_id"
+              class="w-[51%] font-bold bg-[transparent] 2xl:text-[#7CB118] xs:text-[#FFFFFF] xs:text-[10px] sm:text-[#FFFFFF] sm:text-[13px]"
+              @change="updateLocation()">
+              <option v-for="(location,index) in service_locations" :key="index" :value="location.id">
+                {{ location.city_name_en }}
+              </option>
+
             </select>
           </div>
           <div class="flex laiba-iqbal_09 w-[50%] xs:w-[50%] sm:w-[50%] items-center">
@@ -98,7 +96,7 @@
     <div class="side_bar_back z-10" :class=" {side_bar_id_block : user_sidebar}" @click="userSidebar"></div>
     <aside
       id="side_bar_id_pl"
-      ref="user_sidebar"  class="w-64" :class="{side_bar_id_block:user_sidebar}"
+      ref="user_sidebar" class="w-64" :class="{side_bar_id_block:user_sidebar}"
       aria-label="Sidebar">
       <div class="overflow-y-auto py-4 px-6 bg-[#FFFFFF]">
         <button class="cros" @click="userSidebar">
@@ -111,7 +109,7 @@
               <img src="@/assets/img/camera.svg" alt="">
             </a>
           </div>
-<!--          <button class="w-full font-bold mt-8">User <span class="text-[#7CB118]">EDIT</span></button>-->
+          <!--          <button class="w-full font-bold mt-8">User <span class="text-[#7CB118]">EDIT</span></button>-->
         </div>
         <hr class="mt-10 mb-0">
         <div class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
@@ -122,16 +120,16 @@
           </div>
           <img src="@/assets/img/back_arrow.svg" alt="">
         </div>
-       <nuxt-link to="addresses">
-         <div class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
-           <div class="special_card_heading flex items-center">
-             <img src="@/assets/img/about_icon.svg" alt="">
-             <h5 class="ml-5">Addresses </h5>
-             <!-- <p>Spcial promo only Today!</p> -->
-           </div>
-           <img src="@/assets/img/back_arrow.svg" alt="">
-         </div>
-       </nuxt-link>
+        <nuxt-link to="addresses">
+          <div class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
+            <div class="special_card_heading flex items-center">
+              <img src="@/assets/img/about_icon.svg" alt="">
+              <h5 class="ml-5">Addresses </h5>
+              <!-- <p>Spcial promo only Today!</p> -->
+            </div>
+            <img src="@/assets/img/back_arrow.svg" alt="">
+          </div>
+        </nuxt-link>
         <div class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
           <div class="special_card_heading flex items-center">
             <img src="@/assets/img/cell_icon.svg" alt="">
@@ -177,17 +175,39 @@
 </template>
 
 <script>
+import {mapActions} from "vuex";
+import ls from "@/services/ls";
+
 export default {
   name: "AppHeader",
   data() {
     return {
-      user_sidebar: false
+      user_sidebar: false,
+      city_id: 1
     }
   },
+  computed: {
+    service_locations() {
+      return this.$store.state.home.service_locations;
+    }
+  },
+  mounted() {
+    this.city_id = ls.get('city_id', 1);
+    this.fetchServiceLocation();
+  },
   methods: {
+    ...mapActions('home', ['fetchServiceLocation']),
     userSidebar() {
       this.user_sidebar = !this.user_sidebar;
       document.body.classList.toggle('overflow_hide')
+    },
+    updateLocation() {
+      ls.set('city_id', this.city_id);
+      const city = this.service_locations.filter((item) => {
+        return item.id === this.city_id;
+      });
+      ls.set('warehouse_id', city[0].warehouse_id);
+      location.reload();
     }
   }
 }

@@ -15,6 +15,7 @@ const state = () => ({
   promo_banners: [],
   recommended_products: [],
   occasional_category: [],
+  service_locations: [],
 });
 
 export default {

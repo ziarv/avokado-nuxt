@@ -1,21 +1,26 @@
 <template>
   <div
-    class="main_card swiper-slide xs:!pt-[10px] xs:!pl-[10px] xs:!h-[9m0px] xs:!pt[m10px] xs:!pl-1m0px] xs:!h-[190px] sm:!pt-[10px] sm:!pl-[10px] sm:!h-[190px]">
+    v-if="product && product.id"
+class="main_card  xs:!pt-[10px] xs:!pl-[10px] xs:!h-[9m0px] xs:!pt[m10px] xs:!pl-1m0px] xs:!h-[190px] sm:!pt-[10px] sm:!pl-[10px] sm:!h-[190px]"
+  :class="{'swiper-slide':isInSlider}"
+  >
     <img
       src="@/assets/img/Vector.svg" alt=""
       class="xs:!w-[14px] xs:!h-[12px] xs:!mr-[8px] sm:!w-[14px mxs:!h-[2mpx] xs:!mr-[8px] sm:!w-[14px] sm:!h-[12px] sm:!mr-[8px]">
     <div class="img-card xs:!pr-[10px mxs:!pr-[10px] sm:!pr-[10px]">
-      <nuxt-link to="/product">
+      <nuxt-link :to="'/product/'+product.id">
         <img
-          src="@/assets/img/Packages.png"
+          :src="product.images.thumbnail"
           class="xs:!w-[87px] xs:!h-[87px] sm:!w-[87px mxs:!h-[87px] sm:!w-[87px] sm:!h-[87px]"
           alt="">
       </nuxt-link>
     </div>
-    <span class="xs:!text-[8px mxs:!text-[8px] sm:!text-[8px]">Vegetables</span>
+    <span class="xs:!text-[8px mxs:!text-[8px] sm:!text-[8px]">
+      {{product.category_name}}
+    </span>
     <p class="xs:!text-[10px] xs:!text-[10px] sm:!text-[12px]">
-      <nuxt-link to="/product">
-        Green Beans
+      <nuxt-link :to="'/product/'+product.id">
+        {{product.name}}
       </nuxt-link>
     </p>
     <div class="star">
@@ -26,7 +31,8 @@
       <span class="xs:!text-[8px mxs:!text-[8px] sm:!text-[8px]">(4)</span>
     </div>
     <p class="xs:!text-[12px xs:!text-[12px] sm:!text-[12px sm:!text-[14px] sm:!text-[14px]">
-      SAR 100
+      {{ product.price_tax_inc }}
+      {{ product.currency_symbol.toUpperCase() }}
     </p>
     <div class="buy_now_1">
       <button
@@ -53,6 +59,16 @@
 <script>
 export default {
   name: "ProductList",
+  props:{
+    isInSlider:{
+      type:Boolean,
+      default: false,
+    },
+    product: {
+      type: Object,
+      default: () => {}
+    }
+  },
   data() {
     return {
       qty: 0

@@ -2,7 +2,7 @@ import mutations from "./mutations";
 import * as actions from "./actions";
 import * as getters from "./getters";
 
-const initialState = {
+const state = {
   products: [],
   totalPages: 0,
   currentPage: 1,
@@ -12,12 +12,8 @@ const initialState = {
 
 export default {
   namespaced: true,
-
-  state: initialState,
-
-  getters: getters,
-
-  actions: actions,
-
-  mutations: mutations
+  state,
+  getters,
+  actions,
+  mutations
 };

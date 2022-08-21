@@ -3,12 +3,15 @@ const { AES, enc } = require("crypto-js");
 const { decrypt, encrypt } = AES;
 
 export default {
-  get(key) {
+  get(key,defaultValue = null) {
+    if(!process.client) {
+      return defaultValue;
+    }
     let itemStr = localStorage.getItem(key);
 
     // if the item doesn't exist, return null
     if (!itemStr) {
-      return null;
+      return defaultValue;
     }
     try {
       if (!DEBUG) {
@@ -21,13 +24,12 @@ export default {
         // If the item is expired, delete the item from storage
         // and return null
         this.remove(key);
-        return null;
+        return defaultValue;
       }
       return item.value;
     } catch (e) {
-      console.error(e);
       this.remove(key);
-      return null;
+      return defaultValue;
     }
   },
 

@@ -1,5 +1,5 @@
 import * as types from "./mutation-types";
-import {RECOMMENDED_PRODUCTS} from "./mutation-types";
+import {RECOMMENDED_PRODUCTS, UPDATE_SERVICE_LOCATIONS} from "./mutation-types";
 
 export default {
   [types.UPDATE_BANNER_SLIDER]: (state, data) => {
@@ -34,5 +34,8 @@ export default {
   },
   [types.RECOMMENDED_PRODUCTS]: (state, status) => {
     state.recommended_products = status;
+  },
+  [types.UPDATE_SERVICE_LOCATIONS]: (state, status) => {
+    state.service_locations = status;
   }
 };
