@@ -1,5 +1,4 @@
 import * as types from "./mutation-types";
-import ls from "@/services/ls";
 
 export default {
   [types.UPDATE_MIN_ORDER_AMOUNT]: (state, data) => {
@@ -12,7 +11,6 @@ export default {
     state.cart_items = items;
   },
   [types.UPDATE_QUOTE_ID]: (state, quoteId) => {
-    ls.set("quote_id", quoteId);
     state.quote_id = quoteId;
   },
   [types.UPDATE_CART_REVIEW]: (state, reviewData) => {

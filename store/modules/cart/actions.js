@@ -20,7 +20,7 @@ export const getCartAction = ({commit, rootState}) => {
     })
     .then(response => {
       const quoteData = response.data;
-      commit('local/UPDATE_QUOTE_ID', quoteData.quote_id, { root: true })
+      commit('local/UPDATE_QUOTE_ID', quoteData.quote_id, {root: true})
       commit(types.UPDATE_CART_DATA, quoteData);
       commit(types.UPDATE_QUOTE_ID, quoteData.quote_id);
       commit(types.UPDATE_CART_ITEMS_DATA, quoteData.cart);
@@ -44,15 +44,16 @@ export const addCartAction = ({commit, rootState}, product) => {
   }
   return window.$nuxt.$axios
     .get(`/jeddah-en/api-v2/cart/add`, {
+      progress: true,
       params
     })
     .then(response => {
-      const quoteData = response;
-      if (quoteData.status === 200 && quoteData.quote_id) {
-        commit(types.UPDATE_CART_DATA, quoteData);
-        commit(types.UPDATE_QUOTE_ID, quoteData.quote_id);
-        commit(types.UPDATE_CART_ITEMS_DATA, quoteData.cart);
-      }
+      const quoteData = response.data;
+      alert( quoteData.quote_id);
+      commit(types.UPDATE_CART_DATA, quoteData);
+      commit(types.UPDATE_QUOTE_ID, quoteData.quote_id);
+      commit('local/UPDATE_QUOTE_ID', quoteData.quote_id, {root: true})
+      commit(types.UPDATE_CART_ITEMS_DATA, quoteData.cart);
     });
 
 }
@@ -73,12 +74,14 @@ export const removeCartProduct = ({commit, rootState}, product) => {
   }
   return window.$nuxt.$axios
     .get(`/jeddah-en/api-v2/cart/removeItem`, {
+      progress: true,
       params
     })
     .then(response => {
       const quoteData = response;
       commit(types.UPDATE_CART_DATA, quoteData);
       commit(types.UPDATE_QUOTE_ID, quoteData.quote_id);
+      commit('local/UPDATE_QUOTE_ID', quoteData.quote_id, {root: true})
       commit(types.UPDATE_CART_ITEMS_DATA, quoteData.cart);
     })
 }
@@ -98,12 +101,14 @@ export const clearCart = ({commit, rootState}) => {
   }
   return window.$nuxt.$axios
     .get(`/jeddah-en/api-v2/cart/clear`, {
+      progress: true,
       params
     })
     .then(response => {
       const quoteData = response;
       commit(types.UPDATE_CART_DATA, quoteData);
       commit(types.UPDATE_QUOTE_ID, quoteData.quote_id);
+      commit('local/UPDATE_QUOTE_ID', quoteData.quote_id, {root: true})
       commit(types.UPDATE_CART_ITEMS_DATA, quoteData.cart);
     });
 }
@@ -148,12 +153,14 @@ export const cartAddAddress = ({commit, rootState}, addressId) => {
   }
   return window.$nuxt.$axios
     .get(`/jeddah-en/api-v2/cart/address`, {
+      progress: false,
       params
     })
     .then(response => {
       const quoteData = response;
       commit(types.UPDATE_CART_DATA, quoteData);
       commit(types.UPDATE_QUOTE_ID, quoteData.quote_id);
+      commit('local/UPDATE_QUOTE_ID', quoteData.quote_id, {root: true})
       commit(types.UPDATE_CART_ITEMS_DATA, quoteData.cart);
     });
 }
@@ -177,8 +184,7 @@ export const applyCoupon = ({commit, rootState}, code) => {
       params
     })
     .then(response => {
-      const coupon = response;
-      commit(types.COUPON_RESPONSE, coupon);
+      commit(types.COUPON_RESPONSE, response);
     })
 }
 export const cartOrderSave = ({commit, rootState}, orderData) => {
@@ -255,7 +261,7 @@ export const getMinimumOrderAmount = ({commit, rootState}) => {
     .then(response => {
       commit(
         types.UPDATE_MIN_ORDER_AMOUNT,
-        parseInt(response.minimumOrderAmount)
+        parseInt(response.data.minimumOrderAmount)
       );
     })
 }

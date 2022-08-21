@@ -12,15 +12,10 @@
             <h5>Cart</h5>
             <h5>Remove</h5>
           </div>
-        <product-cart></product-cart>
-        <product-cart></product-cart>
-        <product-cart></product-cart>
-        <product-cart></product-cart>
-        <product-cart></product-cart>
-
+          <product-cart v-for="(product,index) in cart_items" :key="index" :product="product"></product-cart>
         </div>
         <div class="continue_shopping">
-          <nuxt-link to="/" class="xs:!text-[14px]" >
+          <nuxt-link to="/" class="xs:!text-[14px]">
             <img src="@/assets/img/Vector_2.svg" class="xs:!w-[14px] xs:!h-[14px]" alt="">
             Continue Shopping
           </nuxt-link>
@@ -35,10 +30,27 @@
 </template>
 
 <script>
+import {mapActions} from "vuex";
 import ProductCart from "~/components/cart/ProductCart";
+
+
 export default {
   name: "CartPage",
-  components: {ProductCart}
+  components: {ProductCart},
+  computed: {
+    cart_items() {
+      return this.$store.state.cart.cart_items;
+    },
+    cart_data() {
+      return this.$store.state.cart.cart_data;
+    }
+  },
+ async mounted() {
+   await this.getMinimumOrderAmount();
+  },
+  methods: {
+    ...mapActions('cart', ['getCartAction','getMinimumOrderAmount'])
+  }
 }
 </script>
 

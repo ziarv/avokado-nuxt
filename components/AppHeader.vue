@@ -193,12 +193,15 @@ export default {
       return this.$store.state.local.city_id;
     }
   },
-  mounted() {
+  async mounted() {
+    await this.getCartAction();
     this.city_id = this.cityId;
     this.fetchServiceLocation();
+
   },
   methods: {
     ...mapActions('home', ['fetchServiceLocation']),
+    ...mapActions('cart', ['getCartAction']),
     userSidebar() {
       this.user_sidebar = !this.user_sidebar;
       document.body.classList.toggle('overflow_hide')

@@ -41,7 +41,6 @@ export default {
   },
   mounted() {
     this.fetchHomeData();
-    this.getCartAction();
   },
   methods: {
     ...mapActions('home', ['fetchHomeData']),

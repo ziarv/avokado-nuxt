@@ -1,8 +1,8 @@
 <template>
   <div
     v-if="product && product.id"
-class="main_card  xs:!pt-[10px] xs:!pl-[10px] xs:!h-[9m0px] xs:!pt[m10px] xs:!pl-1m0px] xs:!h-[190px] sm:!pt-[10px] sm:!pl-[10px] sm:!h-[190px]"
-  :class="{'swiper-slide':isInSlider}"
+    class="main_card  xs:!pt-[10px] xs:!pl-[10px] xs:!h-[9m0px] xs:!pt[m10px] xs:!pl-1m0px] xs:!h-[190px] sm:!pt-[10px] sm:!pl-[10px] sm:!h-[190px]"
+    :class="{'swiper-slide':isInSlider}"
   >
     <img
       src="@/assets/img/Vector.svg" alt=""
@@ -16,11 +16,11 @@ class="main_card  xs:!pt-[10px] xs:!pl-[10px] xs:!h-[9m0px] xs:!pt[m10px] xs:!pl
       </nuxt-link>
     </div>
     <span class="xs:!text-[8px mxs:!text-[8px] sm:!text-[8px]">
-      {{product.category_name}}
+      {{ product.category_name }}
     </span>
     <p class="xs:!text-[10px] xs:!text-[10px] sm:!text-[12px]">
       <nuxt-link :to="'/product/'+product.id">
-        {{product.name}}
+        {{ product.name }}
       </nuxt-link>
     </p>
     <div class="star">
@@ -57,16 +57,19 @@ class="main_card  xs:!pt-[10px] xs:!pl-[10px] xs:!h-[9m0px] xs:!pt[m10px] xs:!pl
 </template>
 
 <script>
+import {mapActions} from "vuex";
+
 export default {
   name: "ProductList",
-  props:{
-    isInSlider:{
-      type:Boolean,
+  props: {
+    isInSlider: {
+      type: Boolean,
       default: false,
     },
     product: {
       type: Object,
-      default: () => {}
+      default: () => {
+      }
     }
   },
   data() {
@@ -74,14 +77,35 @@ export default {
       qty: 0
     }
   },
+  computed: {
+    cart_items() {
+      return this.$store.state.cart.cart_items;
+    }
+  },
+  watch: {
+    qty_in_cart() {
+      this.qty = this.qty_in_cart;
+    }
+  },
+  mounted() {
+    // this.qty = this.qty_in_cart;
+  },
   methods: {
+    ...mapActions('cart', ['addCartAction']),
     add() {
-      this.qty++;
+      this.addCartAction({product_id: this.product.id, qty: 1})
+        .then(() => {
+          this.qty++;
+        });
     },
-    remove() {
-      if (this.qty > 0) {
-        this.qty--;
+    async remove() {
+      if (this.qty <= 0) {
+        return;
       }
+      await this.addCartAction({product_id: this.product.id, qty: -1})
+        .then(() => {
+          this.qty--;
+        });
     }
   }
 }

@@ -21,7 +21,9 @@
             <h5 class="xs:!text-[16px]">SAR 400</h5>
           </div>
           <div class="summary_coprright">
-            <p><img src="@/assets/img/Info.svg" alt=""> Minimum order amount is 30 SAR</p>
+            <p><img src="@/assets/img/Info.svg" alt="">
+              Minimum order amount is {{minimum_order_amount}} SAR
+            </p>
           </div>
         </div>
       </div>
@@ -32,7 +34,12 @@
 
 <script>
 export default {
-  name: "CartSummary"
+  name: "CartSummary",
+  computed: {
+    minimum_order_amount() {
+      return this.$store.state.cart.minOrderAmount;
+    },
+  }
 }
 </script>
 
