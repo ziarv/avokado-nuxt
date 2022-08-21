@@ -49,7 +49,6 @@ export const addCartAction = ({commit, rootState}, product) => {
     })
     .then(response => {
       const quoteData = response.data;
-      alert( quoteData.quote_id);
       commit(types.UPDATE_CART_DATA, quoteData);
       commit(types.UPDATE_QUOTE_ID, quoteData.quote_id);
       commit('local/UPDATE_QUOTE_ID', quoteData.quote_id, {root: true})
@@ -78,7 +77,7 @@ export const removeCartProduct = ({commit, rootState}, product) => {
       params
     })
     .then(response => {
-      const quoteData = response;
+      const quoteData = response.data;
       commit(types.UPDATE_CART_DATA, quoteData);
       commit(types.UPDATE_QUOTE_ID, quoteData.quote_id);
       commit('local/UPDATE_QUOTE_ID', quoteData.quote_id, {root: true})

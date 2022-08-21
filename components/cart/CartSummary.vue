@@ -6,19 +6,19 @@
         <div class="summary_div">
           <div class="summary_heading">
             <h6>Subtotal</h6>
-            <h6>SAR 300</h6>
-          </div>
+            <h6>SAR {{cart_data.sub_total}}</h6>
+  menu        </div>
           <div class="summary_heading">
             <h6>Delivery charges</h6>
             <h6>Calculated at checkout</h6>
           </div>
           <div class="summary_heading">
             <h6>VAT(15%)</h6>
-            <h6>SAR 50</h6>
+            <h6>SAR {{cart_data.tax_amount_without_shipping}}</h6>
           </div>
           <div class="summary_heading">
             <h4 class="xs:!text-[16px]">Total</h4>
-            <h5 class="xs:!text-[16px]">SAR 400</h5>
+            <h5 class="xs:!text-[16px]">SAR {{ cart_data.grand_total }}</h5>
           </div>
           <div class="summary_coprright">
             <p><img src="@/assets/img/Info.svg" alt="">
@@ -38,6 +38,9 @@ export default {
   computed: {
     minimum_order_amount() {
       return this.$store.state.cart.minOrderAmount;
+    },
+    cart_data() {
+      return this.$store.state.cart.cart_data;
     },
   }
 }
