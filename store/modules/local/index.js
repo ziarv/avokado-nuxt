@@ -6,6 +6,8 @@ const state = {
   city_id: 1,
   warehouse_id: 1,
   quote_id: null,
+  customer_id: null,
+  customer: {},
 };
 
 export default {
