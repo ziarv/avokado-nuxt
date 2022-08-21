@@ -5,6 +5,7 @@ import * as actions from "./actions";
 import home from "./modules/home";
 import products from "./modules/products";
 import category from "./modules/category";
+import cart from "./modules/cart";
 import {KEY} from "@/constants";
 import ls from "@/services/ls";
 
@@ -29,7 +30,7 @@ const createStore = () => {
     getters,
     mutations,
     actions,
-    modules: {home, products, category}
+    modules: {home, products, category, cart}
   });
 };
 export default createStore
