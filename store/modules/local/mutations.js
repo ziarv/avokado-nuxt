@@ -9,5 +9,11 @@ export default {
   },
   [types.UPDATE_QUOTE_ID]: (state, quoteId) => {
     state.quote_id = quoteId;
+  },
+  [types.UPDATE_CUSTOMER]: (state, data) => {
+    state.customer = data;
+  },
+  [types.UPDATE_CUSTOMER_ID]: (state, data) => {
+    state.customer_id = data;
   }
 };

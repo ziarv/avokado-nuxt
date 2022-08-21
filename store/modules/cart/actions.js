@@ -11,8 +11,8 @@ export const getCartAction = ({commit, rootState}) => {
     requestSource: rootState.requestSource,
     quote_id: rootState.local.quote_id
   };
-  if (rootState.auth && Object.keys(rootState.auth.customer).length > 0) {
-    params.customer_id = rootState.auth.customer.customerId;
+  if (rootState.auth && Object.keys(rootState.local.customer).length > 0) {
+    params.customer_id = rootState.local.customer.customerId;
   }
   return window.$nuxt.$axios
     .get(`/jeddah-en/api-v2/cart/get`, {
@@ -39,8 +39,8 @@ export const addCartAction = ({commit, rootState}, product) => {
     qty: product.qty,
     quote_id: rootState.local.quote_id
   };
-  if (rootState.auth && Object.keys(rootState.auth.customer).length > 0) {
-    params.customer_id = rootState.auth.customer.customerId;
+  if (rootState.auth && Object.keys(rootState.local.customer).length > 0) {
+    params.customer_id = rootState.local.customer.customerId;
   }
   return window.$nuxt.$axios
     .get(`/jeddah-en/api-v2/cart/add`, {
@@ -68,8 +68,8 @@ export const removeCartProduct = ({commit, rootState}, product) => {
     product_id: product.product_id,
     quote_id: rootState.local.quote_id
   };
-  if (rootState.auth && Object.keys(rootState.auth.customer).length > 0) {
-    params.customer_id = rootState.auth.customer.customerId;
+  if (rootState.auth && Object.keys(rootState.local.customer).length > 0) {
+    params.customer_id = rootState.local.customer.customerId;
   }
   return window.$nuxt.$axios
     .get(`/jeddah-en/api-v2/cart/removeItem`, {
@@ -95,8 +95,8 @@ export const clearCart = ({commit, rootState}) => {
     requestSource: rootState.requestSource,
     quote_id: rootState.local.quote_id
   };
-  if (rootState.auth && Object.keys(rootState.auth.customer).length > 0) {
-    params.customer_id = rootState.auth.customer.customerId;
+  if (rootState.auth && Object.keys(rootState.local.customer).length > 0) {
+    params.customer_id = rootState.local.customer.customerId;
   }
   return window.$nuxt.$axios
     .get(`/jeddah-en/api-v2/cart/clear`, {
@@ -124,8 +124,8 @@ export const cartReview = ({commit, rootState}, info) => {
     use_wallet: info.use_wallet,
     quote_id: rootState.local.quote_id
   };
-  if (rootState.auth && Object.keys(rootState.auth.customer).length > 0) {
-    params.customer_id = rootState.auth.customer.customerId;
+  if (rootState.auth && Object.keys(rootState.local.customer).length > 0) {
+    params.customer_id = rootState.local.customer.customerId;
   }
   return window.$nuxt.$axios
     .get(`/jeddah-en/api-v2/cart/review`, {
@@ -147,8 +147,8 @@ export const cartAddAddress = ({commit, rootState}, addressId) => {
     address_id: addressId,
     quote_id: rootState.local.quote_id
   };
-  if (rootState.auth && Object.keys(rootState.auth.customer).length > 0) {
-    params.customer_id = rootState.auth.customer.customerId;
+  if (rootState.auth && Object.keys(rootState.local.customer).length > 0) {
+    params.customer_id = rootState.local.customer.customerId;
   }
   return window.$nuxt.$axios
     .get(`/jeddah-en/api-v2/cart/address`, {
@@ -175,8 +175,8 @@ export const applyCoupon = ({commit, rootState}, code) => {
     coupon: code,
     quote_id: rootState.local.quote_id
   };
-  if (rootState.auth && Object.keys(rootState.auth.customer).length > 0) {
-    params.customer_id = rootState.auth.customer.customerId;
+  if (rootState.auth && Object.keys(rootState.local.customer).length > 0) {
+    params.customer_id = rootState.local.customer.customerId;
   }
   return window.$nuxt.$axios
     .get(`/jeddah-en/api-v2/cart/coupon`, {
@@ -201,8 +201,8 @@ export const cartOrderSave = ({commit, rootState}, orderData) => {
     extra_info: "Vendor " + window.navigator.vendor,
     quote_id: rootState.local.quote_id
   };
-  if (rootState.auth && Object.keys(rootState.auth.customer).length > 0) {
-    params.customer_id = rootState.auth.customer.customerId;
+  if (rootState.auth && Object.keys(rootState.local.customer).length > 0) {
+    params.customer_id = rootState.local.customer.customerId;
   }
   params = {...params, ...orderData};
   return window.$nuxt.$axios
@@ -229,8 +229,8 @@ export const paymentStatus = ({commit, rootState}, request) => {
     requestSource: rootState.requestSource,
     quote_id: rootState.local.quote_id
   };
-  if (rootState.auth && Object.keys(rootState.auth.customer).length > 0) {
-    params.customer_id = rootState.auth.customer.customerId;
+  if (rootState.auth && Object.keys(rootState.local.customer).length > 0) {
+    params.customer_id = rootState.local.customer.customerId;
   }
   params = {...params, ...request};
   return window.$nuxt.$axios
