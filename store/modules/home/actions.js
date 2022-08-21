@@ -26,3 +26,22 @@ export const fetchHomeData = ({commit, rootState}) => {
     });
   // });
 };
+export const fetchHomeRecommendedProducts = ({commit, rootState}) => {
+  // return new Promise((resolve, reject) => {
+  return  window.$nuxt.$axios.$get(`/v3/home/recommended`, {
+    progress: true,
+    params: {
+      key: rootState.key,
+      country_id: rootState.country_id,
+      city_id: rootState.city_id,
+      district_id: rootState.district_id,
+      warehouse_id: rootState.warehouse_id,
+      storeLanguageId: rootState.storeLanguageId,
+      requestSource: rootState.requestSource
+    }
+  }).then(response => {
+      commit(types.RECOMMENDED_PRODUCTS, response.body.products);
+      // resolve(response);
+    });
+  // });
+};

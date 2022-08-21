@@ -3,6 +3,7 @@ import * as getters from "./getters";
 import mutations from "./mutations";
 import * as actions from "./actions";
 import home from "./modules/home";
+import products from "./modules/products";
 import {KEY} from "@/constants";
 
 
@@ -25,7 +26,7 @@ const createStore = () => {
     getters,
     mutations,
     actions,
-    modules: {home}
+    modules: {home, products}
   });
 };
 export default createStore

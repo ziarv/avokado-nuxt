@@ -1,6 +1,7 @@
 import mutations from "./mutations";
 import * as actions from "./actions";
 import * as getters from "./getters";
+import {RECOMMENDED_PRODUCTS} from "~/store/modules/home/mutation-types";
 
 
 const state = () => ({
@@ -12,6 +13,7 @@ const state = () => ({
   staticContent: [],
   categorySliders: [],
   promo_banners: [],
+  recommended_products: [],
   occasional_category: [],
 });
 
