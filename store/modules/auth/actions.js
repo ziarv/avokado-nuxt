@@ -6,7 +6,7 @@ export const otpSendAction = ({commit, rootState}, phone) => {
   formData.append("country_id", rootState.country_id);
   formData.append("city_id", rootState.city_id);
   formData.append("district_id", rootState.district_id);
-  formData.append("warehouse_id", rootState.warehouse_id);
+  formData.append("warehouse_id", rootState.local.warehouse_id);
   formData.append("storeLanguageId", rootState.storeLanguageId);
   formData.append("requestSource", rootState.requestSource);
   formData.append("mobileNumber", phone);
@@ -25,7 +25,7 @@ export const verifyOtpAction = ({commit, rootState}, data) => {
   formData.append("country_id", rootState.country_id);
   formData.append("city_id", rootState.city_id);
   formData.append("district_id", rootState.district_id);
-  formData.append("warehouse_id", rootState.warehouse_id);
+  formData.append("warehouse_id", rootState.local.warehouse_id);
   formData.append("storeLanguageId", rootState.storeLanguageId);
   formData.append("requestSource", rootState.requestSource);
   formData.append("mobileNumber", data.phone);
@@ -51,7 +51,7 @@ export const registerNewUserAccount = ({commit, rootState}, data) => {
   formData.append("country_id", rootState.country_id);
   formData.append("city_id", rootState.city_id);
   formData.append("district_id", rootState.district_id);
-  formData.append("warehouse_id", rootState.warehouse_id);
+  formData.append("warehouse_id", rootState.local.warehouse_id);
   formData.append("storeLanguageId", rootState.storeLanguageId);
   formData.append("requestSource", rootState.requestSource);
   formData.append("customer_mobile_post", data.phone);

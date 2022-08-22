@@ -8,7 +8,7 @@ export const fetchSingleById = ({commit, rootState}, id) => {
     country_id: rootState.country_id,
     city_id: rootState.local.city_id,
     district_id: rootState.district_id,
-    warehouse_id: rootState.warehouse_id,
+    warehouse_id: rootState.local.warehouse_id,
     storeLanguageId: rootState.storeLanguageId,
     requestSource: rootState.requestSource,
     pid: id
@@ -24,7 +24,7 @@ export const fetchSingleBySearch = ({commit, rootState}, keyword) => {
   formData.append("country_id", rootState.country_id);
   formData.append("city_id", rootState.local.city_id);
   formData.append("district_id", rootState.district_id);
-  formData.append("warehouse_id", rootState.warehouse_id);
+  formData.append("warehouse_id", rootState.local.warehouse_id);
   formData.append("storeLanguageId", rootState.storeLanguageId);
   formData.append("requestSource", rootState.requestSource);
   formData.append("keyword", keyword);
