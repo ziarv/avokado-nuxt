@@ -80,15 +80,19 @@ export default {
   computed: {
     cart_items() {
       return this.$store.state.cart.cart_items;
-    }
-  },
-  watch: {
+    },
     qty_in_cart() {
-      this.qty = this.qty_in_cart;
+      if (this.cart_items === undefined || this.cart_items.length <= 0) {
+        return 0;
+      }
+      const product = this.cart_items.filter(
+        item => item.product_id.toString() === this.product.id.toString()
+      )[0];
+      return product ? product.quantity : 0;
     }
   },
   mounted() {
-    // this.qty = this.qty_in_cart;
+    this.qty = this.qty_in_cart;
   },
   methods: {
     ...mapActions('cart', ['addCartAction']),
