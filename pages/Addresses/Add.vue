@@ -3,20 +3,20 @@
     <section>
       <div class="mx-20 flex xs:!mx-10 md:!mx-10 sm:!mx-10">
         <div class="subscibtion my-5 w-full">
-          <h1 class="xs:!text-[22px] xs:!my-[10px]">Delivery Location</h1>
-          <div class="flex">
-                    <span class="flex location-img xs:!text-[10px] xs:!items-center">
-                        <img src="@/assets/img/location-icon.svg" class="xs:!w-[10px] xs:!h-[12px] xs:!mr-[5px]" alt="">
-                        Deliver to
-                    </span>
-            <select class="xs:!text-[10px] bg-[transparent]">
-              <option value="jaddah">Jeddah,Saudi Arabia</option>
-              <option value="jaddah">jaddah</option>
-              <option value="jaddah">jaddah</option>
-              <option value="jaddah">jaddah</option>
-              <option value="jaddah">jaddah</option>
-            </select>
-          </div>
+          <h1 class="xs:!text-[22px] xs:!my-[10px]">Add new address</h1>
+<!--          <div class="flex">-->
+<!--                    <span class="flex location-img xs:!text-[10px] xs:!items-center">-->
+<!--                        <img src="@/assets/img/location-icon.svg" class="xs:!w-[10px] xs:!h-[12px] xs:!mr-[5px]" alt="">-->
+<!--                        Deliver to-->
+<!--                    </span>-->
+<!--            <select class="xs:!text-[10px] bg-[transparent]">-->
+<!--              <option value="jaddah">Jeddah,Saudi Arabia</option>-->
+<!--              <option value="jaddah">jaddah</option>-->
+<!--              <option value="jaddah">jaddah</option>-->
+<!--              <option value="jaddah">jaddah</option>-->
+<!--              <option value="jaddah">jaddah</option>-->
+<!--            </select>-->
+<!--          </div>-->
           <h2 class="text-[22px] font-bold my-8 xs:!my-4 xs:!text-[16px]">Drop address from map</h2>
           <div class="google_map w-full">
             <iframe

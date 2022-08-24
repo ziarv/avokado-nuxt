@@ -10,42 +10,52 @@
           <h5>Address</h5>
           <h5>Remove</h5>
         </div>
-        <div class="product_1">
+        <div v-for="(address, index) in addresses" :key="index" class="product_1">
           <div class="product_img h-[100%] mr-[15px] location_home_main xs:!w-[40px]">
             <img src="@/assets/img/location_home.svg" class="location_home" alt="">
           </div>
           <div class="product_name product_name_location">
             <p class="xs:!text-[12px]">
-              Block Aa Phase 1, Block Aa Phase 1 Citi Housing, Gujranwala, Punjab,
-              Pakistan
+              {{ address.street }}
             </p>
           </div>
           <div class="product_btn_remove">
-            <button><i class="fa-solid fa-xmark xs:!text-[14px]"></i></button>
+            <button @click="deleteAddress(address.address_id)"><i class="fa-solid fa-xmark xs:!text-[14px]"></i></button>
           </div>
         </div>
-        <div class="product_1">
-          <div class="product_img h-[100%] mr-[15px] location_home_main xs:!w-[40px]">
-            <img src="@/assets/img/location_home.svg" class="location_home" alt="">
-          </div>
-          <div class="product_name product_name_location">
-            <p class="xs:!text-[12px]">
-              Block Aa Phase 1, Block Aa Phase 1 Citi Housing, Gujranwala, Punjab,
-              Pakistan
-            </p>
-          </div>
-          <div class="product_btn_remove">
-            <button><i class="fa-solid fa-xmark xs:!text-[14px]"></i></button>
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import {mapActions} from "vuex";
+
 export default {
-  name: "IndexPage"
+  name: "IndexPage",
+  data() {
+    return {}
+  },
+  computed: {
+    addresses() {
+      return this.$store.state.user.addresses;
+    },
+    customer() {
+      return this.$store.state.local.customer;
+    }
+  },
+  mounted() {
+    this.fetchAddresses(this.customer.customerId);
+  },
+  methods: {
+    ...mapActions('user', ['fetchAddresses', 'deleteMyAddress']),
+    deleteAddress(id) {
+      this.deleteMyAddress(id).then(() => {
+        this.fetchAddresses(this.customer.customerId);
+      });
+    }
+  }
 }
 </script>
 

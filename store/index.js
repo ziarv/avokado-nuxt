@@ -8,6 +8,7 @@ import category from "./modules/category";
 import local from "./modules/local";
 import cart from "./modules/cart";
 import auth from "./modules/auth";
+import user from "./modules/user";
 import {KEY} from "@/constants";
 import ls from "@/services/ls";
 
@@ -32,7 +33,7 @@ const createStore = () => {
     getters,
     mutations,
     actions,
-    modules: {home, products, category, cart, local, auth}
+    modules: {home, products, category, cart, local, auth, user}
   });
 };
 export default createStore

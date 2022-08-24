@@ -120,7 +120,7 @@
           </div>
           <img src="@/assets/img/back_arrow.svg" alt="">
         </div>
-        <nuxt-link to="addresses">
+        <nuxt-link to="/addresses">
           <div class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
             <div class="special_card_heading flex items-center">
               <img src="@/assets/img/about_icon.svg" alt="">
