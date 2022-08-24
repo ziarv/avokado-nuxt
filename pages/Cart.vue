@@ -19,10 +19,9 @@
             <img src="@/assets/img/Vector_2.svg" class="xs:!w-[14px] xs:!h-[14px]" alt="">
             Continue Shopping
           </nuxt-link>
-          <button
-            class="px-[45px] rounded-full text-[#FFFFFF] mt-2 mb-20 xs:!mb-0 text-base py-[8px] bg-[#7CB118] shadow-2xl xs:!pt-[3px] xs:!pb-[3px] xs:!pl-[25px] xs:!pr-[25px] xs:!text-[10px] xs:!h-[30px]">
+          <nuxt-link to="/checkout" class="px-[45px] rounded-full text-[#FFFFFF] mt-2 mb-20 xs:!mb-0 text-base py-[8px] bg-[#7CB118] shadow-2xl xs:!pt-[3px] xs:!pb-[3px] xs:!pl-[25px] xs:!pr-[25px] xs:!text-[10px] xs:!h-[30px]">
             Checkout
-          </button>
+          </nuxt-link>
         </div>
       </div>
     </section>
@@ -32,11 +31,12 @@
 <script>
 import {mapActions} from "vuex";
 import ProductCart from "~/components/cart/ProductCart";
+import CartSummary from "~/components/cart/CartSummary";
 
 
 export default {
   name: "CartPage",
-  components: {ProductCart},
+  components: {ProductCart, CartSummary},
   computed: {
     cart_items() {
       return this.$store.state.cart.cart_items;
@@ -45,11 +45,11 @@ export default {
       return this.$store.state.cart.cart_data;
     }
   },
- async mounted() {
-   await this.getMinimumOrderAmount();
+  async mounted() {
+    await this.getMinimumOrderAmount();
   },
   methods: {
-    ...mapActions('cart', ['getCartAction','getMinimumOrderAmount'])
+    ...mapActions('cart', ['getCartAction', 'getMinimumOrderAmount'])
   }
 }
 </script>
