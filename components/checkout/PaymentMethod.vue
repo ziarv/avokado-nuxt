@@ -7,7 +7,13 @@
           <a id="payment_methood" href="javascript:void(0)">
             <div class="promo_code_input" @click="showPaymentMethods">
               <div class="promo_code_input_1">
-                <img src="@/assets/img/money.svg" class="xs:!w-[25px] xs:!h-[25px]" alt="">
+                <img v-if="selectedPaymentMethod && selectedPaymentMethod.value === 'madapay'"  class="w-[35px] h-[30px] xs:!w-[25px] xs:!h-[25px]" src="@/assets/img/payment/madapay.webp" alt="">
+                <img v-else-if="selectedPaymentMethod && selectedPaymentMethod.value === 'stcpay'"  class="w-[35px] h-[30px]  xs:!w-[25px] xs:!h-[25px]" src="@/assets/img/payment/stcpay.webp" alt="">
+                <img v-else-if="selectedPaymentMethod && selectedPaymentMethod.value === 'hyperpay_creditcard'"  class="w-[35px] h-[30px]  xs:!w-[25px] xs:!h-[25px]" src="@/assets/img/payment/hyperpay_creditcard.webp" alt="">
+                <img v-else-if="selectedPaymentMethod && selectedPaymentMethod.value === 'ncbcard'"  class="w-[35px] h-[30px]  xs:!w-[25px] xs:!h-[25px]" src="@/assets/img/payment/ncbcard.png" alt="">
+                <img v-else-if="selectedPaymentMethod && selectedPaymentMethod.value === 'cashondelivery'"  class="w-[35px] h-[30px]  xs:!w-[25px] xs:!h-[25px]" src="@/assets/img/payment/cashondelivery.png" alt="">
+                <img v-else-if="selectedPaymentMethod && selectedPaymentMethod.value === 'codspanpayment'"  class="w-[35px] h-[30px]  xs:!w-[25px] xs:!h-[25px]" src="@/assets/img/payment/codspan.png" alt="">
+                <img v-else src="@/assets/img/payment/cashondelivery.png"  class="w-[35px] h-[30px]  xs:!w-[25px] xs:!h-[25px]" alt="">
                 <p v-if="selectedPaymentMethod" class="xs:!text-[14px]">{{ selectedPaymentMethod.label }}</p>
                 <p v-else class="xs:!text-[14px]">Cash on delivery (COD)</p>
               </div>
@@ -29,11 +35,13 @@
           <div class="overflow_auto_1">
             <div v-for="(method,index) in paymentMethods" :key="index" class="btn_set">
               <button class="visa_btn" @click="selectPaymentMethod(method,$event)">
-                <img v-if="method.value === 'madapay'" src="@/assets/img/mada.svg" alt="">
-                <img v-else-if="method.value === 'stcpay'" src="@/assets/img/stcpay.png" alt="">
-                <img v-else-if="method.value === 'hyperpay_creditcard'" src="@/assets/img/visa.svg" alt="">
-                <img v-else-if="method.value === 'cashondelivery'" src="@/assets/img/money.svg" alt="">
-                <img v-else src="@/assets/img/money.svg" alt="">
+                <img v-if="method.value === 'madapay'" src="@/assets/img/payment/madapay.webp" alt="">
+                <img v-else-if="method.value === 'stcpay'" src="@/assets/img/payment/stcpay.webp" alt="">
+                <img v-else-if="method.value === 'hyperpay_creditcard'" src="@/assets/img/payment/hyperpay_creditcard.webp" alt="">
+                <img v-else-if="method.value === 'ncbcard'" src="@/assets/img/payment/ncbcard.png" alt="">
+                <img v-else-if="method.value === 'cashondelivery'" src="@/assets/img/payment/cashondelivery.png" alt="">
+                <img v-else-if="method.value === 'codspanpayment'" src="@/assets/img/payment/codspan.png" alt="">
+                <img v-else src="@/assets/img/payment/cashondelivery.png" alt="">
               </button>
               <p class="text-center">{{ method.label }}</p>
             </div>
@@ -76,6 +84,7 @@ export default {
       });
       event.target.closest('button').classList.toggle('btn_setting_side');
       this.popupShow = !this.popupShow;
+      document.body.classList.remove('overflow_hide')
       this.$emit('paymentSelected', {
         payment_method: this.selectedPaymentMethod.value,
       });

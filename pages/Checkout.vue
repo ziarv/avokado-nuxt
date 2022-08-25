@@ -14,6 +14,7 @@
     <checkout-items-summary/>
     <delivery-dates @deliverySelected="selectedDelivery"/>
     <promo-code/>
+    <additional-notes></additional-notes>
     <payment-method @paymentSelected="paymentSelected"/>
 
 
@@ -31,11 +32,14 @@ import CheckoutSummary from "~/components/checkout/CheckoutSummary";
 import DeliveryDates from "~/components/checkout/DeliveryDates";
 import PaymentMethod from "~/components/checkout/PaymentMethod";
 import PromoCode from "~/components/checkout/PromoCode";
+import AdditionalNotes from "~/components/checkout/AdditionalNotes";
 
 
 export default {
   name: "CheckoutPage",
-  components: {PaymentMethod, PromoCode, CheckoutItemsSummary, CheckoutSummary, CheckoutAddress, DeliveryDates},
+  components: {
+    AdditionalNotes,
+    PaymentMethod, PromoCode, CheckoutItemsSummary, CheckoutSummary, CheckoutAddress, DeliveryDates},
   layout: 'checkout',
   data() {
     return {

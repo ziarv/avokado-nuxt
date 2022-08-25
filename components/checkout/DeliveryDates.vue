@@ -104,6 +104,7 @@ export default {
         time: this.selectedTime,
       });
       this.popupShow = !this.popupShow;
+      document.body.classList.remove('overflow_hide')
     }
   }
 }

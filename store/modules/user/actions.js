@@ -67,7 +67,7 @@ export const createMyAddress = ({rootState}, addr) => {
   data.append("telephone", addr.telephone);
   data.append("street", addr.street);
   data.append("city", addr.city);
-  data.append("customerId", addr.country_id);
+  data.append("customerId", addr.customerId);
   data.append("customer_address_lat", addr.customer_address_lat);
   data.append("customer_address_lng", addr.customer_address_lng);
   data.append(
