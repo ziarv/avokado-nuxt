@@ -1,6 +1,8 @@
 <template>
 
-  <div v-if="promo_banners && promo_banners.top && promo_banners.top.length > 0" ref="swiper_main" class="overflow-hidden">
+  <div
+v-if="promo_banners && promo_banners.top && promo_banners.top.length > 0" ref="swiper_main"
+       class="overflow-hidden">
     <div class="swiper-wrapper">
       <div v-for="(banner,index) in promo_banners.top" :key="index" class="swiper-slide m-1 mb-3">
         <img :src="banner.image" alt="banner top">
@@ -43,6 +45,9 @@ export default {
       }
       // eslint-disable-next-line no-new
       this.slider = new Swiper(this.$refs.swiper_main, {
+        autoplay: {
+          delay: 3000,
+        },
         slidesPerView: 1,
         loop: true
       });

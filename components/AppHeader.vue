@@ -23,12 +23,15 @@
               <option value="4">categories</option>
             </select>
             <span class="2xl:flex items-center mx-[12px] xs:hidden sm:hidden"> | </span>
-            <input
-              type="text"
-              class="font-light bg-[transparent] text-[#ADADAD] h-[100%] placeholder:text-[#ADADAD] xs:hidden sm:hidden"
-              placeholder="Search for items...">
+            <form action="" @submit.prevent="searchKeyword">
+              <input
+                v-model="keyword"
+                type="text"
+                class="font-light bg-[transparent] text-[#ADADAD] h-[100%] placeholder:text-[#ADADAD] xs:hidden sm:hidden"
+                placeholder="Search for items...">
+            </form>
             <div class="none_input">
-              <input type="text" placeholder="Search for items...">
+              <input type="text" placeholder="Search for itemsz...">
             </div>
             <div
               class="search-icon 2xl:!w-[55px] xl:!w-[85px] 2xl:bg-[#7CB118] xs:bg-[transparent] sm:bg-[transparent] flex items-center justify-center rounded-tl-[0px] rounded-tr-[2px] rounded-br-[2px] rounded-bl-[0px] w-[85px] h-[100%] absolute right-[0%] top-[0%]">
@@ -37,9 +40,9 @@
                 src="@/assets/img/search_icon_black.svg"
                 class="search_icon_black w-[14px] xs:mx-[5px] sm:mx-[5px] h-[14px] 2xl:hidden xs:block sm:block"
                 alt="">
-              <img
-                src="@/assets/img/favrite.svg"
-                class="w-[21px] h-[16px] mx-[5px] 2xl:hidden xs:block sm:block" alt="">
+              <!--              <img-->
+              <!--                src="@/assets/img/favrite.svg"-->
+              <!--                class="w-[21px] h-[16px] mx-[5px] 2xl:hidden xs:block sm:block" alt="">-->
               <nuxt-link to="/cart">
                 <img
                   src="@/assets/img/shopping.svg"
@@ -54,8 +57,7 @@
            <span
              class="flex location-img w-[50%] font-[600] items-center xs:text-[#FFFFFF] xs:text-[10px] sm:text-[#FFFFFF] sm:text-[13px]">
              <img src="@/assets/img/location-icon.svg" class="w-[20px] h-[24px] mr-[10px] xs:hidden sm:hidden" alt="">
-             <img src="@/assets/img/location-icon-white.svg" class="w-[10px] xs:h-[12px] sm:h-[12px] mr-[10px]" alt="">
-                        Deliver to
+             <span class="w-[85px]">Deliver to</span>
            </span>
             <select
               v-model="city_id"
@@ -192,7 +194,8 @@ export default {
   data() {
     return {
       user_sidebar: false,
-      city_id: 1
+      city_id: 1,
+      keyword: ""
     }
   },
   computed: {
@@ -207,11 +210,18 @@ export default {
     await this.getCartAction();
     this.city_id = this.cityId;
     this.fetchServiceLocation();
-
   },
   methods: {
     ...mapActions('home', ['fetchServiceLocation']),
     ...mapActions('cart', ['getCartAction']),
+    searchKeyword() {
+      this.$router.push({
+        path: '/search',
+        query: {
+          keyword: this.keyword
+        }
+      })
+    },
     userSidebar() {
       this.user_sidebar = !this.user_sidebar;
       document.body.classList.toggle('overflow_hide');

@@ -11,7 +11,7 @@
       <nuxt-link :to="'/product/'+product.id">
         <img
           :src="product.images.thumbnail"
-          class="xs:!w-[87px] xs:!h-[87px] sm:!w-[87px mxs:!h-[87px] sm:!w-[87px] sm:!h-[87px]"
+          class="prodImage xs:!w-[87px] xs:!h-[87px] sm:!w-[87px mxs:!h-[87px] sm:!w-[87px] sm:!h-[87px]"
           alt="">
       </nuxt-link>
     </div>
