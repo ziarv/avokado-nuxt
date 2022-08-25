@@ -11,12 +11,14 @@
     </section>
 
     <checkout-address @addressSelected="selectedAddress"/>
-
     <checkout-items-summary/>
     <delivery-dates @deliverySelected="selectedDelivery"/>
+    <promo-code/>
+    <payment-method @paymentSelected="paymentSelected"/>
 
 
     <checkout-summary/>
+
 
   </div>
 </template>
@@ -27,15 +29,18 @@ import CheckoutAddress from "~/components/checkout/CheckoutAddress";
 import CheckoutItemsSummary from "~/components/checkout/CheckoutItemsSummary";
 import CheckoutSummary from "~/components/checkout/CheckoutSummary";
 import DeliveryDates from "~/components/checkout/DeliveryDates";
+import PaymentMethod from "~/components/checkout/PaymentMethod";
+import PromoCode from "~/components/checkout/PromoCode";
 
 
 export default {
   name: "CheckoutPage",
-  components: {CheckoutItemsSummary, CheckoutSummary, CheckoutAddress, DeliveryDates},
+  components: {PaymentMethod, PromoCode, CheckoutItemsSummary, CheckoutSummary, CheckoutAddress, DeliveryDates},
   layout: 'checkout',
   data() {
     return {
       address_id: null,
+      payment_method: null,
       delivery: {
         data: null,
         time: null,
@@ -60,6 +65,9 @@ export default {
     },
     selectedDelivery(delivery) {
       this.delivery = delivery
+    },
+    paymentSelected(method) {
+      this.payment_method = method.payment_method
     }
   }
 }

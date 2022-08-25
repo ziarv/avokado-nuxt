@@ -15,13 +15,18 @@
           <product-cart v-for="(product,index) in cart_items" :key="index" :product="product"></product-cart>
         </div>
         <div class="continue_shopping">
+
           <nuxt-link to="/" class="xs:!text-[14px]">
             <img src="@/assets/img/Vector_2.svg" class="xs:!w-[14px] xs:!h-[14px]" alt="">
             Continue Shopping
           </nuxt-link>
-          <nuxt-link to="/checkout" class="px-[45px] rounded-full text-[#FFFFFF] mt-2 mb-20 xs:!mb-0 text-base py-[8px] bg-[#7CB118] shadow-2xl xs:!pt-[3px] xs:!pb-[3px] xs:!pl-[25px] xs:!pr-[25px] xs:!text-[10px] xs:!h-[30px]">
+          <nuxt-link
+            to="/checkout"
+            :class="{disabled: cart_data.sub_total < minimum_order_amount}"
+            class="px-[45px] rounded-full text-[#FFFFFF] mt-2 mb-20 xs:!mb-0 text-base py-[8px] bg-[#7CB118] shadow-2xl xs:!pt-[3px] xs:!pb-[3px] xs:!pl-[25px] xs:!pr-[25px] xs:!text-[10px] xs:!h-[30px]">
             Checkout
           </nuxt-link>
+
         </div>
       </div>
     </section>
@@ -43,7 +48,10 @@ export default {
     },
     cart_data() {
       return this.$store.state.cart.cart_data;
-    }
+    },
+    minimum_order_amount() {
+      return this.$store.state.cart.minOrderAmount;
+    },
   },
   async mounted() {
     await this.getMinimumOrderAmount();
@@ -55,5 +63,8 @@ export default {
 </script>
 
 <style scoped>
-
+a.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+}
 </style>

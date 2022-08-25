@@ -7,7 +7,7 @@
           <div class="summary_heading">
             <h6>Subtotal</h6>
             <h6>SAR {{cart_data.sub_total}}</h6>
-  menu        </div>
+           </div>
           <div class="summary_heading">
             <h6>Delivery charges</h6>
             <h6>Calculated at checkout</h6>
@@ -21,7 +21,7 @@
             <h5 class="xs:!text-[16px]">SAR {{ cart_data.grand_total }}</h5>
           </div>
           <div class="summary_coprright">
-            <p><img src="@/assets/img/Info.svg" alt="">
+            <p class="text-red-700"><img src="@/assets/img/Info.svg" alt="">
               Minimum order amount is {{minimum_order_amount}} SAR
             </p>
           </div>
