@@ -13,6 +13,9 @@
     <checkout-address @addressSelected="selectedAddress"/>
 
     <checkout-items-summary/>
+    <delivery-dates @deliverySelected="selectedDelivery"/>
+
+
     <checkout-summary/>
 
   </div>
@@ -23,15 +26,20 @@ import {mapActions} from "vuex";
 import CheckoutAddress from "~/components/checkout/CheckoutAddress";
 import CheckoutItemsSummary from "~/components/checkout/CheckoutItemsSummary";
 import CheckoutSummary from "~/components/checkout/CheckoutSummary";
+import DeliveryDates from "~/components/checkout/DeliveryDates";
 
 
 export default {
   name: "CheckoutPage",
-  components: {CheckoutItemsSummary,CheckoutSummary, CheckoutAddress},
+  components: {CheckoutItemsSummary, CheckoutSummary, CheckoutAddress, DeliveryDates},
   layout: 'checkout',
   data() {
     return {
-      address_id: null
+      address_id: null,
+      delivery: {
+        data: null,
+        time: null,
+      }
     }
   },
   computed: {
@@ -49,6 +57,9 @@ export default {
     ...mapActions('cart', ['getCartAction']),
     selectedAddress(addressId) {
       this.address_id = addressId;
+    },
+    selectedDelivery(delivery) {
+      this.delivery = delivery
     }
   }
 }

@@ -4,33 +4,14 @@
       <div class="mx-20 flex xs:!mx-10 md:!mx-10 sm:!mx-10">
         <div class="subscibtion my-5 w-full">
           <h1 class="xs:!text-[22px] xs:!my-[10px]">Add new address</h1>
-<!--          <div class="flex">-->
-<!--                    <span class="flex location-img xs:!text-[10px] xs:!items-center">-->
-<!--                        <img src="@/assets/img/location-icon.svg" class="xs:!w-[10px] xs:!h-[12px] xs:!mr-[5px]" alt="">-->
-<!--                        Deliver to-->
-<!--                    </span>-->
-<!--            <select class="xs:!text-[10px] bg-[transparent]">-->
-<!--              <option value="jaddah">Jeddah,Saudi Arabia</option>-->
-<!--              <option value="jaddah">jaddah</option>-->
-<!--              <option value="jaddah">jaddah</option>-->
-<!--              <option value="jaddah">jaddah</option>-->
-<!--              <option value="jaddah">jaddah</option>-->
-<!--            </select>-->
-<!--          </div>-->
           <h2 class="text-[22px] font-bold my-8 xs:!my-4 xs:!text-[16px]">Drop address from map</h2>
           <div class="google_map w-full">
-            <iframe
-              class="rounded-[20px] w-full xs:!h-[200px]"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d54065.48734402186!2d74.19969250000001!3d32.1207917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1659725910176!5m2!1sen!2s"
-              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            <avokado-google-map />
           </div>
           <p class="text-center my-10 xs:!my-3 xs:!text-[10px] font-bold">OR</p>
         </div>
       </div>
     </section>
-
     <section>
       <div class="mx-20 flex xs:!mx-10 md:!mx-10 sm:!mx-10">
         <div class="address_menual w-full">
@@ -72,8 +53,11 @@
 </template>
 
 <script>
+import AvokadoGoogleMap from "~/components/address/AvokadoGoogleMap";
+
 export default {
-  name: "AddPage"
+  name: "AddPage",
+  components: {AvokadoGoogleMap}
 }
 </script>
 

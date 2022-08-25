@@ -214,7 +214,7 @@ export default {
     ...mapActions('cart', ['getCartAction']),
     userSidebar() {
       this.user_sidebar = !this.user_sidebar;
-      document.body.classList.toggle('overflow_hide')
+      document.body.classList.toggle('overflow_hide');
     },
     updateLocation() {
       const city = this.service_locations.filter((item) => {

@@ -62,7 +62,6 @@ export default {
     ['nuxt-vuex-localstorage', {
       localStorage: ['local']
     }]
-
   ],
   i18n: {
     locales: ['en', 'ar'],
@@ -73,8 +72,7 @@ export default {
   axios: {
     proxy: true,
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: 'http://localhost:3000'
-    // baseURL: 'https://v3ui.avokado.sa'
+    baseURL: process.env.BASE_URL
   },
   proxy: {
     '/v3': {target: 'https://avokado.sa'},
@@ -87,7 +85,6 @@ export default {
       lang: 'en'
     }
   },
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     postcss: {
