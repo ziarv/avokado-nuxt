@@ -8,6 +8,9 @@ const state = {
   quote_id: null,
   customer_id: null,
   customer: {},
+  tmp_order_id: null,
+  tmp_payment_method: null,
+  tmp_order_save_response: null,
 };
 
 export default {

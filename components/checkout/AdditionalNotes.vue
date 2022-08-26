@@ -20,6 +20,11 @@ export default {
     return {
       deliveryNotes: ''
     }
+  },
+  watch: {
+    deliveryNotes() {
+      this.$emit('deliveryNoteChanged', this.deliveryNotes);
+    }
   }
 }
 </script>

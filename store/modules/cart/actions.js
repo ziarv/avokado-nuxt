@@ -206,16 +206,15 @@ export const cartOrderSave = ({commit, rootState}, orderData) => {
   }
   params = {...params, ...orderData};
   return window.$nuxt.$axios
-    .get(`/jeddah-en/api-v2/cart/save`, {
-      params
-    })
+    .post(`/jeddah-en/api-v2/cart/save`, params)
     .then(response => {
-      const order = response;
+      const order = response.data;
       commit(types.ORDER_SAVE, order);
       commit(types.PAYMENT_METHOD, orderData.payment_method);
       commit(types.UPDATE_CART_ITEMS_DATA, []);
       commit(types.UPDATE_CART_REVIEW, []);
       commit(types.UPDATE_CART_DATA, []);
+      commit('local/UPDATE_QUOTE_ID', null, {root: true})
     })
 }
 export const paymentStatus = ({commit, rootState}, request) => {
@@ -234,11 +233,9 @@ export const paymentStatus = ({commit, rootState}, request) => {
   }
   params = {...params, ...request};
   return window.$nuxt.$axios
-    .get(`/jeddah-en/api-v2/payment/status`, {
-      params
-    })
+    .post(`/jeddah-en/api-v2/payment/status`, params)
     .then(response => {
-      commit(types.PAYMENT_STATUS, response);
+      commit(types.PAYMENT_STATUS, response.data);
       commit(types.UPDATE_CART_ITEMS_DATA, []);
       commit(types.UPDATE_CART_REVIEW, []);
       commit(types.UPDATE_CART_DATA, []);

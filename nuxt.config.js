@@ -32,7 +32,9 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    {src: '~/plugins/vue-toast-notification.js', mode: 'client'}
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -75,8 +77,8 @@ export default {
     baseURL: process.env.BASE_URL
   },
   proxy: {
-    '/v3': {target: 'https://avokado.sa'},
-    '/jeddah-en': {target: 'https://avokado.sa'}
+    '/v3': {target: 'https://staging.avokado.sa'},
+    '/jeddah-en': {target: 'https://staging.avokado.sa'}
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

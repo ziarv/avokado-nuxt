@@ -14,11 +14,11 @@
     <checkout-items-summary/>
     <delivery-dates @deliverySelected="selectedDelivery"/>
     <promo-code/>
-    <additional-notes></additional-notes>
+    <additional-notes @deliveryNoteChanged="setDeliveryNote"></additional-notes>
     <payment-method @paymentSelected="paymentSelected"/>
 
 
-    <checkout-summary/>
+    <checkout-summary @placeOrder="placeOrder"/>
 
 
   </div>
@@ -39,12 +39,14 @@ export default {
   name: "CheckoutPage",
   components: {
     AdditionalNotes,
-    PaymentMethod, PromoCode, CheckoutItemsSummary, CheckoutSummary, CheckoutAddress, DeliveryDates},
+    PaymentMethod, PromoCode, CheckoutItemsSummary, CheckoutSummary, CheckoutAddress, DeliveryDates
+  },
   layout: 'checkout',
   data() {
     return {
       address_id: null,
       payment_method: null,
+      comment: "",
       delivery: {
         data: null,
         time: null,
@@ -57,13 +59,21 @@ export default {
     },
     cart_data() {
       return this.$store.state.cart.cart_data;
-    }
+    },
+    order_save() {
+      return this.$store.state.cart.order_save;
+    },
   },
   mounted() {
-    this.getCartAction()
+    this.getCartAction();
+    this.getMinimumOrderAmount();
+
+    this.$store.commit('local/UPDATE_TMP_ORDER_ID', null);
+    this.$store.commit('local/UPDATE_TMP_PAYMENT_METHOD', null);
+    this.$store.commit('local/UPDATE_TMP_ORDER_SAVE_RESPONSE', null);
   },
   methods: {
-    ...mapActions('cart', ['getCartAction']),
+    ...mapActions('cart', ['getCartAction', 'getMinimumOrderAmount', 'cartOrderSave']),
     selectedAddress(addressId) {
       this.address_id = addressId;
     },
@@ -72,6 +82,46 @@ export default {
     },
     paymentSelected(method) {
       this.payment_method = method.payment_method
+    },
+    setDeliveryNote(note) {
+      this.comment = note
+    },
+    placeOrder() {
+      const order = {
+        delivery_date: this.delivery.data,
+        deliver_time_interval: this.delivery.time,
+        comment: this.comment,
+        use_wallet: false,
+        payment_method: this.payment_method
+      };
+      if (!this.address_id) {
+        this.$toast.success("Please Select Address.");
+        return;
+      }
+      if (!this.delivery.data || !this.delivery.time) {
+        this.$toast.success("Please Select Delivery Details.");
+        return;
+      }
+      if (!this.payment_method) {
+        this.$toast.success("Please Select Payment Method.");
+        return;
+      }
+      this.cartOrderSave(order).then(() => {
+        if (this.order_save.status.toString() === "200") {
+          if (this.order_save.order.checkout_id) {
+            this.$router.push({
+              path: "/payment"
+            });
+          } else {
+            this.$toast.success("Order Placed");
+            this.$router.push({
+              path: "/thanks",
+            });
+          }
+        } else {
+          this.$toast.success(this.order_save.message);
+        }
+      });
     }
   }
 }

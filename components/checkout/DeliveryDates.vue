@@ -91,7 +91,8 @@ export default {
     },
     async selectDeliveryTime(time, event) {
       this.selectedTimeObject = time;
-      this.selectedTime = time.id;
+      this.selectedTime = time.fk_shift_id;
+
       const items = document.querySelectorAll('.changes_sidebar > li > a');
       await items.forEach((item) => {
         item.classList.remove('changes_sidebar_li');
