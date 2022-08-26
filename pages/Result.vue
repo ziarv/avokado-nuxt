@@ -41,13 +41,13 @@ export default {
           path: "/thanks"
         });
       } else {
+        this.$store.commit('local/UPDATE_TMP_ORDER_ID', null);
+        this.$store.commit('local/UPDATE_TMP_PAYMENT_METHOD', null);
+        this.$store.commit('local/UPDATE_TMP_ORDER_SAVE_RESPONSE', null);
         this.$router.push({
           path: "/checkout"
         });
       }
-      this.$store.commit('local/UPDATE_TMP_ORDER_ID', null);
-      this.$store.commit('local/UPDATE_TMP_PAYMENT_METHOD', null);
-      this.$store.commit('local/UPDATE_TMP_ORDER_SAVE_RESPONSE', null);
     });
   },
   methods: {

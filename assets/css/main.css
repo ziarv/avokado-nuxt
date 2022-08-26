@@ -9,10 +9,18 @@
 .v-toast__item--warning {
   background-color: #989616 !important;
 }
+
 .v-toast__item--success {
   background-color: #7CB118 !important;
 }
 
+.page-enter-active, .page-leave-active {
+  transition: opacity 0.5s;
+}
+
+.page-enter, .page-leave-to {
+  opacity: 0;
+}
 .option_setting_px {
   position: relative;
 }
