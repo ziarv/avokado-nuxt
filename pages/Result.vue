@@ -14,6 +14,9 @@ export default {
     tmp_order_id() {
       return this.$store.state.local.tmp_order_id;
     },
+    tmp_order_save_response() {
+      return this.$store.state.local.tmp_order_save_response;
+    },
     tmp_payment_method() {
       return this.$store.state.local.tmp_payment_method;
     }
@@ -28,12 +31,14 @@ export default {
       this.$router.push({
         path: "/"
       });
+      this.$toast.warning("No Payment Session Found");
     }
     this.paymentStatus(request).then(() => {
       this.$toast.success(this.payment_status.message);
       if (this.payment_status.status) {
+        this.$store.commit('cart/ORDER_SAVE', this.tmp_order_save_response);
         this.$router.push({
-          path: "/"
+          path: "/thanks"
         });
       } else {
         this.$router.push({

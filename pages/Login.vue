@@ -207,7 +207,7 @@ export default {
         this.phoneNumber = this.phoneNumber.replace(/^(966)/, "");
       }
       if (this.phoneNumber.length !== 9) {
-        alert('invalid phone number');
+        this.$toast.warning("invalid phone number");
         return false;
       }
 
@@ -225,7 +225,7 @@ export default {
         code: this.v_code
       }).then(() => {
         if (this.otp_verify_response.customerId == null) {
-          alert('otp failed')
+          this.$toast.warning("OTP Verification Failed");
           return;
         }
         if (
@@ -237,7 +237,7 @@ export default {
           this.is_register = true;
           this.customer.phone = this.phone_verify;
           this.customer.code = this.v_code;
-          alert('new user register');
+          this.$toast.warning("Please Register As new user.");
         } else {
           this.$store.commit('local/UPDATE_CUSTOMER', this.otp_verify_response)
           this.$router.push({
@@ -249,7 +249,7 @@ export default {
     registerUser() {
       this.registerNewUserAccount(this.customer).then(() => {
         this.$store.commit('local/UPDATE_CUSTOMER', this.customer_login)
-        alert('registred');
+        this.$toast.warning("Welcome.");
         this.$router.push({
           path: "/"
         });

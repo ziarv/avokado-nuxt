@@ -35,6 +35,7 @@ export default {
       }
     };
     if (Object.keys(this.order).length <= 0) {
+      this.$toast.warning("No Payment Session Found");
       this.$router.push({
         path: "/"
       });

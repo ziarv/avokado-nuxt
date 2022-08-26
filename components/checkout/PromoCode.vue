@@ -49,7 +49,7 @@ export default {
     async applyPromoCode() {
       await this.applyCoupon(this.promoCode === this.coupon_code ? "" : this.promoCode);
       if (!this.couponResponse || !this.couponResponse.data.status || this.couponResponse.data.status.toString() !== "200") {
-        alert('Invalid Coupon')
+        this.$toast.warning("Invalid Coupon");
         return;
       }
       this.getCartAction();
