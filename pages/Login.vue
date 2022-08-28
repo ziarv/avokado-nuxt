@@ -59,10 +59,10 @@
                 <h1 class="w-full text-[32px] font-['futur-extra']">Verify Code!</h1>
               </div>
               <div class="relative mb-5">
-                <label for="" class="w-full text-[18px] block mt-5 mb-0">Verification Code</label>
+                <label for="" class="w-full  text-[18px] block mt-5 mb-0">Verification Code</label>
                 <input
                   v-model="v_code"
-                  class="w-[100%] bg-[#ECECEC] py-[16px] rounded-md text=[#848484] placeholder:text=[#848484] pr-[22px] outline-none mt-4"
+                  class="w-[100%] pl-10 bg-[#ECECEC] py-[16px] rounded-md text=[#848484] placeholder:text=[#848484] pr-[22px] outline-none mt-4"
                   type="number" placeholder="Enter your Verification number">
               </div>
               <div class="login_btn text-center">

@@ -62,24 +62,21 @@
             </select>
           </div>
           <div class="flex laiba-iqbal_09 w-[50%] xs:w-[50%] sm:w-[50%] items-center">
-            <img src="@/assets/img/favrite.svg" class="w-[27px] h-[25px] mx-[5px] xs:hidden sm:hidden" alt="">
+
             <nuxt-link to="/cart">
               <img src="@/assets/img/shopping.svg" class="w-[27px] h-[25px] mx-[5px] xs:hidden sm:hidden" alt="">
             </nuxt-link>
             <div
+              v-if="customer.customerId"
               class="laiba-iqbal 2xl:w-[52%] justify-end ml-[15px] flex items-center xs:w-[100%] sm:w-[100%]">
-              <img
-                id="side_bar_id_block" src="@/assets/img/laiba-iqbal.svg" alt=""
-                class="xs:w-[20px] xs:h-[20px] sm:w-[20px] sm:h-[20px]">
-              <select
-                id="side_bar_id_block_1" name="service"
-                class="bg-[transparent] 2xl:mb-[11px] ml-[5px] xs:mb-[0px] xs:w-[10%] xs:block sm:block sm:mb-[0px] sm:w-[10%] sm:block">
-                <option value="1" selected>Laiba Iqbal</option>
-                <option value="2">Laiba Iqbal</option>
-                <option value="3">Laiba Iqbal</option>
-                <option value="4">Laiba Iqbal</option>
-                <option value="5">Laiba Iqbal</option>
-              </select>
+              <p class="mr-1">{{ customer.customerData.firstName }} {{ customer.customerData.lastName }}</p>
+              <i class="text-red-700 fa fa-sign-out cursor-pointer" @click="logoutUser"></i>
+            </div>
+            <div
+              v-else
+              class="laiba-iqbal 2xl:w-[52%] justify-end ml-[15px] flex items-center xs:w-[100%] sm:w-[100%]">
+              <nuxt-link to="/login"> Login</nuxt-link>
+
             </div>
           </div>
         </div>
