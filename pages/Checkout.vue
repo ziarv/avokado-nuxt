@@ -63,8 +63,20 @@ export default {
     order_save() {
       return this.$store.state.cart.order_save;
     },
+    customer() {
+      return this.$store.state.local.customer;
+    },
   },
   mounted() {
+
+    if (!this.customer.customerId) {
+      this.$toast.warning('Please login.');
+      this.$router.push({
+        'path': '/login'
+      })
+      return;
+    }
+
     this.getCartAction();
     this.getMinimumOrderAmount();
 

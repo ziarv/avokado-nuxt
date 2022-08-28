@@ -70,6 +70,14 @@ export default {
       return this.$store.state.local.customer;
     }
   },
+  mounted() {
+    if (!this.customer.customerId) {
+      this.$toast.warning('Please login.');
+      this.$router.push({
+        'path': '/login'
+      })
+    }
+  },
   methods: {
     ...mapActions('user', ['createMyAddress']),
     locationUpdated(location) {

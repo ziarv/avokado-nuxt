@@ -195,6 +195,17 @@ export default {
     customer_login() {
       return this.$store.state.auth.customer;
     },
+    customer_local() {
+      return this.$store.state.local.customer;
+    },
+  },
+  mounted() {
+    if (this.customer_local.customerId) {
+      this.$toast.warning('Already Logged In.');
+      this.$router.push({
+        'path': '/'
+      })
+    }
   },
   methods: {
     ...mapActions("auth", [

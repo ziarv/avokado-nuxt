@@ -20,7 +20,8 @@
             </p>
           </div>
           <div class="product_btn_remove">
-            <button @click="deleteAddress(address.address_id)"><i class="fa-solid fa-xmark xs:!text-[14px]"></i></button>
+            <button @click="deleteAddress(address.address_id)"><i class="fa-solid fa-xmark xs:!text-[14px]"></i>
+            </button>
           </div>
         </div>
 
@@ -46,6 +47,13 @@ export default {
     }
   },
   mounted() {
+    if (!this.customer.customerId) {
+      this.$toast.warning('Please login.');
+      this.$router.push({
+        'path': '/login'
+      })
+      return;
+    }
     this.fetchAddresses(this.customer.customerId);
   },
   methods: {

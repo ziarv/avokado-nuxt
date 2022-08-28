@@ -15,14 +15,6 @@
           </div>
           <div
             class="option_setting_px flex items-center input-set 2xl:mx-[48px] xs:mx-[0px] sm:mx-[0px] relative p-[9px] w-[56.7%] 2xl:bg-[#ECECEC] xs:bg-[transparent] sm:bg-[transparent] rounded-[2px] h-[42px] flex-row">
-            <select id="" name="" class="bg-[transparent] font-semibold text-[14px] xs:hidden sm:hidden">
-              <option value="">All Categories</option>
-              <option value="1">categories</option>
-              <option value="2">categories</option>
-              <option value="3">categories</option>
-              <option value="4">categories</option>
-            </select>
-            <span class="2xl:flex items-center mx-[12px] xs:hidden sm:hidden"> | </span>
             <form action="" @submit.prevent="searchKeyword">
               <input
                 v-model="keyword"
@@ -122,33 +114,20 @@
           </div>
           <img src="@/assets/img/back_arrow.svg" alt="">
         </div>
-        <nuxt-link to="/addresses">
-          <div class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
-            <div class="special_card_heading flex items-center">
-              <img src="@/assets/img/about_icon.svg" alt="">
-              <h5 class="ml-5">Addresses </h5>
-              <!-- <p>Spcial promo only Today!</p> -->
-            </div>
-            <img src="@/assets/img/back_arrow.svg" alt="">
-          </div>
-        </nuxt-link>
-        <nuxt-link to="/login">
-          <div class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
-            <div class="special_card_heading flex items-center">
-              <img src="@/assets/img/about_icon.svg" alt="">
-              <h5 class="ml-5">Login </h5>
-              <!-- <p>Spcial promo only Today!</p> -->
-            </div>
-            <img src="@/assets/img/back_arrow.svg" alt="">
-          </div>
-        </nuxt-link>
-        <div class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
+
+        <div
+          v-if="customer.customerId"
+          class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
+
           <div class="special_card_heading flex items-center">
-            <img src="@/assets/img/cell_icon.svg" alt="">
-            <h5 class="ml-5">Help Center</h5>
+            <img src="@/assets/img/about_icon.svg" alt="">
+            <nuxt-link to="/addresses">
+              <h5 class="ml-5">Addresses </h5>
+            </nuxt-link>
             <!-- <p>Spcial promo only Today!</p> -->
           </div>
           <img src="@/assets/img/back_arrow.svg" alt="">
+
         </div>
         <div class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
           <div class="special_card_heading flex items-center">
@@ -160,11 +139,35 @@
         </div>
         <div class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
           <div class="special_card_heading flex items-center">
+            <img src="@/assets/img/cell_icon.svg" alt="">
+            <h5 class="ml-5">Help Center</h5>
+            <!-- <p>Spcial promo only Today!</p> -->
+          </div>
+          <img src="@/assets/img/back_arrow.svg" alt="">
+        </div>
+        <div
+          v-if="customer.customerId"
+          class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
+          <div class="special_card_heading flex items-center">
             <img src="@/assets/img/login.svg" alt="">
-            <h5 class="ml-5">Logout</h5>
+            <h5 class="ml-5 cursor-pointer" @click="logoutUser">Logout</h5>
             <!-- <p>Spcial promo only Today!</p> -->
           </div>
         </div>
+
+        <div v-else class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
+
+          <div class="special_card_heading flex items-center">
+            <img src="@/assets/img/about_icon.svg" alt="">
+            <nuxt-link to="/login">
+              <h5 class="ml-5">Login </h5>
+            </nuxt-link>
+            <!-- <p>Spcial promo only Today!</p> -->
+          </div>
+          <img src="@/assets/img/back_arrow.svg" alt="">
+
+        </div>
+
         <div class="language_btn_main">
           <div class="language_btn">
             <button
@@ -204,7 +207,10 @@ export default {
     },
     cityId() {
       return this.$store.state.local.city_id;
-    }
+    },
+    customer() {
+      return this.$store.state.local.customer;
+    },
   },
   async mounted() {
     await this.getCartAction();
@@ -221,6 +227,12 @@ export default {
           keyword: this.keyword
         }
       })
+    },
+    logoutUser() {
+      this.$store.commit('local/UPDATE_CUSTOMER', []);
+      this.$store.commit('local/UPDATE_QUOTE_ID', null);
+      this.$toast.warning("Logged Out");
+      location.reload();
     },
     userSidebar() {
       this.user_sidebar = !this.user_sidebar;
