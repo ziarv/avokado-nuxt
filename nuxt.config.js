@@ -1,4 +1,5 @@
 export default {
+  loading: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Avokado.sa',
@@ -33,7 +34,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    {src: '~/plugins/vue-toast-notification.js', mode: 'client'}
+    {src: '~/plugins/vue-toast-notification.js', mode: 'client'},
+    {src: '~/plugins/axios.js', mode: 'client'}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

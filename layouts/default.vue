@@ -1,5 +1,6 @@
 <template>
   <div>
+    <AppLoading />
     <app-header/>
       <Nuxt/>
     <app-footer/>
@@ -11,9 +12,10 @@
 import AppHeader from "~/components/AppHeader";
 import AppFooter from "~/components/AppFooter";
 import 'aos/dist/aos.css'
+import AppLoading from "~/components/Loading";
 export default {
   name: "DefaultLayout",
-  components: {AppFooter, AppHeader},
+  components: {AppLoading, AppFooter, AppHeader},
   mounted() {
     // AOS.init();
   }
@@ -21,5 +23,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
