@@ -1,19 +1,19 @@
 .banner {
-  background-image: linear-gradient(to right, #7CB118 40%, #A2CE53 80%);
-  padding: 60px 0px 0px 0px;
+    background-image: linear-gradient(to right, #7CB118 40%, #A2CE53 80%);
+    padding: 60px 0px 0px 0px;
 }
 
 .set {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .subscribe {
-  width: 64%;
-  text-align: left;
+    width: 64%;
+    text-align: left;
 }
 
 .subscribe_img {
-  width: 36%;
+    width: 36%;
 }
 
 /* .subscribe>h1 {

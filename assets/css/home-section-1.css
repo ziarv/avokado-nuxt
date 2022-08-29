@@ -163,7 +163,7 @@ input {
   height: 220px !important;
   box-shadow: 0px 6px 12px #00000036;
   flex-flow: row wrap;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: flex-start;
 }
 
@@ -217,19 +217,14 @@ input {
   display: flex;
   flex-flow: row wrap;
   align-content: space-between;
-  justify-content: flex-end;
-  min-height: 360px !important;
-  /*max-height: 400px !important;*/
+  height: 360px !important;
   padding: 12px 0px 0px 30px;
   border-radius: 10px;
   width: 22%;
   background: #FFFFFF;
-  margin: 17px 0px;
+  margin: 0px 0px;
+  justify-content: center;
   box-shadow: 0px 6px 12px #00000036;
-}
-
-.img-card > img.prodImage {
-  height: 10px !important;
 }
 
 .main_card > img {
@@ -239,7 +234,8 @@ input {
 }
 
 .img-card {
-  width: 100%;
+  width: 150px;
+  height: 165px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -247,8 +243,9 @@ input {
 }
 
 .img-card > img {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
+  object-fit: none;
 }
 
 .star {
@@ -515,7 +512,7 @@ input::-webkit-inner-spin-button {
 }
 
 .fresh_fruit:hover > p {
-  font-family: "futur-bold";
+  font-family: "futura_bold";
   color: #7CB118;
   font-size: 16px;
 }
@@ -705,13 +702,13 @@ input::-webkit-inner-spin-button {
 }
 
 .summary_heading > h4 {
-  font-family: "futur-extra";
+  font-family: "futura_bold";
   color: #000000;
   font-size: 26px;
 }
 
 .summary_heading > h5 {
-  font-family: "futur-extra";
+  font-family: "futura_bold" !important;
   color: #7CB118;
   font-size: 26px;
 }
@@ -728,6 +725,14 @@ input::-webkit-inner-spin-button {
 }
 
 .summary_heading > h6 {
+  font-size: 18px;
+}
+
+.summary_div > .summary_heading:nth-child(3) > h6 {
+  font-size: 20px;
+}
+
+.summary_div > .summary_heading:nth-child(3) > h6:nth-child(2) {
   font-size: 18px;
 }
 
@@ -1251,7 +1256,6 @@ input::-webkit-inner-spin-button {
 
 .btn_set > p {
   color: #7CB118;
-  font-weight: bold;
   margin: 5px 0px;
   font-size: 13px;
 }
@@ -1629,7 +1633,7 @@ input::-webkit-inner-spin-button {
 }
 
 .complaints_call {
-  background-color: #7CB118;
+  background-color: #A2CE53;
   box-shadow: 0px 3px 6px #0000003b;
   border-radius: 10px;
   padding: 10px;
@@ -1656,8 +1660,9 @@ input::-webkit-inner-spin-button {
   background-color: #7CB118;
   box-shadow: 0px 3px 6px #0000003b;
   border: 1px solid #7CB118;
-  padding: 5px 60px;
-  font-size: 16px;
+  padding: 14.5px 25px;
+  width: 45%;
+  font-size: 22px;
   color: #FFFFFF;
 
 }
@@ -1761,7 +1766,7 @@ input::-webkit-inner-spin-button {
   width: 1px;
   height: 29%;
   top: 57%;
-  left: 12%;
+  left: 13%;
   position: absolute;
 }
 
@@ -1798,4 +1803,52 @@ input::-webkit-inner-spin-button {
 
 #srange {
   border-radius: 0px 8px 8px 0px;
+}
+
+.wishlist > .delivery_address ~ .product_ongoing ~ .give_a_friend {
+  width: 59%;
+}
+
+.wishlist > .delivery_address ~ .product_ongoing ~ .give_a_friend > div > input {
+  width: 25%;
+}
+
+.product_ongoing > h5 {
+  font-family: "futura_bold" !important;
+}
+
+.product_1 > div:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.product_1 > div:nth-child(2) > div {
+  width: calc(100% / 3);
+}
+
+.product_1 > div:nth-child(2) > div > p {
+  font-size: 18px;
+}
+
+.show,
+.show ~ div,
+.show ~ div ~ .product_slider_boot {
+  display: none;
+}
+
+.cardse_sec_main {
+  display: none;
+}
+
+.Vectorsvg {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Vectorsvg > img {
+  width: 24px;
+  height: 21px;
+  margin-right: 12px;
 }

@@ -14,7 +14,8 @@
             <img :src="product.thumbnail" class="xs:!w-[40px] xs:!h-[40px] xs:!ml-[0px]" alt="">
           </div>
           <div class="product_name xs:!w-[25%]">
-            <p class="xs:!text-[12px]">{{product.name}}</p>
+            <p v-if="$i18n.locale === 'ar'" class="xs:!text-[12px]">{{product.name_ar}}</p>
+            <p v-else class="xs:!text-[12px]">{{product.name}}</p>
           </div>
           <div class="product_price xs:!w-[20%]">
             <p class="xs:!text-[12px]">{{product.price_vat}} SAR</p>

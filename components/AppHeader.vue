@@ -50,7 +50,7 @@
            <span
              class="flex location-img w-[50%] font-[600] items-center xs:text-[#FFFFFF] xs:text-[10px] sm:text-[#FFFFFF] sm:text-[13px]">
              <img src="@/assets/img/location-icon.svg" class="w-[20px] h-[24px] mr-[10px] xs:hidden sm:hidden" alt="">
-             <span class="w-[85px]">Deliver to</span>
+             <span  class="w-[140px]">Deliver to</span>
            </span>
             <select
               v-model="city_id"

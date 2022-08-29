@@ -7,4 +7,11 @@ export default function ({$axios, redirect}) {
       window.$nuxt.$store.commit('UPDATE_LOADING', false);
     }, 1000);
   });
+
+  $axios.onError((error) => {
+    if (error.response  && error.response.data && error.response.data.message) {
+      window.$nuxt.$toast.warning(error.response.data.message);
+    }
+    window.$nuxt.$store.commit('UPDATE_LOADING', false);
+  });
 }

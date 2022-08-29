@@ -32,7 +32,7 @@ export default {
   width: 100%;
   height: 100%;
   z-index: 111111;
-  background-color: #1e1e1ee0;
+  background-color: rgb(255 255 255  / 80%);
 }
 
 .loadin-wrapper > img {

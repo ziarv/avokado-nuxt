@@ -1,4 +1,6 @@
 <template>
+
+
   <div v-if="product && product.id" class="cards swiper-slide xs:!h-[150px] sm:!h-[150px]">
     <div class="cardse">
       <nuxt-link :to="localePath(`/product/${product.id}`)">

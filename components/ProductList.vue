@@ -4,9 +4,11 @@
     class="main_card  xs:!pt-[10px] xs:!pl-[10px] xs:!h-[9m0px] xs:!pt[m10px] xs:!pl-1m0px] xs:!h-[190px] sm:!pt-[10px] sm:!pl-[10px] sm:!h-[190px]"
     :class="{'swiper-slide':isInSlider}"
   >
-    <img
-      src="@/assets/img/Vector.svg" alt=""
-      class="xs:!w-[14px] xs:!h-[12px] xs:!mr-[8px] sm:!w-[14px mxs:!h-[2mpx] xs:!mr-[8px] sm:!w-[14px] sm:!h-[12px] sm:!mr-[8px]">
+    <div class="Vectorsvg">
+      <img
+src="@/assets/img/Vector.svg" alt=""
+           class="xs:!w-[14px] xs:!h-[12px] xs:!mr-[8px] sm:!w-[14px] sm:!h-[12px] sm:!mr-[8px]">
+    </div>
     <div class="img-card xs:!pr-[10px mxs:!pr-[10px] sm:!pr-[10px]">
       <nuxt-link   :to="localePath(`/product/${product.id}`)">
         <img

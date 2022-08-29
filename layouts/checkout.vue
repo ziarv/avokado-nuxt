@@ -18,7 +18,8 @@ export default {
   head() {
     return {
       htmlAttrs: {
-        lang: this.$i18n.locale
+        lang: this.$i18n.locale,
+        dir: this.$i18n.locale === 'ar' ? 'rtl' : 'ltr'
       }
     }
   },

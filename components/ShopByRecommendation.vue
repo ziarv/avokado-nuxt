@@ -58,7 +58,7 @@ export default {
       }
       // eslint-disable-next-line no-new
       this.slider = new Swiper(this.$refs.swiper, {
-        slidesPerView: 3,
+        slidesPerView: 1,
         spaceBetween: 20,
         loop: true,
         navigation: {
