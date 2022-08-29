@@ -588,7 +588,13 @@
   }
 
   .cardse {
-    height: 55%;
+    width: 90% !important;
+    height: 76% !important;
+  }
+
+  .cardse > img {
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .buy_now > button {
@@ -1188,6 +1194,26 @@
   .wishlist > .delivery_address ~ .product_ongoing ~ .give_a_friend > div > input {
     width: 50%;
   }
+
+  .img-card {
+    height: 87px !important;
+  }
+
+  .main_card {
+    height: 100% !important;
+  }
+
+  .img-card {
+    padding-right: 0px;
+  }
+
+  .img-card > img {
+    object-fit: fill !important;
+  }
+
+  .buy_now {
+    height: 30px !important;
+  }
 }
 
 @media (max-width: 420px) {
@@ -1229,9 +1255,10 @@
     height: 82px !important;
   }
 
-  .card > img {
+  .card > a > img {
     width: 45px !important;
     height: 45px !important;
+    object-fit: contain !important;
   }
 
   .new_item_1 {
