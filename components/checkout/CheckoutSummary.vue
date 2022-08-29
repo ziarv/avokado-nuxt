@@ -11,7 +11,7 @@
         </div>
         <div class="btn_place flex justify-end my-8">
           <nuxt-link
-            to="/"
+            :to="localePath(`/`)"
             class="px-[45px] mr-2 rounded-full text-[#FFFFFF] mt-2 mb-20 sm:!mb-0 xs:!mb-0 text-base py-[8px] bg-[#7CB118] shadow-2xl xs:!pt-[3px] xs:!pb-[3px] xs:!pl-[25px] xs:!pr-[25px] xs:!text-[10px] xs:!h-[30px]">
             Home
           </nuxt-link>

@@ -203,7 +203,7 @@ export default {
     if (this.customer_local.customerId) {
       this.$toast.warning('Already Logged In.');
       this.$router.push({
-        'path': '/'
+        'path': this.localePath('/')
       })
     }
   },
@@ -252,7 +252,7 @@ export default {
         } else {
           this.$store.commit('local/UPDATE_CUSTOMER', this.otp_verify_response)
           this.$router.push({
-            path: "/"
+            path: this.localePath("/")
           });
         }
       });
@@ -262,7 +262,7 @@ export default {
         this.$store.commit('local/UPDATE_CUSTOMER', this.customer_login)
         this.$toast.warning("Welcome.");
         this.$router.push({
-          path: "/"
+          path: this.localePath("/")
         });
       });
     },

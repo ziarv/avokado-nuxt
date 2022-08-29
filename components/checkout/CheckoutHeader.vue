@@ -5,7 +5,7 @@
         <button id="hame_buger" type="button" class="xs:!block sm:!block">
           <img src="@/assets/img/ham_buger.svg" alt="">
         </button>
-        <nuxt-link to="/">
+        <nuxt-link  :to="localePath('/')">
           <img src="@/assets/img/logo.svg" class="xs:!w-[80px] xs:!h-[29px]" alt="">
         </nuxt-link>
       </div>

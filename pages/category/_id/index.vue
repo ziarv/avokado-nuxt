@@ -8,62 +8,62 @@
             <h1 class="mb-8">Categories</h1>
             <div v-for="(item, index) in menu" :key="index" class="fresh_fruit flex items-center">
 
-                <img  :src="item.menu_icon" alt="">
-              <nuxt-link :to="'/category/'+item.id">
+              <img :src="item.menu_icon" alt="">
+              <nuxt-link :to="localePath(`/category/${item.id}`)">
                 <p>{{ item.name }}</p>
               </nuxt-link>
             </div>
           </div>
-<!--          <div class="side_bar sm:!w-[47.5%] xs:!w-[47.5%]">-->
-<!--            <h1>Filter Price Range</h1>-->
-<!--            <div class="wrap my-5">-->
-<!--              <div class='slider'>-->
-<!--                <input id="r" type="range" class="progress" value='0' min="0" max="5000" step="1">-->
-<!--              </div>-->
-<!--              <div class='slider'>-->
-<!--                <input id="srange" type="range" class="progress" value='5000' max="5000" step="1">-->
-<!--                &lt;!&ndash; <input id="s" type="range"  value='5000' max="5000" step="1"/> &ndash;&gt;-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <p>0 SAR-200 SAR</p>-->
-<!--            <h1>Customer Rating</h1>-->
-<!--            <div class="listing_star">-->
-<!--              <div class="star_img">-->
-<!--                <img src="@/assets/img/Vector_1.svg" alt="">-->
-<!--                <img src="@/assets/img/Vector_1.svg" alt="">-->
-<!--                <img src="@/assets/img/Vector_1.svg" alt="">-->
-<!--                <img src="@/assets/img/Vector_1.svg" alt="">-->
-<!--              </div>-->
-<!--              <span>& up</span>-->
-<!--            </div>-->
-<!--            <div class="listing_star">-->
-<!--              <div class="star_img">-->
-<!--                <img src="@/assets/img/Star_1.svg" alt="">-->
-<!--                <img src="@/assets/img/Star_1.svg" alt="">-->
-<!--                <img src="@/assets/img/Star_1.svg" alt="">-->
-<!--              </div>-->
-<!--              <span>& up</span>-->
-<!--            </div>-->
-<!--            <div class="listing_star">-->
-<!--              <div class="star_img">-->
-<!--                <img src="@/assets/img/Star_1.svg" alt="">-->
-<!--                <img src="@/assets/img/Star_1.svg" alt="">-->
-<!--              </div>-->
-<!--              <span>& up</span>-->
-<!--            </div>-->
-<!--          </div>-->
+          <!--          <div class="side_bar sm:!w-[47.5%] xs:!w-[47.5%]">-->
+          <!--            <h1>Filter Price Range</h1>-->
+          <!--            <div class="wrap my-5">-->
+          <!--              <div class='slider'>-->
+          <!--                <input id="r" type="range" class="progress" value='0' min="0" max="5000" step="1">-->
+          <!--              </div>-->
+          <!--              <div class='slider'>-->
+          <!--                <input id="srange" type="range" class="progress" value='5000' max="5000" step="1">-->
+          <!--                &lt;!&ndash; <input id="s" type="range"  value='5000' max="5000" step="1"/> &ndash;&gt;-->
+          <!--              </div>-->
+          <!--            </div>-->
+          <!--            <p>0 SAR-200 SAR</p>-->
+          <!--            <h1>Customer Rating</h1>-->
+          <!--            <div class="listing_star">-->
+          <!--              <div class="star_img">-->
+          <!--                <img src="@/assets/img/Vector_1.svg" alt="">-->
+          <!--                <img src="@/assets/img/Vector_1.svg" alt="">-->
+          <!--                <img src="@/assets/img/Vector_1.svg" alt="">-->
+          <!--                <img src="@/assets/img/Vector_1.svg" alt="">-->
+          <!--              </div>-->
+          <!--              <span>& up</span>-->
+          <!--            </div>-->
+          <!--            <div class="listing_star">-->
+          <!--              <div class="star_img">-->
+          <!--                <img src="@/assets/img/Star_1.svg" alt="">-->
+          <!--                <img src="@/assets/img/Star_1.svg" alt="">-->
+          <!--                <img src="@/assets/img/Star_1.svg" alt="">-->
+          <!--              </div>-->
+          <!--              <span>& up</span>-->
+          <!--            </div>-->
+          <!--            <div class="listing_star">-->
+          <!--              <div class="star_img">-->
+          <!--                <img src="@/assets/img/Star_1.svg" alt="">-->
+          <!--                <img src="@/assets/img/Star_1.svg" alt="">-->
+          <!--              </div>-->
+          <!--              <span>& up</span>-->
+          <!--            </div>-->
+          <!--          </div>-->
         </div>
         <div class="main_content w-[76%] sm:!w-[100%] sm:mt-[50px]">
           <div class="flex flex-row flex-wrap justify-between">
             <div class="heading flex flex-row flex-wrap justify-between mx-4">
               <h1> {{ category.category_name }}</h1>
-<!--              <select id="" name="">-->
-<!--                <option value="Recommended">Sort by: Recommended</option>-->
-<!--                <option value="Recommended">Sort by: Recommended</option>-->
-<!--                <option value="Recommended">Sort by: Recommended</option>-->
-<!--                <option value="Recommended">Sort by: Recommended</option>-->
-<!--                <option value="Recommended">Sort by: Recommended</option>-->
-<!--              </select>-->
+              <!--              <select id="" name="">-->
+              <!--                <option value="Recommended">Sort by: Recommended</option>-->
+              <!--                <option value="Recommended">Sort by: Recommended</option>-->
+              <!--                <option value="Recommended">Sort by: Recommended</option>-->
+              <!--                <option value="Recommended">Sort by: Recommended</option>-->
+              <!--                <option value="Recommended">Sort by: Recommended</option>-->
+              <!--              </select>-->
             </div>
 
 

@@ -3,7 +3,7 @@
     <section>
       <div class="mx-20 flex my-10 xs:!mx-10 xs:!my-10 sm:!mx-10">
         <nuxt-link
-          to="/cart"
+          :to="localePath(`/cart`)"
           class="text-xl text-lime-600 flex justify-between w-36 xs:!w-24 xs:!text-[14px] items-center">
           <img src="@/assets/img/li_chevron-right.svg" alt="li_chevron" class="xs:!w-[14px] xs:!h-[14px]"> Back to Cart
         </nuxt-link>
@@ -72,7 +72,7 @@ export default {
     if (!this.customer.customerId) {
       this.$toast.warning('Please login.');
       this.$router.push({
-        'path': '/login'
+        'path': this.localePath('/login')
       })
       return;
     }
@@ -122,12 +122,12 @@ export default {
         if (this.order_save.status.toString() === "200") {
           if (this.order_save.order.checkout_id) {
             this.$router.push({
-              path: "/payment"
+              path: this.localePath("/payment")
             });
           } else {
             this.$toast.success("Order Placed");
             this.$router.push({
-              path: "/thanks",
+              path: this.localePath("/thanks"),
             });
           }
         } else {

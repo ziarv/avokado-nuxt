@@ -9,9 +9,9 @@
             <img src="@/assets/img/ham_buger.svg" alt="ham_buger"/>
           </button>
           <div class="col-4 xs:w-[80px] sm:w-[80px]">
-            <NuxtLink to="/">
+            <nuxt-link :to="localePath('/')">
               <img src="@/assets/img/logo_en.png" class="max-w-[150px]" alt="avokad logo">
-            </NuxtLink>
+            </nuxt-link>
           </div>
           <div
             class="option_setting_px flex items-center input-set 2xl:mx-[48px] xs:mx-[0px] sm:mx-[0px] relative p-[9px] w-[56.7%] 2xl:bg-[#ECECEC] xs:bg-[transparent] sm:bg-[transparent] rounded-[2px] h-[42px] flex-row">
@@ -35,7 +35,8 @@
               <!--              <img-->
               <!--                src="@/assets/img/favrite.svg"-->
               <!--                class="w-[21px] h-[16px] mx-[5px] 2xl:hidden xs:block sm:block" alt="">-->
-              <nuxt-link to="/cart">
+              <nuxt-link
+                :to="localePath('/cart')">
                 <img
                   src="@/assets/img/shopping.svg"
                   class="w-[20px] h-[14px] mx-[5px] 2xl:hidden xs:block sm:block" alt="">
@@ -63,7 +64,7 @@
           </div>
           <div class="flex laiba-iqbal_09 w-[50%] xs:w-[50%] sm:w-[50%] items-center">
 
-            <nuxt-link to="/cart">
+            <nuxt-link :to="localePath('/cart')">
               <img src="@/assets/img/shopping.svg" class="w-[27px] h-[25px] mx-[5px] xs:hidden sm:hidden" alt="">
             </nuxt-link>
             <div
@@ -75,7 +76,7 @@
             <div
               v-else
               class="laiba-iqbal 2xl:w-[52%] justify-end ml-[15px] flex items-center xs:w-[100%] sm:w-[100%]">
-              <nuxt-link to="/login"> Login</nuxt-link>
+              <nuxt-link :to="localePath('/login')"> Login</nuxt-link>
 
             </div>
           </div>
@@ -118,7 +119,7 @@
 
           <div class="special_card_heading flex items-center">
             <img src="@/assets/img/about_icon.svg" alt="">
-            <nuxt-link to="/addresses">
+            <nuxt-link :to="localePath('/addresses')">
               <h5 class="ml-5">Addresses </h5>
             </nuxt-link>
             <!-- <p>Spcial promo only Today!</p> -->
@@ -156,7 +157,7 @@
 
           <div class="special_card_heading flex items-center">
             <img src="@/assets/img/about_icon.svg" alt="">
-            <nuxt-link to="/login">
+            <nuxt-link :to="localePath('/login')">
               <h5 class="ml-5">Login </h5>
             </nuxt-link>
             <!-- <p>Spcial promo only Today!</p> -->
@@ -168,15 +169,15 @@
         <div class="language_btn_main">
           <div class="language_btn">
             <button
-              id=""
-              class="english rounded-full border-[1px] border-[solid] border-[#7CB118] py-2 px-10 my-3 text-[#7CB118] language_btn_button">
+              class="english rounded-full border-[1px] border-[solid] border-[#7CB118] py-2 px-10 my-3 text-[#7CB118] language_btn_button"
+              @click="switchLang('en')">
               English
             </button>
           </div>
           <div class="language_btn">
             <button
-              id=""
-              class="arabic rounded-full border-[1px] border-[solid] border-[#7CB118] py-2 px-10 my-3 text-[#7CB118]">
+              class="arabic rounded-full border-[1px] border-[solid] border-[#7CB118] py-2 px-10 my-3 text-[#7CB118]"
+              @click="switchLang('ar')">
               Arabic
             </button>
           </div>
@@ -213,13 +214,17 @@ export default {
     await this.getCartAction();
     this.city_id = this.cityId;
     this.fetchServiceLocation();
+    document.body.classList.remove('overflow_hide');
   },
   methods: {
     ...mapActions('home', ['fetchServiceLocation']),
     ...mapActions('cart', ['getCartAction']),
+    switchLang(lang) {
+      this.$i18n.setLocale(lang)
+    },
     searchKeyword() {
       this.$router.push({
-        path: '/search',
+        path: this.localePath('/search'),
         query: {
           keyword: this.keyword
         }
@@ -233,7 +238,7 @@ export default {
     },
     userSidebar() {
       this.user_sidebar = !this.user_sidebar;
-      document.body.classList.toggle('overflow_hide');
+      document.body.classList.remove('overflow_hide');
     },
     updateLocation() {
       const city = this.service_locations.filter((item) => {

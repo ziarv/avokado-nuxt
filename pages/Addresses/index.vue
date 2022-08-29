@@ -4,7 +4,7 @@
       <div class="wishlist">
         <div class="delivery_address w-[100%] flex justify-between items-center">
           <h1 class="font-['futur-extra'] text-[30px] xs:!text-[16px]">Addresses</h1>
-          <nuxt-link to="/addresses/add" class="uppercase text-[#7CB118] xs:!text-[12px]">Add new Address</nuxt-link>
+          <nuxt-link :to="localePath(`/addresses/add`)"   class="uppercase text-[#7CB118] xs:!text-[12px]">Add new Address</nuxt-link>
         </div>
         <div class="product xs:!h-[40px] xs:!py-[10px] xs:!px-[15px]">
           <h5>Address</h5>
@@ -50,7 +50,7 @@ export default {
     if (!this.customer.customerId) {
       this.$toast.warning('Please login.');
       this.$router.push({
-        'path': '/login'
+        'path': this.localePath('/login')
       })
       return;
     }

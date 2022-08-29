@@ -9,7 +9,7 @@
             enter a new
             address.
           </p>
-          <nuxt-link to="/addresses/add" class="text-xl text-lime-600 uppercase xs:!text-[12px]">Add new Address
+          <nuxt-link :to="localePath(`/addresses/add`)"    class="text-xl text-lime-600 uppercase xs:!text-[12px]">Add new Address
           </nuxt-link>
         </div>
         <div ref="product_main" class="product_main w-full my-4" @click="showAddresses()">

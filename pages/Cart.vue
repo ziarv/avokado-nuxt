@@ -16,20 +16,20 @@
         </div>
         <div class="continue_shopping">
 
-          <nuxt-link to="/" class="xs:!text-[14px]">
+          <nuxt-link :to="localePath(`/`)" class="xs:!text-[14px]">
             <img src="@/assets/img/Vector_2.svg" class="xs:!w-[14px] xs:!h-[14px]" alt="">
             Continue Shopping
           </nuxt-link>
           <nuxt-link
             v-if="customer.customerId"
-            to="/checkout"
+            :to="localePath(`/checkout`)"
             :class="{disabled: cart_data.sub_total < minimum_order_amount}"
             class="px-[45px] rounded-full text-[#FFFFFF] mt-2 mb-20 xs:!mb-0 text-base py-[8px] bg-[#7CB118] shadow-2xl xs:!pt-[3px] xs:!pb-[3px] xs:!pl-[25px] xs:!pr-[25px] xs:!text-[10px] xs:!h-[30px]">
             Checkout
           </nuxt-link>
           <nuxt-link
             v-else
-            to="/checkout"
+            :to="localePath(`/checkout`)"
             class="px-[45px] rounded-full text-[#FFFFFF] mt-2 mb-20 xs:!mb-0 text-base py-[8px] bg-[#7CB118] shadow-2xl xs:!pt-[3px] xs:!pb-[3px] xs:!pl-[25px] xs:!pr-[25px] xs:!text-[10px] xs:!h-[30px]">
             Login To Checkout
           </nuxt-link>

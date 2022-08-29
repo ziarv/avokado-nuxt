@@ -74,7 +74,7 @@ export default {
     if (!this.customer.customerId) {
       this.$toast.warning('Please login.');
       this.$router.push({
-        'path': '/login'
+        'path': this.localePath('/login')
       })
     }
   },
@@ -97,7 +97,7 @@ export default {
       };
       this.createMyAddress(address).then(() => {
         this.$router.push({
-          path: "/addresses",
+          path: this.localePath("/addresses"),
         });
       });
     }
