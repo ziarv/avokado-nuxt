@@ -28,7 +28,7 @@ export default {
     '@/assets/css/slider.css',
     '@/assets/css/banner.css',
     '@/assets/css/home-section-1.css',
-    '@/assets/css/main.css',
+    '@/assets/css/main.css'
     // '@/assets/css/direction_change.css',
   ],
 

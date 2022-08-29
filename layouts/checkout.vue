@@ -15,6 +15,13 @@ import 'aos/dist/aos.css'
 export default {
   name: "CheckoutLayout",
   components: {AppFooter, CheckoutHeader},
+  head() {
+    return {
+      htmlAttrs: {
+        lang: this.$i18n.locale
+      }
+    }
+  },
   mounted() {
     // AOS.init();
   }

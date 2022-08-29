@@ -1,8 +1,8 @@
 <template>
   <div>
-    <AppLoading />
+    <AppLoading/>
     <app-header/>
-      <Nuxt/>
+    <Nuxt/>
     <app-footer/>
   </div>
 </template>
@@ -13,11 +13,27 @@ import AppHeader from "~/components/AppHeader";
 import AppFooter from "~/components/AppFooter";
 import 'aos/dist/aos.css'
 import AppLoading from "~/components/Loading";
+
 export default {
   name: "DefaultLayout",
   components: {AppLoading, AppFooter, AppHeader},
+  head() {
+    return {
+      htmlAttrs: {
+        lang: this.$i18n.locale
+      }
+    }
+  },
+  computed: {
+    lang() {
+      return this.$store.state.local.lang;
+    }
+  },
   mounted() {
-    // AOS.init();
+    if (this.$i18n.locale !== this.lang) {
+      this.$i18n.setLocale(this.lang);
+      location.reload();
+    }
   }
 }
 </script>
