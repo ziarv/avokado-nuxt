@@ -192,7 +192,7 @@ input {
   justify-content: flex-end;
 }
 
-.buy_now > button {
+.buy_now > a {
   background-color: #7CB118;
   border-radius: 25px;
   color: #fff;
@@ -203,12 +203,12 @@ input {
   align-items: center;
 }
 
-.buy_now > button > span {
+.buy_now > a > span {
   margin-left: 10px;
   text-align: end;
 }
 
-.buy_now > button > span > img {
+.buy_now > a > span > img {
   width: 65%;
   height: 65%;
 }

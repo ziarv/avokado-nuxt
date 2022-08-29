@@ -597,7 +597,7 @@
     height: 100% !important;
   }
 
-  .buy_now > button {
+  .buy_now > a {
     padding: 3px 5px 3px 5px !important;
     width: 80px !important;
     height: 30px !important;
