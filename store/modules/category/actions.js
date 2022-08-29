@@ -8,7 +8,7 @@ export const fetchByCategoryId = ({commit, rootState}, payload) => {
     city_id: rootState.local.city_id,
     district_id: rootState.district_id,
     warehouse_id: rootState.local.warehouse_id,
-    storeLanguageId: rootState.storeLanguageId,
+    storeLanguageId: rootState.local.storeLanguageId,
     requestSource: rootState.requestSource,
     categoryId: payload.id
   })
@@ -24,7 +24,7 @@ export const fetchSliderByCategoryId = ({commit, rootState}, id) => {
     city_id: rootState.local.city_id,
     district_id: rootState.district_id,
     warehouse_id: rootState.local.warehouse_id,
-    storeLanguageId: rootState.storeLanguageId,
+    storeLanguageId: rootState.local.storeLanguageId,
     requestSource: rootState.requestSource,
     categoryId: id
   };

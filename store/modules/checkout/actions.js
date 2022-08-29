@@ -9,8 +9,8 @@ export const fetchDeliveryDatesAndTime = ({commit, rootState}) => {
         city_id: rootState.local.city_id,
         district_id: rootState.district_id,
         warehouse_id: rootState.local.warehouse_id,
-        storeLanguageId: rootState.storeLanguageId,
-        lang_id: rootState.storeLanguageId,
+        storeLanguageId: rootState.local.storeLanguageId,
+        lang_id: rootState.local.storeLanguageId,
         requestSource: rootState.requestSource
       }
     })
@@ -23,10 +23,10 @@ export const fetchPaymentMethods = ({commit, rootState}) => {
   const formData = new FormData();
   formData.append("key", rootState.key);
   formData.append("country_id", rootState.country_id);
-  formData.append("city_id", rootState.city_id);
+  formData.append("city_id", rootState.local.city_id);
   formData.append("district_id", rootState.district_id);
   formData.append("warehouse_id", rootState.warehouse_id);
-  formData.append("storeLanguageId", rootState.storeLanguageId);
+  formData.append("storeLanguageId", rootState.local.storeLanguageId);
   formData.append("requestSource", rootState.requestSource);
   window.$nuxt.$axios
     .post(`/jeddah-en/apis/index/getActivePaymentMethods`, formData)
@@ -42,10 +42,10 @@ export const fetchShippingMethods = ({commit, rootState}) => {
   const formData = new FormData();
   formData.append("key", rootState.key);
   formData.append("country_id", rootState.country_id);
-  formData.append("city_id", rootState.city_id);
+  formData.append("city_id", rootState.local.city_id);
   formData.append("district_id", rootState.district_id);
   formData.append("warehouse_id", rootState.warehouse_id);
-  formData.append("storeLanguageId", rootState.storeLanguageId);
+  formData.append("storeLanguageId", rootState.local.storeLanguageId);
   formData.append("requestSource", rootState.requestSource);
   window.$nuxt.$axios
     .post(
@@ -65,10 +65,10 @@ export const placeOrderReview = ({commit, rootState}, cdata) => {
   data.key = rootState.key;
   data.fcm_token = "";
   data.country_id = rootState.country_id;
-  data.city_id = rootState.city_id;
+  data.city_id = rootState.local.city_id;
   data.district_id = rootState.district_id;
   data.warehouse_id = rootState.warehouse_id;
-  data.storeLanguageId = rootState.storeLanguageId;
+  data.storeLanguageId = rootState.local.storeLanguageId;
   data.requestSource = rootState.requestSource;
   data.customerId = cdata.customerId;
   // Products
@@ -111,10 +111,10 @@ export const fetchCouponData = ({commit, rootState}, data) => {
   const formData = new FormData();
   formData.append("key", rootState.key);
   formData.append("country_id", rootState.country_id);
-  formData.append("city_id", rootState.city_id);
+  formData.append("city_id", rootState.local.city_id);
   formData.append("district_id", rootState.district_id);
   formData.append("warehouse_id", rootState.warehouse_id);
-  formData.append("storeLanguageId", rootState.storeLanguageId);
+  formData.append("storeLanguageId", rootState.local.storeLanguageId);
   formData.append("requestSource", rootState.requestSource);
   formData.append("coupon", data.coupon);
   formData.append("subtotal", data.subtotal);
@@ -131,10 +131,10 @@ export const fetchPriceDetails = ({commit, rootState}, payload) => {
     .post(`/jeddah-en/api-v2/placeOrder/priceDetails`, {
       key: rootState.key,
       country_id: rootState.country_id,
-      city_id: rootState.city_id,
+      city_id: rootState.local.city_id,
       district_id: rootState.district_id,
       warehouse_id: rootState.warehouse_id,
-      storeLanguageId: rootState.storeLanguageId,
+      storeLanguageId: rootState.local.storeLanguageId,
       requestSource: rootState.requestSource,
       quote_id: payload.quote_id,
       payment_method: payload.payment_method
@@ -148,10 +148,10 @@ export const hyperPayStatusCheck = ({commit, rootState}, payload) => {
   const formData = new FormData();
   formData.append("key", rootState.key);
   formData.append("country_id", rootState.country_id);
-  formData.append("city_id", rootState.city_id);
+  formData.append("city_id", rootState.local.city_id);
   formData.append("district_id", rootState.district_id);
   formData.append("warehouse_id", rootState.warehouse_id);
-  formData.append("storeLanguageId", rootState.storeLanguageId);
+  formData.append("storeLanguageId", rootState.local.storeLanguageId);
   formData.append("requestSource", rootState.requestSource);
   formData.append("hyperPayCheckoutId", payload.hyperPayCheckoutId);
   formData.append("payment_method", payload.payment_method);

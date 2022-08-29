@@ -9,7 +9,7 @@ export const fetchSingleById = ({commit, rootState}, id) => {
     city_id: rootState.local.city_id,
     district_id: rootState.district_id,
     warehouse_id: rootState.local.warehouse_id,
-    storeLanguageId: rootState.storeLanguageId,
+    storeLanguageId: rootState.local.storeLanguageId,
     requestSource: rootState.requestSource,
     pid: id
   })
@@ -25,7 +25,7 @@ export const fetchSingleBySearch = ({commit, rootState}, keyword) => {
   formData.append("city_id", rootState.local.city_id);
   formData.append("district_id", rootState.district_id);
   formData.append("warehouse_id", rootState.local.warehouse_id);
-  formData.append("storeLanguageId", rootState.storeLanguageId);
+  formData.append("storeLanguageId", rootState.local.storeLanguageId);
   formData.append("requestSource", rootState.requestSource);
   formData.append("keyword", keyword);
   return window.$nuxt.$axios.post(`/jeddah-en/apis/index/getProductsBySearch`, formData, {

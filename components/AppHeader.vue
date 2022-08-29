@@ -221,6 +221,9 @@ export default {
     ...mapActions('cart', ['getCartAction']),
     switchLang(lang) {
       this.$i18n.setLocale(lang)
+      this.$store.commit('local/UPDATE_LANG', lang)
+      this.$store.commit('local/UPDATE_LANG_ID', lang === 'ar' ? 2 : 1)
+      this.user_sidebar = false;
     },
     searchKeyword() {
       this.$router.push({

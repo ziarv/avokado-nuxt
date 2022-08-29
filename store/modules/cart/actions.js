@@ -7,7 +7,7 @@ export const getCartAction = ({commit, rootState}) => {
     city_id: rootState.local.city_id,
     district_id: rootState.district_id,
     warehouse_id: rootState.local.warehouse_id,
-    storeLanguageId: rootState.storeLanguageId,
+    storeLanguageId: rootState.local.storeLanguageId,
     requestSource: rootState.requestSource,
     quote_id: rootState.local.quote_id
   };
@@ -33,7 +33,7 @@ export const addCartAction = ({commit, rootState}, product) => {
     city_id: rootState.local.city_id,
     district_id: rootState.district_id,
     warehouse_id: rootState.local.warehouse_id,
-    storeLanguageId: rootState.storeLanguageId,
+    storeLanguageId: rootState.local.storeLanguageId,
     requestSource: rootState.requestSource,
     product_id: product.product_id,
     qty: product.qty,
@@ -63,7 +63,7 @@ export const removeCartProduct = ({commit, rootState}, product) => {
     city_id: rootState.local.city_id,
     district_id: rootState.district_id,
     warehouse_id: rootState.local.warehouse_id,
-    storeLanguageId: rootState.storeLanguageId,
+    storeLanguageId: rootState.local.storeLanguageId,
     requestSource: rootState.requestSource,
     product_id: product.product_id,
     quote_id: rootState.local.quote_id
@@ -91,7 +91,7 @@ export const clearCart = ({commit, rootState}) => {
     city_id: rootState.local.city_id,
     district_id: rootState.district_id,
     warehouse_id: rootState.local.warehouse_id,
-    storeLanguageId: rootState.storeLanguageId,
+    storeLanguageId: rootState.local.storeLanguageId,
     requestSource: rootState.requestSource,
     quote_id: rootState.local.quote_id
   };
@@ -118,7 +118,7 @@ export const cartReview = ({commit, rootState}, info) => {
     city_id: rootState.local.city_id,
     district_id: rootState.district_id,
     warehouse_id: rootState.local.warehouse_id,
-    storeLanguageId: rootState.storeLanguageId,
+    storeLanguageId: rootState.local.storeLanguageId,
     requestSource: rootState.requestSource,
     payment_method: info.method,
     use_wallet: info.use_wallet,
@@ -142,7 +142,7 @@ export const cartAddAddress = ({commit, rootState}, addressId) => {
     city_id: rootState.local.city_id,
     district_id: rootState.district_id,
     warehouse_id: rootState.local.warehouse_id,
-    storeLanguageId: rootState.storeLanguageId,
+    storeLanguageId: rootState.local.storeLanguageId,
     requestSource: rootState.requestSource,
     address_id: addressId,
     quote_id: rootState.local.quote_id
@@ -170,7 +170,7 @@ export const applyCoupon = ({commit, rootState}, code) => {
     city_id: rootState.local.city_id,
     district_id: rootState.district_id,
     warehouse_id: rootState.local.warehouse_id,
-    storeLanguageId: rootState.storeLanguageId,
+    storeLanguageId: rootState.local.storeLanguageId,
     requestSource: rootState.requestSource,
     coupon: code,
     quote_id: rootState.local.quote_id
@@ -193,7 +193,7 @@ export const cartOrderSave = ({commit, rootState}, orderData) => {
     city_id: rootState.local.city_id,
     district_id: rootState.district_id,
     warehouse_id: rootState.local.warehouse_id,
-    storeLanguageId: rootState.storeLanguageId,
+    storeLanguageId: rootState.local.storeLanguageId,
     requestSource: rootState.requestSource,
     device_name: "Web " + window.navigator.platform,
     app_version: "1.0",
@@ -224,7 +224,7 @@ export const paymentStatus = ({commit, rootState}, request) => {
     city_id: rootState.local.city_id,
     district_id: rootState.district_id,
     warehouse_id: rootState.local.warehouse_id,
-    storeLanguageId: rootState.storeLanguageId,
+    storeLanguageId: rootState.local.storeLanguageId,
     requestSource: rootState.requestSource,
     quote_id: rootState.local.quote_id
   };
@@ -250,7 +250,7 @@ export const getMinimumOrderAmount = ({commit, rootState}) => {
         city_id: rootState.local.city_id,
         district_id: rootState.district_id,
         warehouse_id: rootState.local.warehouse_id,
-        storeLanguageId: rootState.storeLanguageId,
+        storeLanguageId: rootState.local.storeLanguageId,
         requestSource: rootState.requestSource
       }
     })

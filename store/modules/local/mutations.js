@@ -1,5 +1,4 @@
 import * as types from "./mutation-types";
-import {UPDATE_TMP_ORDER_ID} from "./mutation-types";
 
 export default {
   [types.UPDATE_CITY_ID]: (state, cityId) => {
@@ -25,5 +24,11 @@ export default {
   },
   [types.UPDATE_TMP_PAYMENT_METHOD]: (state, data) => {
     state.tmp_payment_method = data;
+  },
+  [types.UPDATE_LANG]: (state, data) => {
+    state.lang = data;
+  },
+  [types.UPDATE_LANG_ID]: (state, data) => {
+    state.storeLanguageId = data;
   },
 };

@@ -4,10 +4,10 @@ export const otpSendAction = ({commit, rootState}, phone) => {
   const formData = new FormData();
   formData.append("key", rootState.key);
   formData.append("country_id", rootState.country_id);
-  formData.append("city_id", rootState.city_id);
+  formData.append("city_id", rootState.local.city_id);
   formData.append("district_id", rootState.district_id);
   formData.append("warehouse_id", rootState.local.warehouse_id);
-  formData.append("storeLanguageId", rootState.storeLanguageId);
+  formData.append("storeLanguageId", rootState.local.storeLanguageId);
   formData.append("requestSource", rootState.requestSource);
   formData.append("mobileNumber", phone);
   return window.$nuxt.$axios.post(
@@ -23,10 +23,10 @@ export const verifyOtpAction = ({commit, rootState}, data) => {
   const formData = new FormData();
   formData.append("key", rootState.key);
   formData.append("country_id", rootState.country_id);
-  formData.append("city_id", rootState.city_id);
+  formData.append("city_id", rootState.local.city_id);
   formData.append("district_id", rootState.district_id);
   formData.append("warehouse_id", rootState.local.warehouse_id);
-  formData.append("storeLanguageId", rootState.storeLanguageId);
+  formData.append("storeLanguageId", rootState.local.storeLanguageId);
   formData.append("requestSource", rootState.requestSource);
   formData.append("mobileNumber", data.phone);
   formData.append("vCode", data.code);
@@ -49,17 +49,17 @@ export const registerNewUserAccount = ({commit, rootState}, data) => {
   const formData = new FormData();
   formData.append("key", rootState.key);
   formData.append("country_id", rootState.country_id);
-  formData.append("city_id", rootState.city_id);
+  formData.append("city_id", rootState.local.city_id);
   formData.append("district_id", rootState.district_id);
   formData.append("warehouse_id", rootState.local.warehouse_id);
-  formData.append("storeLanguageId", rootState.storeLanguageId);
+  formData.append("storeLanguageId", rootState.local.storeLanguageId);
   formData.append("requestSource", rootState.requestSource);
   formData.append("customer_mobile_post", data.phone);
   formData.append("vcode", data.code);
   formData.append("email", data.email);
   formData.append("first_name", data.first_name);
   formData.append("last_name", data.last_name);
-  formData.append("customerSelectedLanguage", rootState.storeLanguageId);
+  formData.append("customerSelectedLanguage", rootState.local.storeLanguageId);
   return window.$nuxt.$axios.post(
     `/jeddah-en/smsverification/index/OnBoardingFormHandler`,
     formData

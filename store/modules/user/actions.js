@@ -23,10 +23,10 @@ export const fetchMyOrders = ({commit, rootState}, id) => {
   const data = new FormData();
   data.append("key", rootState.key);
   data.append("country_id", rootState.country_id);
-  data.append("city_id", rootState.city_id);
+  data.append("city_id", rootState.local.city_id);
   data.append("district_id", rootState.district_id);
   data.append("warehouse_id", rootState.warehouse_id);
-  data.append("storeLanguageId", rootState.storeLanguageId);
+  data.append("storeLanguageId", rootState.local.storeLanguageId);
   data.append("requestSource", rootState.requestSource);
   data.append("customerId", id);
   return window.$nuxt.$axios
@@ -43,10 +43,10 @@ export const deleteMyAddress = ({rootState}, id) => {
   const data = new FormData();
   data.append("key", rootState.key);
   data.append("country_id", rootState.country_id);
-  data.append("city_id", rootState.city_id);
+  data.append("city_id", rootState.local.city_id);
   data.append("district_id", rootState.district_id);
   data.append("warehouse_id", rootState.warehouse_id);
-  data.append("storeLanguageId", rootState.storeLanguageId);
+  data.append("storeLanguageId", rootState.local.storeLanguageId);
   data.append("requestSource", rootState.requestSource);
   data.append("addressId", id);
   return window.$nuxt.$axios
@@ -57,10 +57,10 @@ export const createMyAddress = ({rootState}, addr) => {
   const data = new FormData();
   data.append("key", rootState.key);
   data.append("country_id", rootState.country_id);
-  data.append("city_id", rootState.city_id);
+  data.append("city_id", rootState.local.city_id);
   data.append("district_id", rootState.district_id);
   data.append("warehouse_id", rootState.warehouse_id);
-  data.append("storeLanguageId", rootState.storeLanguageId);
+  data.append("storeLanguageId", rootState.local.storeLanguageId);
   data.append("requestSource", rootState.requestSource);
   data.append("firstname", addr.firstname);
   data.append("lastname", addr.lastname);
@@ -82,10 +82,10 @@ export const orderCancel = ({rootState}, id) => {
   const data = new FormData();
   data.append("key", rootState.key);
   data.append("country_id", rootState.country_id);
-  data.append("city_id", rootState.city_id);
+  data.append("city_id", rootState.local.city_id);
   data.append("district_id", rootState.district_id);
   data.append("warehouse_id", rootState.warehouse_id);
-  data.append("storeLanguageId", rootState.storeLanguageId);
+  data.append("storeLanguageId", rootState.local.storeLanguageId);
   data.append("requestSource", rootState.requestSource);
   data.append("reason", "");
   data.append("orderId", id);

@@ -13,7 +13,7 @@ export const fetchHomeData = ({commit, rootState}) => {
       city_id: rootState.local.city_id,
       district_id: rootState.district_id,
       warehouse_id: rootState.local.warehouse_id,
-      storeLanguageId: rootState.storeLanguageId,
+      storeLanguageId: rootState.local.storeLanguageId,
       requestSource: rootState.requestSource
     }
   }).then(response => {
@@ -36,7 +36,7 @@ export const fetchHomeRecommendedProducts = ({commit, rootState}) => {
       city_id: rootState.local.city_id,
       district_id: rootState.district_id,
       warehouse_id: rootState.local.warehouse_id,
-      storeLanguageId: rootState.storeLanguageId,
+      storeLanguageId: rootState.local.storeLanguageId,
       requestSource: rootState.requestSource
     }
   }).then(response => {

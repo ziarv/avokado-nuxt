@@ -11,6 +11,8 @@ const state = {
   tmp_order_id: null,
   tmp_payment_method: null,
   tmp_order_save_response: null,
+  lang: 'en',
+  storeLanguageId: 1,
 };
 
 export default {
