@@ -9,20 +9,6 @@
               <div class="cards product_slider_1 swiper-slide justify-center">
                 <div class="cardse_sec_main">
                   <div class="cardse_first">
-                    <!--                    <img src="@/assets/img/Back_green.svg" alt="">-->
-                  </div>
-                  <div class="cardse_sec">
-                    <!--                    <img src="@/assets/img/share_green.svg" alt="">-->
-                    <!--                    <img src="@/assets/img/dil_green.svg" alt="">-->
-                  </div>
-                </div>
-                <div class="cardse">
-                  <img src="@/assets/img/apple.png" alt="">
-                </div>
-              </div>
-              <div class="cards product_slider_1 swiper-slide justify-center">
-                <div class="cardse_sec_main">
-                  <div class="cardse_first">
                   </div>
                   <div class="cardse_sec">
                   </div>

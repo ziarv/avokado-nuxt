@@ -1,17 +1,39 @@
 <template>
   <footer>
+    <div class="right-floating-btn">
+      <span class="right-floating-btn-cart-summary">{{ cart_items.length }}</span>
+      <nuxt-link
+        :to="localePath('/cart')"
+        class="floatingCart"
+      >
+        <img
+          v-if="cart_items.length > 0"
+          class="w-[100%]"
+          src="@/assets/img/full_box.png"
+          alt="My Basket"
+          style="display: block"
+        />
+        <img
+          v-else
+          src="@/assets/img/empty_box.png"
+          alt="My Basket"
+          class="w-[100%]"
+          style="display: block"
+        />
+      </nuxt-link>
+    </div>
     <div
       class="2xl:mx-20 2xl:flex 2xl:flex-row 2xl:flex-wrap xs:flex xs:flex-wrap sm:flex sm:flex-wrap justify-between xs:!mx-10 sm:!mx-5">
       <div class="footer_logo">
         <img src="@/assets/img/logo.svg" class="xs:!w-[152px] xs:!h-[55px]" alt="">
         <ul>
           <li class="my-[25px] xs:!text-[12px xs:!text-[12px] sm:!text-[12px sm:!text-[14px] xs:!my-[15px]">
-              <img src="@/assets/img/li_map-pin.svg" class="inline nxs:!mr-[10px] xs:!w-[16px] xs:!h-[16px]" alt="">
-              Address: 1762 School House Roadx
+            <img src="@/assets/img/li_map-pin.svg" class="inline nxs:!mr-[10px] xs:!w-[16px] xs:!h-[16px]" alt="">
+            Address: 1762 School House Roadx
           </li>
           <li class="my-[25px] xs:!text-[12px xs:!text-[12px] sm:!text-[12px sm:!text-[14px] xs:!my-[15px]">
-              <img src="@/assets/img/li_phone.svg" class="inline xs:!mr-[10px] xs:!w-[16px] xs:!h-[16px]" alt="">
-              Call Us: 1233-777
+            <img src="@/assets/img/li_phone.svg" class="inline xs:!mr-[10px] xs:!w-[16px] xs:!h-[16px]" alt="">
+            Call Us: 1233-777
           </li>
           <li class="my-[25px] xs:!text-[12px xs:!text-[12px] sm:!text-[12px sm:!text-[14px] xs:!my-[15px]">
             <img src="@/assets/img/li_mail.svg" class="inline xs:!mr-[10px] xs:!w-[16px] xs:!h-[16px]" alt="">
@@ -44,7 +66,9 @@
           <a href="https://play.google.com/store/apps/details?id=com.akio.avokado" target="_blank">
             <img src="@/assets/img/apple-store.png" class="xs:!h-[34px]" alt="">
           </a>
-          <a href="https://apps.apple.com/us/app/avokado-%D8%A7%D9%81%D9%88%D9%83%D8%A7%D8%AF%D9%88/id1265492118" target="_blank">
+          <a
+            href="https://apps.apple.com/us/app/avokado-%D8%A7%D9%81%D9%88%D9%83%D8%A7%D8%AF%D9%88/id1265492118"
+            target="_blank">
             <img src="@/assets/img/play-store.png" class="xs:!h-[36px]" alt="">
           </a>
         </div>
@@ -55,7 +79,12 @@
 
 <script>
 export default {
-  name: "AppFooter"
+  name: "AppFooter",
+  computed: {
+    cart_items() {
+      return this.$store.state.cart.cart_items;
+    }
+  }
 }
 </script>
 
