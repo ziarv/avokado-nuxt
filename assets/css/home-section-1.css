@@ -1198,9 +1198,10 @@ input::-webkit-inner-spin-button {
 }
 
 .overflow_auto_1 {
-  width: 600px;
+  /*width: 600px;*/
   display: flex;
-  padding: 20px 0px;
+  flex-wrap: wrap;
+  padding: 20px 0;
 }
 
 .overflow_auto > .overflow_auto_1 > div > button {
@@ -1820,7 +1821,7 @@ input::-webkit-inner-spin-button {
 .product_1 > div:nth-child(2) {
   display: flex;
   justify-content: space-between;
-  width: 17%;
+  /*width: 17%;*/
 }
 
 .product_1 > div:nth-child(2) > div {

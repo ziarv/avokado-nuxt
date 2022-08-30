@@ -27,7 +27,7 @@
     <aside id="side_bar_pay" :class="{side_bar_id_block:popupShow}" class="w-64" aria-label="Sidebar">
       <div class="overflow-y-auto py-4 px-6 bg-gray-50 bg-[#FFFFFF]">
         <div class="cros" @click="popupShow = false"><img src="@/assets/img/cross.svg" alt=""></div>
-        <div class="side-bar-heading">
+        <div class="side-bar-heading text-center">
           <h1>{{ $t('pages.checkout.payment_method') }}</h1>
           <p>{{ $t('pages.checkout.payment_select') }}</p>
         </div>
