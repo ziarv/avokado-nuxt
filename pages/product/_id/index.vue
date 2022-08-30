@@ -55,13 +55,16 @@
           <div
             class="product_slider_09_heading flex flex-row flex-wrap justify-between px-[20px] xs:!px-[0px] sm:!px-[0px]">
             <h1
-              class="text-[32px] xs:!text-[24px] sm:!text-[26px] xs:!mb-2.5 sm:!mb-2.5 font-['futur-extra'] mb-5">
+              class="text-[32px] xs:!text-[24px] sm:!text-[26px] xs:!mb-2.5 sm:!mb-2.5 font-['futur-extra'] mb-3">
               {{ product.name }}
+              <small class="!text-[18px]"> {{ product.avokadoAttributes.avokado_item_unit }}</small>
             </h1>
             <div class="product_slider_09_heading_icon">
-              <img src="@/assets/img/Vector.svg" alt="">
-              <img src="@/assets/img/share.svg" alt="">
+
+<!--              <img src="@/assets/img/Vector.svg" alt="">-->
+<!--              <img src="@/assets/img/share.svg" alt="">-->
             </div>
+
             <h5 class="w-[100%] text-[22px] xs:!text-[14px] sm:!text-[16px] text-[#7CB118] font-bold mb-5">
               {{ product.price_tax_inc }}
               {{ product.currency_symbol.toUpperCase() }}

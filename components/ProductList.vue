@@ -4,11 +4,11 @@
     class="main_card  xs:!pt-[10px] xs:!pl-[10px] xs:!h-[9m0px] xs:!pt[m10px] xs:!pl-1m0px] xs:!h-[190px] sm:!pt-[10px] sm:!pl-[10px] sm:!h-[190px]"
     :class="{'swiper-slide':isInSlider}"
   >
-    <div class="Vectorsvg">
-      <img
-src="@/assets/img/Vector.svg" alt=""
-           class="xs:!w-[14px] xs:!h-[12px] xs:!mr-[8px] sm:!w-[14px] sm:!h-[12px] sm:!mr-[8px]">
-    </div>
+<!--    <div class="Vectorsvg">-->
+<!--      <img-->
+<!--src="@/assets/img/Vector.svg" alt=""-->
+<!--           class="xs:!w-[14px] xs:!h-[12px] xs:!mr-[8px] sm:!w-[14px] sm:!h-[12px] sm:!mr-[8px]">-->
+<!--    </div>-->
     <div class="img-card xs:!pr-[10px mxs:!pr-[10px] sm:!pr-[10px]">
       <nuxt-link   :to="localePath(`/product/${product.id}`)">
         <img
@@ -26,11 +26,12 @@ src="@/assets/img/Vector.svg" alt=""
       </nuxt-link>
     </p>
     <div class="star">
-      <img
-        v-for="index in 4" :key="index" src="@/assets/img/star_fill.svg"
-        class="xs:!w-[11px] xs:!h-[11px] sm:!w-[11px] sm:!h-[11px]" alt="">
-      <img src="@/assets/img/star_blank.svg" class="xs:!w-[11px] xs:!h-[11px] sm:!w-[11px] sm:!h-[11px]" alt="">
-      <span class="xs:!text-[8px mxs:!text-[8px] sm:!text-[8px]">(4)</span>
+      <p class="m-0 p-0">{{ product.avokadoAttributes.avokado_item_unit }}</p>
+<!--      <img-->
+<!--        v-for="index in 4" :key="index" src="@/assets/img/star_fill.svg"-->
+<!--        class="xs:!w-[11px] xs:!h-[11px] sm:!w-[11px] sm:!h-[11px]" alt="">-->
+<!--      <img src="@/assets/img/star_blank.svg" class="xs:!w-[11px] xs:!h-[11px] sm:!w-[11px] sm:!h-[11px]" alt="">-->
+<!--      <span class="xs:!text-[8px mxs:!text-[8px] sm:!text-[8px]">(4)</span>-->
     </div>
     <p class="xs:!text-[12px xs:!text-[12px] sm:!text-[12px sm:!text-[14px] sm:!text-[14px]">
       {{ product.price_tax_inc }}
