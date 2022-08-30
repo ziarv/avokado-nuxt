@@ -202,7 +202,7 @@
   left: 0%;
 }
 
-.none_input > input {
+.none_input > form > input {
   border: 1px solid #898989;
   background-color: transparent;
   width: 100%;
@@ -227,7 +227,7 @@
 
   .bara_px_setting {
     justify-content: center !important;
-    flex-flow: column;
+    /*flex-flow: column;*/
     align-items: end;
   }
 }
@@ -239,12 +239,12 @@
 
   .option_setting_px {
     margin: 0px 0px !important;
-    width: 100%;
+    /*width: 100%;*/
   }
 
   .px_main_bara {
-    flex-flow: column !important;
-    align-items: flex-start;
+    /*flex-flow: column !important;*/
+    align-items: center;
   }
 
   .setting_heading {
@@ -1242,9 +1242,9 @@
     height: 100vh !important;
   }
 
-  .main_card {
-    height: 190px !important;
-  }
+  /*.main_card {*/
+  /*  height: 190px !important;*/
+  /*}*/
 
   .best_card {
     width: 100% !important;
@@ -1364,7 +1364,7 @@
   }
 
   .mySwiper_6 > .swiper-wrapper > .main_card {
-    height: 190px !important;
+    /*height: 190px !important;*/
   }
 
   .mySwiper_6 {

@@ -4,7 +4,7 @@
       <div
         class="2xl:mx-20 2xl:flex header_inner 2xl:flex-row 2xl:flex-wrap xs:flex xs:flex-wrap sm:flex sm:flex-wrap xs:flex-col-reverse xs:mx-0 sm:flex-col-reverse sm:mx-0">
         <div
-          class="px_main_bara flex flex-row flex-wrap 2xl:w-[50%] xs:px-10 xs:w-full sm:px-10 sm:w-full items-center xs:justify-between sm:justify-between">
+          class="px_main_bara flex flex-row  2xl:w-[50%] xs:px-10 xs:w-full sm:px-10 sm:w-full items-center xs:justify-between sm:justify-between">
           <button id="hame_buger" type="button" class="block ml-2 mr-2" @click="userSidebar">
             <img src="@/assets/img/ham_buger.svg" alt="ham_buger"/>
           </button>
@@ -15,15 +15,17 @@
           </div>
           <div
             class="option_setting_px flex items-center input-set 2xl:mx-[48px] xs:mx-[0px] sm:mx-[0px] relative p-[9px] w-[56.7%] 2xl:bg-[#ECECEC] xs:bg-[transparent] sm:bg-[transparent] rounded-[2px] h-[42px] flex-row">
-            <form action="" @submit.prevent="searchKeyword">
+            <form action="" class="inline" @submit.prevent="searchKeyword">
               <input
                 v-model="keyword"
                 type="text"
                 class="font-light bg-[transparent] text-[#ADADAD] h-[100%] placeholder:text-[#ADADAD] xs:hidden sm:hidden"
                 :placeholder="$t('search_for_items')">
             </form>
-            <div class="none_input">
-              <input type="text" :placeholder="$t('search_for_items')">
+            <div class="none_input" :class="{block_input: mobile_search}">
+              <form action="" @submit.prevent="searchKeyword">
+                <input v-model="keyword" type="text" :placeholder="$t('search_for_items')">
+              </form>
             </div>
             <div
               class="search-icon 2xl:!w-[55px] xl:!w-[85px] 2xl:bg-[#7CB118] xs:bg-[transparent] sm:bg-[transparent] flex items-center justify-center rounded-tl-[0px] rounded-tr-[2px] rounded-br-[2px] rounded-bl-[0px] w-[85px] h-[100%] absolute right-[0%] top-[0%]">
@@ -31,7 +33,8 @@
               <img
                 src="@/assets/img/search_icon_black.svg"
                 class="search_icon_black w-[14px] xs:mx-[5px] sm:mx-[5px] h-[14px] 2xl:hidden xs:block sm:block"
-                alt="">
+                alt=""
+                @click="mobile_search = !mobile_search">
               <!--              <img-->
               <!--                src="@/assets/img/favrite.svg"-->
               <!--                class="w-[21px] h-[16px] mx-[5px] 2xl:hidden xs:block sm:block" alt="">-->
@@ -45,12 +48,12 @@
           </div>
         </div>
         <div
-          class="bara_px_setting flex flex-row flex-wrap items-center 2xl:w-[50%] xs:w-full sm:px-10 sm:w-full xs:bg-[#7CB118] sm:bg-[#7CB118] xs:px-10">
+          class="bara_px_setting flex flex-row   items-center 2xl:w-[50%] xs:w-full sm:px-10 sm:w-full xs:bg-[#7CB118] sm:bg-[#7CB118] xs:px-10">
           <div class="flex h-[24px] xs:w-[50%] sm:w-[50%]">
            <span
              class="flex location-img w-[50%] font-[600] items-center xs:text-[#FFFFFF] xs:text-[10px] sm:text-[#FFFFFF] sm:text-[13px]">
              <img src="@/assets/img/location-icon.svg" class="w-[20px] h-[24px] mr-[10px] xs:hidden sm:hidden" alt="">
-             <span  class="w-[140px]">{{$t("deliver_to")}}</span>
+             <span class="w-[140px]">{{ $t("deliver_to") }}</span>
            </span>
             <select
               v-model="city_id"
@@ -76,7 +79,7 @@
             <div
               v-else
               class="laiba-iqbal 2xl:w-[52%] justify-end ml-[15px] flex items-center xs:w-[100%] sm:w-[100%]">
-              <nuxt-link :to="localePath('/login')">{{$t('login')}}</nuxt-link>
+              <nuxt-link :to="localePath('/login')">{{ $t('login') }}</nuxt-link>
             </div>
           </div>
         </div>
@@ -106,7 +109,7 @@
         <div class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
           <div class="special_card_heading flex items-center">
             <img src="@/assets/img/about_icon.svg" alt="">
-            <h5 class="ml-5">{{$t('menu_popup.about')}} </h5>
+            <h5 class="ml-5">{{ $t('menu_popup.about') }} </h5>
           </div>
           <img src="@/assets/img/back_arrow.svg" alt="">
         </div>
@@ -117,7 +120,7 @@
           <div class="special_card_heading flex items-center">
             <img src="@/assets/img/about_icon.svg" alt="">
             <nuxt-link :to="localePath('/addresses')">
-              <h5 class="ml-5">{{$t('menu_popup.addresses')}}</h5>
+              <h5 class="ml-5">{{ $t('menu_popup.addresses') }}</h5>
             </nuxt-link>
           </div>
           <img src="@/assets/img/back_arrow.svg" alt="">
@@ -126,14 +129,14 @@
         <div class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
           <div class="special_card_heading flex items-center">
             <img src="@/assets/img/team_condition.svg" alt="">
-            <h5 class="ml-5">{{$t('menu_popup.terms_conditions')}}</h5>
+            <h5 class="ml-5">{{ $t('menu_popup.terms_conditions') }}</h5>
           </div>
           <img src="@/assets/img/back_arrow.svg" alt="">
         </div>
         <div class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
           <div class="special_card_heading flex items-center">
             <img src="@/assets/img/cell_icon.svg" alt="">
-            <h5 class="ml-5">{{$t('menu_popup.help_center')}}</h5>
+            <h5 class="ml-5">{{ $t('menu_popup.help_center') }}</h5>
           </div>
           <img src="@/assets/img/back_arrow.svg" alt="">
         </div>
@@ -188,6 +191,7 @@ export default {
   data() {
     return {
       user_sidebar: false,
+      mobile_search: false,
       city_id: 1,
       keyword: ""
     }
