@@ -8,7 +8,7 @@
       <p v-else  class="xs:!text-[12px]">{{ product.name }}</p>
     </div>
     <div class="product_price xs:!w-[20%]">
-      <p class="xs:!text-[12px]">{{ product.price_vat }} SAR</p>
+      <p class="xs:!text-[12px]">{{ product.price_vat }} {{ $t("currency_code") }}</p>
     </div>
     <div class="product_btn xs:!w-[23%]">
       <button class="add_product addShow_product xs:!text-[12px] xs:!py-[0px] xs:!px-[5px]" @click="remove"><i

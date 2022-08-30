@@ -3,12 +3,12 @@
     <section>
       <div class="mx-20 flex flex-row flex-wrap xs:!mx-10 sm:!mx-10">
         <div class="delivery_schedule flex flex-row flex-wrap w-full">
-          <h1 class="w-full text-[32px] font-['futur-extra'] my-5 xs:!text-[16px]">Delivery Schedule</h1>
+          <h1 class="w-full text-[32px] font-['futur-extra'] my-5 xs:!text-[16px]">{{ $t('pages.checkout.delivery_schedule') }}</h1>
           <div class="delivery_schedule_btn flex w-full">
             <button
               class="slot_none rounded-md mr-5 bg-[#7CB118] text-[#FFFFFF] py-[15px] px-[50px] xs:!px-[19px] xs:!text-[14px]"
               @click="showDeliverDates">
-              Select Delivery Schedule
+              {{ $t('pages.checkout.select_delivery_schedule') }}
             </button>
           </div>
           <p v-if="selectedTimeObject" class="mt-5 font-bold">{{ selectedTimeObject.shift_day }} {{ selectedTimeObject.shift_date }}
@@ -22,7 +22,7 @@
         <div class="cros" @click="popupShow = false"><img src="@/assets/img/cross.svg" alt=""></div>
         <div class="side-bar-heading">
           <img src="@/assets/img/calender.svg" alt="">
-          <h1>Select date</h1>
+          <h1> {{ $t('pages.checkout.select_date') }}</h1>
         </div>
         <div class="overflow_auto">
           <div class="overflow_auto_1">

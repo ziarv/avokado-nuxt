@@ -144,7 +144,7 @@ export default {
       return this.$store.state.cart.cart_items;
     },
     qty_in_cart() {
-      if (this.cart_items === undefined || this.cart_items.length <= 0) {
+      if (this.cart_items === undefined || this.cart_items.length <= 0 || !this.product.id) {
         return 0;
       }
       const product = this.cart_items.filter(

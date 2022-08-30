@@ -69,7 +69,16 @@ export default {
     }]
   ],
   i18n: {
-    locales: ['en', 'ar'],
+    locales: [{
+      code: 'en',
+      file: 'en.json',
+      dir: 'ltr'
+    }, {
+      code: 'ar',
+      file: 'ar.json',
+      dir: 'rtl'
+    }],
+    langDir: 'lang/',
     defaultLocale: 'en'
   },
 

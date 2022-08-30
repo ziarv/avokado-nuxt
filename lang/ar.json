@@ -1,0 +1,105 @@
+{
+  "shop_by_recommendation": "تسوق بالتوصية",
+  "search_for_items": "البحث عن العناصر ...",
+  "deliver_to": "يسلم إلى",
+  "login": "الدخول",
+  "logout": "تسجيل خروج",
+  "explore_categories": "استكشف الفئات",
+  "currency_code": "ريال",
+  "continue_shopping": "مواصلة التسوق",
+  "login_to_checkout": "تسجيل الدخول للخروج",
+  "checkout": "الدفع",
+  "menu_popup": {
+    "about": "حول",
+    "addresses": "عناوين",
+    "terms_conditions": "البنود و الظروف",
+    "help_center": "مركز المساعدة",
+    "logout": "تسجيل خروج"
+  },
+  "key_value": {
+    "best_prices": "أفضل الأسعار والصفقات",
+    "best_prices_desc": "لا تفوت عروضنا وأسعارنا اليومية المذهلة",
+    "refundable": "مستردة",
+    "refundable_desc": "في حالة تلف العناصر الخاصة بك ، نوافق على استردادها",
+    "free_delivery": "توصيل مجاني",
+    "free_delivery_desc": "قم بشراء أكثر من 50 واحصل على توصيل مجاني في أي مكان"
+  },
+  "cart": {
+    "my_cart": "عربة التسوق",
+    "summary": "ملخص",
+    "subtotal": "المجموع الفرعي",
+    "delivery_charges": "رسوم التوصيل",
+    "VAT": "ضريبة",
+    "total": "المجموع",
+    "minimum_order_amount_is": "الحد الأدنى لمبلغ الطلب هو",
+    "calculated_at_checkout": "تحسب عند الخروج",
+    "product": {
+      "product": "منتج",
+      "name": "اسم",
+      "price": "سعر",
+      "quantity": "كمية",
+      "remove": "Remove"
+    }
+  },
+  "footer": {
+    "we_accept": "نحن نقبل",
+    "useful_links": "روابط مفيدة",
+    "download_app": "تحميل التطبيق"
+  },
+  "pages": {
+    "login": {
+      "login": "تسجيل الدخول",
+      "welcome": "مرحبًا بعودتك!",
+      "mobile_number": "هاتف",
+      "login_placeholder": "أدخل رقم هاتفك المحمول",
+      "send_access_code": "إرسال رمز الوصول",
+      "verify_code": "التحقق من كود!",
+      "verification_code": "رمز التحقق",
+      "enter_verification_code": "أدخل رقم التحقق الخاص بك",
+      "new_account": "الرجاء إنشاء حساب جديد!",
+      "first_name": "الاسم الاول!",
+      "last_name": "الكنية!",
+      "email": "البريد الإلكتروني!",
+      "ref_code": "Ref Code!",
+      "register": "يسجل"
+    },
+    "categories": {
+      "name": "فئات"
+    },
+    "checkout": {
+      "checkout": "الدفع",
+      "summary": "ملخص",
+      "back_to_cart": "العودة إلى عربة التسوق",
+      "select_address": "حدد عنوان شحن من دفتر العناوين الخاص بك أو أدخل عنوانًا جديدًا.",
+      "add_new_address": "أضف عنوان جديد",
+      "address": "تبوك",
+      "order_list": "لائحة الطلبات",
+      "product": "منتج",
+      "name": "اسم",
+      "price": "سعر",
+      "quantity": "كمية",
+      "delivery_schedule": "جدول التسليم",
+      "select_delivery_schedule": "حدد جدول التسليم",
+      "select_date": "حدد تاريخ",
+      "promo_code": "رمز ترويجي",
+      "additional_information": "معلومات إضافية",
+      "payment_method": "طريقة الدفع او السداد",
+      "cash_on_delivery": "الدفع عند الاستلام",
+      "payment_change": "يتغيرون",
+      "payment_select": "حدد طريقة الدفع التي تريد استخدامها",
+      "home": "الصفحة الرئيسية",
+      "place_order": "مكان الامر"
+    },
+    "payment" : {
+      "payment": "دفع"
+    },
+    "search" : {
+      "search_product": "البحث عن المنتجات"
+    },
+    "address" : {
+      "addresses": "عناوين",
+      "address": "تبوك",
+      "remove": "إزالة"
+    }
+  }
+}

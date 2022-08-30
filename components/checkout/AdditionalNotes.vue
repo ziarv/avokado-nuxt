@@ -2,7 +2,7 @@
   <section>
     <div class="mx-20 flex flex-row flex-wrap xs:!mx-10 sm:!mx-10">
       <div class="promo_code">
-        <h1 class="xs:!text-[16px] xs:!mb-0">Additional Information</h1>
+        <h1 class="xs:!text-[16px] xs:!mb-0">{{ $t('pages.checkout.additional_information') }}</h1>
         <div class="promo_code_input">
           <input
             v-model="deliveryNotes" type="text" placeholder="Delivery Instructions"

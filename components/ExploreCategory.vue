@@ -2,7 +2,7 @@
   <section>
     <div
       class="2xl:mx-20 2xl:flex 2xl:flex-row 2xl:flex-wrap xs:flex xs:flex-wrap sm:flex sm:flex-wrap justify-center xs:!mx-5 sm:!mx-5 explore_categories">
-      <h1 class="xs:!text-[16px] xs:!mb-[30px] sm:!text-[20px] sm:!mb-[30px]">Explore Categories</h1>
+      <h1 class="xs:!text-[16px] xs:!mb-[30px] sm:!text-[20px] sm:!mb-[30px]">{{ $t("explore_categories") }}</h1>
       <div ref="swiper" class="swiper mySwiper_1">
         <div v-if="menu.length > 0" class="swiper-wrapper">
           <div

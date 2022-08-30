@@ -1,6 +1,6 @@
 <template>
   <section id="hyperpay" class="grid text-center my-10">
-    <h1 class="text-3xl mb-2">Payment</h1>
+    <h1 class="text-3xl mb-2">{{ $t('pages.payment.payment') }}</h1>
   </section>
 </template>
 

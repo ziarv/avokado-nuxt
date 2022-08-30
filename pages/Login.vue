@@ -3,20 +3,20 @@
     <div class="mx-20 flex mt-10 flex-row flex-wrap justify-end xs:!mx-10 sm:!mx-5">
       <div class="sighn_login_btn w-full text-end my-10">
         <button
-          class="login_sign_up px-[60px] py-[10px] login_block bg-[#ECECEC] text-[#848484] rounded-full">Login
+          class="login_sign_up px-[60px] py-[10px] login_block bg-[#ECECEC] text-[#848484] rounded-full">
+          {{ $t("pages.login.login") }}
         </button>
       </div>
       <div class="back_ground_img w-full h-[100%]">
         <div
           class="address_menual w-[50%] h-[100%] flex flex-row shadow-2xl flex-wrap bg-[#FFFFFF] rounded-[20px] signup_none_1 ">
-
           <div v-if="is_login" class="form w-full py-[40px] pl-[40px] pr-[80px] self-center">
             <form @submit.prevent="sendCode">
               <div class="name_area flex flex-row flex-wrap justify-between">
-                <h1 class="w-full text-[32px] font-['futur-extra']">Hello! Welcome back!</h1>
+                <h1 class="w-full text-[32px] font-['futur-extra']"> {{ $t("pages.login.welcome") }}</h1>
               </div>
               <div class="mobile_number relative mb-5">
-                <label for="" class="w-full text-[18px] block mt-5 mb-0">Mobile Number</label>
+                <label for="" class="w-full text-[18px] block mt-5 mb-0"> {{ $t("pages.login.mobile_number") }}</label>
                 <input
                   v-model="countryCode" readonly type="text"
                   class="absolute w-[7%] top-[62%] left-[4%] bg-[transparent]">
@@ -25,13 +25,13 @@
                   v-model="phoneNumber"
                   required
                   class="w-[100%] bg-[#ECECEC] py-[16px] rounded-md text=[#848484] placeholder:text=[#848484] pl-[75px] pr-[22px] outline-none mt-4"
-                  type="number" placeholder="Enter  your mobile number">
+                  type="number" :placeholder="$t('pages.login.login_placeholder')">
               </div>
               <div class="login_btn text-center">
                 <button
                   type="submit"
                   class="rounded-full bg-[#7CB118] mb-5 py-2 px-[40px] uppercase text-[#FFFFFF]">
-                  Send Access Code
+                  {{ $t('pages.login.send_access_code') }}
                 </button>
                 <!--              <div class="login_or_main">-->
                 <!--                <div class="login_or flex justify-center items-center">-->
@@ -56,20 +56,22 @@
           <div v-if="is_verify" class="form w-full py-[40px] pl-[40px] pr-[80px] self-center">
             <form @submit.prevent="verifyCode">
               <div class="name_area flex flex-row flex-wrap justify-between">
-                <h1 class="w-full text-[32px] font-['futur-extra']">Verify Code!</h1>
+                <h1 class="w-full text-[32px] font-['futur-extra']">{{ $t('pages.login.verify_code') }}</h1>
               </div>
               <div class="relative mb-5">
-                <label for="" class="w-full  text-[18px] block mt-5 mb-0">Verification Code</label>
+                <label for="" class="w-full  text-[18px] block mt-5 mb-0"> {{
+                    $t('pages.login.verification_code')
+                  }} </label>
                 <input
                   v-model="v_code"
                   class="w-[100%] pl-10 bg-[#ECECEC] py-[16px] rounded-md text=[#848484] placeholder:text=[#848484] pr-[22px] outline-none mt-4"
-                  type="number" placeholder="Enter your Verification number">
+                  type="number" :placeholder="$t('pages.login.enter_verification_code')">
               </div>
               <div class="login_btn text-center">
                 <button
                   type="submit"
                   class="rounded-full bg-[#7CB118] mb-5 py-2 px-[40px] uppercase text-[#FFFFFF]">
-                  Verify Code
+                  {{ $t('pages.login.verify_code') }}
                 </button>
                 <!--              <div class="login_or_main">-->
                 <!--                <div class="login_or flex justify-center items-center">-->
@@ -94,46 +96,48 @@
           <div v-if="is_register" class="form w-full py-[40px] pl-[40px] pr-[80px] self-center">
             <form @submit.prevent="registerUser">
               <div class="name_area flex flex-row flex-wrap justify-between">
-                <h1 class="w-full text-[32px] font-['futur-extra']">Please Create New Account!</h1>
+                <h1 class="w-full text-[32px] font-['futur-extra']">
+                  {{ $t('pages.login.new_account') }}
+                </h1>
               </div>
               <div class="relative mb-5">
-                <label for="" class="w-full text-[18px] block mt-5 mb-0">First Name:</label>
+                <label for="" class="w-full text-[18px] block mt-5 mb-0">{{ $t('pages.login.first_name') }}</label>
                 <input
                   v-model="customer.first_name"
                   required
                   class="w-[100%] bg-[#ECECEC] py-[16px] rounded-md text=[#848484] placeholder:text=[#848484]  pr-[22px] outline-none mt-4"
-                  type="text" placeholder="First Name">
+                  type="text" :placeholder="$t('pages.login.first_name')">
               </div>
               <div class="relative mb-5">
-                <label for="" class="w-full text-[18px] block mt-5 mb-0">Last Name:</label>
+                <label for="" class="w-full text-[18px] block mt-5 mb-0">{{ $t('pages.login.last_name') }}</label>
                 <input
                   v-model="customer.last_name"
                   required
                   class="w-[100%] bg-[#ECECEC] py-[16px] rounded-md text=[#848484] placeholder:text=[#848484]  pr-[22px] outline-none mt-4"
-                  type="text" placeholder="Last Name">
+                  type="text" :placeholder="$t('pages.login.last_name')">
               </div>
               <div class="relative mb-5">
-                <label for="" class="w-full text-[18px] block mt-5 mb-0">Email:</label>
+                <label for="" class="w-full text-[18px] block mt-5 mb-0">{{ $t('pages.login.email') }}</label>
                 <input
                   v-model="customer.email"
                   required
                   class="w-[100%] bg-[#ECECEC] py-[16px] rounded-md text=[#848484] placeholder:text=[#848484]  pr-[22px] outline-none mt-4"
-                  type="email" placeholder="Email">
+                  type="email" :placeholder="$t('pages.login.email')">
               </div>
               <div class="relative mb-5">
-                <label for="" class="w-full text-[18px] block mt-5 mb-0">Ref Code:</label>
+                <label for="" class="w-full text-[18px] block mt-5 mb-0">{{ $t('pages.login.ref_cde') }}</label>
                 <input
                   v-model="customer.ref_code"
                   required
                   class="w-[100%] bg-[#ECECEC] py-[16px] rounded-md text=[#848484] placeholder:text=[#848484] pr-[22px] outline-none mt-4"
-                  type="email" placeholder="Ref Code">
+                  type="email" :placeholder="$t('pages.login.ref_cde')">
               </div>
 
               <div class="login_btn text-center">
                 <button
                   type="submit"
                   class="rounded-full bg-[#7CB118] mb-5 py-2 px-[40px] uppercase text-[#FFFFFF]">
-                  Register
+                  {{ $t('pages.login.register') }}
                 </button>
                 <!--              <div class="login_or_main">-->
                 <!--                <div class="login_or flex justify-center items-center">-->

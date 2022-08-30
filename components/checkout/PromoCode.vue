@@ -2,7 +2,7 @@
   <section>
     <div class="mx-20 flex flex-row flex-wrap xs:!mx-10 sm:!mx-10">
       <div class="promo_code">
-        <h1 class="xs:!text-[16px] xs:!mb-0">Promo code</h1>
+        <h1 class="xs:!text-[16px] xs:!mb-0">{{ $t('pages.checkout.promo_code') }}</h1>
         <div class="promo_code_input promo_code_input_098">
           <input
             v-model="promoCode"

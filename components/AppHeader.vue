@@ -20,10 +20,10 @@
                 v-model="keyword"
                 type="text"
                 class="font-light bg-[transparent] text-[#ADADAD] h-[100%] placeholder:text-[#ADADAD] xs:hidden sm:hidden"
-                placeholder="Search for items...">
+                :placeholder="$t('search_for_items')">
             </form>
             <div class="none_input">
-              <input type="text" placeholder="Search for itemsz...">
+              <input type="text" :placeholder="$t('search_for_items')">
             </div>
             <div
               class="search-icon 2xl:!w-[55px] xl:!w-[85px] 2xl:bg-[#7CB118] xs:bg-[transparent] sm:bg-[transparent] flex items-center justify-center rounded-tl-[0px] rounded-tr-[2px] rounded-br-[2px] rounded-bl-[0px] w-[85px] h-[100%] absolute right-[0%] top-[0%]">
@@ -50,7 +50,7 @@
            <span
              class="flex location-img w-[50%] font-[600] items-center xs:text-[#FFFFFF] xs:text-[10px] sm:text-[#FFFFFF] sm:text-[13px]">
              <img src="@/assets/img/location-icon.svg" class="w-[20px] h-[24px] mr-[10px] xs:hidden sm:hidden" alt="">
-             <span  class="w-[140px]">Deliver to</span>
+             <span  class="w-[140px]">{{$t("deliver_to")}}</span>
            </span>
             <select
               v-model="city_id"
@@ -76,8 +76,7 @@
             <div
               v-else
               class="laiba-iqbal 2xl:w-[52%] justify-end ml-[15px] flex items-center xs:w-[100%] sm:w-[100%]">
-              <nuxt-link :to="localePath('/login')"> Login</nuxt-link>
-
+              <nuxt-link :to="localePath('/login')">{{$t('login')}}</nuxt-link>
             </div>
           </div>
         </div>
@@ -107,8 +106,7 @@
         <div class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
           <div class="special_card_heading flex items-center">
             <img src="@/assets/img/about_icon.svg" alt="">
-            <h5 class="ml-5">About </h5>
-            <!-- <p>Spcial promo only Today!</p> -->
+            <h5 class="ml-5">{{$t('menu_popup.about')}} </h5>
           </div>
           <img src="@/assets/img/back_arrow.svg" alt="">
         </div>
@@ -116,13 +114,11 @@
         <div
           v-if="customer.customerId"
           class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
-
           <div class="special_card_heading flex items-center">
             <img src="@/assets/img/about_icon.svg" alt="">
             <nuxt-link :to="localePath('/addresses')">
-              <h5 class="ml-5">Addresses </h5>
+              <h5 class="ml-5">{{$t('menu_popup.addresses')}}</h5>
             </nuxt-link>
-            <!-- <p>Spcial promo only Today!</p> -->
           </div>
           <img src="@/assets/img/back_arrow.svg" alt="">
 
@@ -130,16 +126,14 @@
         <div class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
           <div class="special_card_heading flex items-center">
             <img src="@/assets/img/team_condition.svg" alt="">
-            <h5 class="ml-5">Terms & Conditions</h5>
-            <!-- <p>Spcial promo only Today!</p> -->
+            <h5 class="ml-5">{{$t('menu_popup.terms_conditions')}}</h5>
           </div>
           <img src="@/assets/img/back_arrow.svg" alt="">
         </div>
         <div class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
           <div class="special_card_heading flex items-center">
             <img src="@/assets/img/cell_icon.svg" alt="">
-            <h5 class="ml-5">Help Center</h5>
-            <!-- <p>Spcial promo only Today!</p> -->
+            <h5 class="ml-5">{{$t('menu_popup.help_center')}}</h5>
           </div>
           <img src="@/assets/img/back_arrow.svg" alt="">
         </div>
@@ -148,19 +142,16 @@
           class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
           <div class="special_card_heading flex items-center">
             <img src="@/assets/img/login.svg" alt="">
-            <h5 class="ml-5 cursor-pointer" @click="logoutUser">Logout</h5>
-            <!-- <p>Spcial promo only Today!</p> -->
+            <h5 class="ml-5 cursor-pointer" @click="logoutUser">{{ $t("logout") }}</h5>
           </div>
         </div>
 
         <div v-else class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
-
           <div class="special_card_heading flex items-center">
             <img src="@/assets/img/about_icon.svg" alt="">
             <nuxt-link :to="localePath('/login')">
-              <h5 class="ml-5">Login </h5>
+              <h5 class="ml-5">{{ $t("login") }}</h5>
             </nuxt-link>
-            <!-- <p>Spcial promo only Today!</p> -->
           </div>
           <img src="@/assets/img/back_arrow.svg" alt="">
 
@@ -169,13 +160,15 @@
         <div class="language_btn_main">
           <div class="language_btn">
             <button
-              class="english rounded-full border-[1px] border-[solid] border-[#7CB118] py-2 px-10 my-3 text-[#7CB118] language_btn_button"
+              class="english rounded-full border-[1px] border-[solid] border-[#7CB118] py-2 px-10 my-3 text-[#7CB118]"
+              :class="{language_btn_button: $i18n.locale === 'en'}"
               @click="switchLang('en')">
               English
             </button>
           </div>
           <div class="language_btn">
             <button
+              :class="{language_btn_button: $i18n.locale === 'ar'}"
               class="arabic rounded-full border-[1px] border-[solid] border-[#7CB118] py-2 px-10 my-3 text-[#7CB118]"
               @click="switchLang('ar')">
               Arabic

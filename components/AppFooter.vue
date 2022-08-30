@@ -6,9 +6,7 @@
         <img src="@/assets/img/logo.svg" class="xs:!w-[152px] xs:!h-[55px]" alt="">
         <ul>
           <li class="my-[25px] xs:!text-[12px xs:!text-[12px] sm:!text-[12px sm:!text-[14px] xs:!my-[15px]">
-              <img
-src="@/assets/img/li_map-pin.svg"
-                   class="inline nxs:!mr-[10px] xs:!w-[16px] xs:!h-[16px]" alt="">
+              <img src="@/assets/img/li_map-pin.svg" class="inline nxs:!mr-[10px] xs:!w-[16px] xs:!h-[16px]" alt="">
               Address: 1762 School House Roadx
           </li>
           <li class="my-[25px] xs:!text-[12px xs:!text-[12px] sm:!text-[12px sm:!text-[14px] xs:!my-[15px]">
@@ -29,7 +27,7 @@ src="@/assets/img/li_map-pin.svg"
         </ul>
       </div>
       <div class="footer_link xs:!mb-[15px] xs:!block xs:!w-full">
-        <h5 class="xs:!text-[16px] xs:!mb-[10px]">Useful links</h5>
+        <h5 class="xs:!text-[16px] xs:!mb-[10px]">{{ $t("footer.useful_links") }}</h5>
         <ul>
           <li class="xs:!text-[12px] sm:!text-[14px]">About Us</li>
           <li class="xs:!text-[12px] sm:!text-[14px]">Help Center</li>
@@ -38,13 +36,17 @@ src="@/assets/img/li_map-pin.svg"
       </div>
       <div class="footer_application">
         <div class="application">
-          <h5 class="xs:!text-[16px]">We Accept</h5>
+          <h5 class="xs:!text-[16px]">{{ $t("footer.we_accept") }}</h5>
           <a href="#"><img src="@/assets/img/Payment.png" class="xs:!h-[33px]" alt=""></a>
         </div>
         <div class="application">
-          <h5 class="xs:!text-[16px]">Download App</h5>
-          <a href="#"><img src="@/assets/img/apple-store.png" class="xs:!h-[34px]" alt=""></a>
-          <a href="#"><img src="@/assets/img/play-store.png" class="xs:!h-[36px]" alt=""></a>
+          <h5 class="xs:!text-[16px]">{{ $t("footer.download_app") }}</h5>
+          <a href="https://play.google.com/store/apps/details?id=com.akio.avokado" target="_blank">
+            <img src="@/assets/img/apple-store.png" class="xs:!h-[34px]" alt="">
+          </a>
+          <a href="https://apps.apple.com/us/app/avokado-%D8%A7%D9%81%D9%88%D9%83%D8%A7%D8%AF%D9%88/id1265492118" target="_blank">
+            <img src="@/assets/img/play-store.png" class="xs:!h-[36px]" alt="">
+          </a>
         </div>
       </div>
     </div>

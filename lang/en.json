@@ -1,0 +1,105 @@
+{
+  "shop_by_recommendation": "Shop by recommendation",
+  "search_for_items": "Search for items...",
+  "deliver_to": "Deliver to",
+  "login": "Login",
+  "logout": "Logout",
+  "explore_categories": "Explore Categories",
+  "currency_code": "SAR",
+  "continue_shopping": "Continue Shopping",
+  "login_to_checkout": "Login To Checkout",
+  "checkout": "Checkout",
+  "menu_popup": {
+    "about": "About",
+    "addresses": "Addresses",
+    "terms_conditions": "Terms & Conditions",
+    "help_center": "Help Center",
+    "logout": "Logout"
+  },
+  "key_value": {
+    "best_prices": "Best Prices & Deals",
+    "best_prices_desc": "Don’t miss our daily amazing deals and prices",
+    "refundable": "Refundable",
+    "refundable_desc": "If your items have damage we agree to refund it",
+    "free_delivery": "Free delivery",
+    "free_delivery_desc": "Do purchase over $50 and get free delivery anywhere"
+  },
+  "cart": {
+    "my_cart": "My Cart",
+    "summary": "Summary",
+    "subtotal": "Subtotal",
+    "delivery_charges": "Delivery charges",
+    "VAT": "VAT",
+    "total": "Total",
+    "minimum_order_amount_is": "Minimum order amount is",
+    "calculated_at_checkout": "Calculated at checkout",
+    "product": {
+      "product": "Product",
+      "name": "Name",
+      "price": "Price",
+      "quantity": "Quantity",
+      "remove": "Remove"
+    }
+  },
+  "footer": {
+    "we_accept": "We Accept",
+    "useful_links": "Useful links",
+    "download_app": "Download App"
+  },
+  "pages": {
+    "login": {
+      "login": "Login",
+      "welcome": "Hello! Welcome back!",
+      "mobile_number": "Mobile Number",
+      "login_placeholder": "Enter your mobile number",
+      "send_access_code": "Send Access Code",
+      "verify_code": "Verify Code!",
+      "verification_code": "Verification Code",
+      "enter_verification_code": "Enter your Verification number",
+      "new_account": "Please Create New Account!",
+      "first_name": "First Name!",
+      "last_name": "Last Name!",
+      "email": "Email!",
+      "ref_code": "Ref Code!",
+      "register": "Register"
+    },
+    "categories": {
+      "name": "Categories"
+    },
+    "checkout": {
+      "checkout": "Checkout",
+      "summary": "Summary",
+      "back_to_cart": "Back to Cart",
+      "select_address": "Select a shipping address from your address book or enter a new address.",
+      "add_new_address": "Add new Address",
+      "address": "Address",
+      "order_list": "Order List",
+      "product": "Product",
+      "name": "Name",
+      "price": "Price",
+      "quantity": "Quantity",
+      "delivery_schedule": "Delivery Schedule",
+      "select_delivery_schedule": "Select Delivery Schedule",
+      "select_date": "Select date",
+      "promo_code": "Promo code",
+      "additional_information": "Additional Information",
+      "payment_method": "Payment Method",
+      "cash_on_delivery": "Cash on delivery",
+      "payment_change": "Change",
+      "payment_select": "Select the payment method you want to use",
+      "home": "Home",
+      "place_order": "Place Order"
+    },
+    "payment" : {
+      "payment": "Payment"
+    },
+    "search" : {
+      "search_product": "Search Products"
+    },
+    "address" : {
+      "addresses": "Addresses",
+      "address": "Address",
+      "remove": "Remove"
+    }
+  }
+}

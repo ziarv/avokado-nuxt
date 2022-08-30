@@ -1820,7 +1820,7 @@ input::-webkit-inner-spin-button {
 .product_1 > div:nth-child(2) {
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 17%;
 }
 
 .product_1 > div:nth-child(2) > div {

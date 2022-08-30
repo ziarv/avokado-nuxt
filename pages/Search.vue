@@ -2,7 +2,7 @@
   <section class="flex px-10 ">
     <div class="flex flex-row flex-wrap justify-between">
       <div class="heading flex flex-row flex-wrap justify-between mx-4">
-        <h1> Search Products </h1>
+        <h1> {{ $t('pages.search.search_product') }} </h1>
       </div>
       <product-list v-for="(product,index) in products" :key="index" ca :product="product"></product-list>
     </div>
