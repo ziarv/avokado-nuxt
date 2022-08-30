@@ -46,6 +46,10 @@
     "useful_links": "روابط مفيدة",
     "download_app": "تحميل التطبيق"
   },
+  "pagination": {
+    "prev" : "prev",
+    "next" : "next"
+  },
   "pages": {
     "login": {
       "login": "تسجيل الدخول",

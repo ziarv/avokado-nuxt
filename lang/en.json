@@ -46,6 +46,10 @@
     "useful_links": "Useful links",
     "download_app": "Download App"
   },
+  "pagination": {
+    "prev" : "prev",
+    "next" : "next"
+  },
   "pages": {
     "login": {
       "login": "Login",

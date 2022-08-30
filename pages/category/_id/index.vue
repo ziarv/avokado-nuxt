@@ -61,6 +61,26 @@
 
             <product-list v-for="(product,index) in products" :key="index" :product="product"></product-list>
           </div>
+
+
+          <div class="flex justify-center">
+            <paginate
+              v-model="page"
+              :page-count="parseInt(total_pages)"
+              :click-handler="updateRoutePage"
+              :prev-text="$t('pagination.prev')"
+              :next-text="$t('pagination.next')"
+              :container-class="'my-pagination'"
+              :page-class="''"
+              :page-link-class="''"
+              :prev-class="''"
+              :next-class="''"
+              :prev-link-class="''"
+              :next-link-class="''"
+            >
+            </paginate>
+          </div>
+
         </div>
       </div>
     </section>
@@ -71,9 +91,13 @@
 import {mapActions} from "vuex";
 import Swiper from 'swiper/swiper-bundle.min';
 import 'swiper/swiper-bundle.min.css';
+// import Paginate from "vuejs-paginate";
+
+const Paginate = process.client ? require('vuejs-paginate') : undefined
 
 export default {
   name: "CategoryIndex",
+  components: {Paginate},
   data() {
     return {
       slider: null,
@@ -82,6 +106,9 @@ export default {
     }
   },
   computed: {
+    total_pages() {
+      return this.$store.state.category.totalPages;
+    },
     products() {
       return this.$store.state.category.products;
     },
@@ -92,8 +119,20 @@ export default {
       return this.$store.state.category.response;
     }
   },
-  watch: {},
+  watch: {
+    "$route.query.page"(pageNo) {
+      const payload = {
+        id: this.id,
+        page: pageNo,
+      }
+      this.fetchByCategoryId(payload);
+      if (window) {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      }
+    }
+  },
   mounted() {
+    this.page = this.$route.query.page ? parseInt(this.$route.query.page) : 1;
     const payload = {
       id: this.id,
       page: this.page,
@@ -104,6 +143,14 @@ export default {
   methods: {
     ...mapActions('category', ['fetchByCategoryId']),
     ...mapActions('home', ['fetchHomeData']),
+    updateRoutePage() {
+      this.$router.push({
+        path: this.localePath("/category/" + this.id),
+        query: {
+          page: this.page
+        }
+      });
+    },
     async initSlider() {
       await this.$nextTick();
       if (this.slider) {
