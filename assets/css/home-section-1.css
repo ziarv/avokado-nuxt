@@ -66,12 +66,14 @@ input {
   padding: 12px;
   flex-flow: column;
   height: 170px !important;
+  overflow: hidden;
   box-shadow: 0px 6px 12px #00000036;
 }
 
 .card > img {
   width: 65% !important;
   height: 85% !important;
+
 }
 
 .mySwiper_1 > .swiper-wrapper > .card:nth-child(1n) {
@@ -310,7 +312,7 @@ input {
 .input_hide {
   display: none;
   right: 0%;
-  bottom: 100%;
+  bottom: 85%;
   width: 50px;
   height: 50px;
   background-color: #7CB118;
@@ -323,7 +325,7 @@ input {
 
 .minus {
   display: none;
-  bottom: 200%;
+  bottom: 185%;
   right: 0%;
   position: absolute;
   border-radius: 10px 0px 0px 0px !important;

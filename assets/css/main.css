@@ -299,7 +299,7 @@
   .buy_now_1 > button,
   .input_hide {
     width: 40px;
-    height: 40px;
+    /*height: 40px;*/
   }
 
   .main_card > .star ~ p {

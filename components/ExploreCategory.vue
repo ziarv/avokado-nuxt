@@ -8,10 +8,12 @@
           <div
             v-for="(category,index) in menu" :key="index"
             :style="{'background-color': category.menu_icon_background_color}" class="card swiper-slide">
+
+            <img
+:src="category.menu_icon" class="cursor-pointer xs:!w-[45] xs:!h-[45] sm:!w-[45] sm:!h-[45]"
+                 alt="" @click="$router.push({path:localePath(`/category/${category.id}`)})">
+
             <nuxt-link :to="localePath(`/category/${category.id}`)">
-            <img :src="category.menu_icon" class="xs:!w-[45] xs:!h-[45] sm:!w-[45] sm:!h-[45]" alt="">
-            </nuxt-link>
-            <nuxt-link :to="localePath(`/category/${category.id}`)" >
               <p class="xs:!text-[12px] sm:!text-[14px]">{{ category.name }}</p>
             </nuxt-link>
           </div>
