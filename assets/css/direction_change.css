@@ -115,10 +115,10 @@
   margin-left: 1.25rem;
 }
 
-[dir="rtl"] .product_img.mr-5 {
-  margin-left: 0rem;
-  margin-right: 1.25rem;
-}
+/*[dir="rtl"] .product_img.mr-5 {*/
+  /*margin-left: 0rem;*/
+  /*margin-right: 1.25rem;*/
+/*}*/
 
 [dir="rtl"] .mr-4 {
   margin-right: 0rem;
