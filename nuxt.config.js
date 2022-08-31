@@ -1,9 +1,5 @@
 export default {
   loading: false,
-  basePath: '/shop',
-  static: {
-    prefix: '/shop'
-  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Avokado.sa',
@@ -105,7 +101,6 @@ export default {
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    publicPath: 'https://avokado.sa/shop/',
     postcss: {
       plugins: {
         tailwindcss: {},
