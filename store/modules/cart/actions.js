@@ -197,6 +197,7 @@ export const cartOrderSave = ({commit, rootState}, orderData) => {
     requestSource: rootState.requestSource,
     device_name: "Web " + window.navigator.platform,
     app_version: "3.0",
+    version: "3",
     device_os_version: window.navigator.appVersion,
     extra_info: "Vendor " + window.navigator.vendor,
     quote_id: rootState.local.quote_id
