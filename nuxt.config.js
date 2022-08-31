@@ -1,4 +1,7 @@
 export default {
+  router: {
+    base: '/shop/'
+  },
   loading: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
