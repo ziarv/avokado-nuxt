@@ -1,5 +1,5 @@
 <template>
-  <div class="product_1 xs:!h-[80px]">
+  <div class="product_1 xs:!h-[80px] overflow-hidden">
     <div class="product_img xs:!w-[15%]">
       <img :src="product.thumbnail" class="xs:!w-[40px] xs:!h-[40px] xs:!ml-[0px]" alt="">
     </div>
@@ -11,10 +11,10 @@
       <p class="xs:!text-[12px]">{{ product.price_vat }} {{ $t("currency_code") }}</p>
     </div>
     <div class="product_btn xs:!w-[23%]">
-      <button class="add_product addShow_product xs:!text-[12px] xs:!py-[0px] xs:!px-[5px]" @click="remove"><i
+      <button class="add_product addShow_product xs:!text-[12px] xs:!py-[0px] xs:!px-[5px]" style="border-bottom-right-radius: 0 !important; " @click="remove"><i
         class="fa-solid fa-minus"></i></button>
       <input v-model="qty" type="text" class="add_product addShow_product xs:!w-[28px] sm:!w-[28px] xs:!rounded-none sm:!rounded-none">
-      <button class="add_product addShow_product xs:!text-[12px] xs:!py-[0px] xs:!px-[5px]" @click="add"><i
+      <button class="add_product addShow_product xs:!text-[12px] xs:!py-[0px] xs:!px-[5px]" style="border-top-left-radius: 0 !important; " @click="add"><i
         class="fa-solid fa-plus"></i></button>
     </div>
     <div class="product_btn_remove xs:!w-[10%] xs:!hidden sm:!hidden">
