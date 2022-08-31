@@ -1336,7 +1336,7 @@
   }
 
   .main_content > div > .main_card {
-    height: 178px !important;
+    /*height: 178px !important;*/
     width: 47% !important;
     margin: 15px 0px !important;
   }
@@ -1517,7 +1517,7 @@
   }
 
   .delivery_address {
-    justify-content: center !important;
+    /*justify-content: center !important;*/
   }
 
   .product_ongoing {
@@ -1595,10 +1595,10 @@
     display: none;
   }
 
-  .swiper > .swiper-button-prev,
-  .product_btn_remove {
-    display: none;
-  }
+  /*.swiper > .swiper-button-prev,*/
+  /*.product_btn_remove {*/
+  /*  display: none;*/
+  /*}*/
 
   .product_1 > .product_btn {
     flex-flow: column;
@@ -1624,7 +1624,7 @@
 
   .wishlist > .product_1 {
     padding: 0px 0px 0px 12px;
-    flex-flow: row wrap;
+    /*flex-flow: row wrap;*/
   }
 
   .product_1 > .product_img {

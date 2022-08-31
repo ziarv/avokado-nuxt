@@ -34,18 +34,15 @@
           </li>
           <li class="my-[25px] xs:!text-[12px xs:!text-[12px] sm:!text-[12px sm:!text-[14px] xs:!my-[15px]">
             <img src="@/assets/img/li_phone.svg" class="inline xs:!mr-[10px] xs:!w-[16px] xs:!h-[16px]" alt="">
-            Call Us: 1233-777
+            Call Us: 920033710
           </li>
           <li class="my-[25px] xs:!text-[12px xs:!text-[12px] sm:!text-[12px sm:!text-[14px] xs:!my-[15px]">
             <img src="@/assets/img/li_mail.svg" class="inline xs:!mr-[10px] xs:!w-[16px] xs:!h-[16px]" alt="">
-            Email:
-            care@avokado.sa
+            Email: care@avokado.sa
           </li>
           <li class="my-[25px] xs:!text-[12px xs:!text-[12px] sm:!text-[12px sm:!text-[14px] xs:!my-[15px]">
             <img src="@/assets/img/li_clock-9.svg" class="inline xs:!mr-[10px] xs:!w-[16px] xs:!h-[16px]" alt="">
-            Work
-            hours: 8:00 - 20:00, Sunday -
-            Thursday
+            Work hours: From 9:00 AM to 9:00 PM
           </li>
         </ul>
       </div>

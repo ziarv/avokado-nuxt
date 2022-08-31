@@ -1,9 +1,9 @@
 <template>
   <div>
     <section>
-      <div class="mx-20 lg:!mx-14 xs:!mx-10 sm:!mx-5 flex-row flex-wrap flex my-14 justify-between">
+      <div class="m-auto  flex-row flex-wrap flex my-14 justify-center">
         <div
-          class="side_bar_main w-[20%] sm:!w-[100%] sm:!justify-between xs:!justify-between sm:!mr-0 xs:!flex xs:!flex-row xs:!flex-wrap sm:!flex sm:!flex-row sm:!flex-wrap xs:!w-[100%] xs:!mr-0 mr-5">
+          class="side_bar_main w-[20%] sm:!w-[100%] sm:!justify-between xs:!justify-between sm:!mr-0 xs:!flex xs:!flex-row xs:!flex-wrap sm:!flex sm:!flex-row sm:!flex-wrap xs:!w-[90%] xs:!mr-0 mr-5">
           <div class="side_bar sm:!w-[47.5%] xs:!w-[47.5%] mb-14 flex flex-col">
             <h1 class="mb-8">{{ $t('pages.categories.name') }}</h1>
             <div v-for="(item, index) in menu" :key="index" class="fresh_fruit flex items-center">
