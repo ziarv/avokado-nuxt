@@ -31,4 +31,7 @@ export default {
   [types.UPDATE_LANG_ID]: (state, data) => {
     state.storeLanguageId = data;
   },
+  [types.UPDATE_LOCATION_SELECTED]: (state, data) => {
+    state.location_selected = data;
+  },
 };

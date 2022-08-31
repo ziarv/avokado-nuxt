@@ -1,5 +1,6 @@
 <template>
   <footer>
+    <select-location/>
     <div class="right-floating-btn">
       <span class="right-floating-btn-cart-summary">{{ cart_items.length }}</span>
       <nuxt-link

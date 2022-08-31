@@ -4,6 +4,7 @@ import * as getters from "./getters";
 
 const state = {
   city_id: 1,
+  location_selected: false,
   warehouse_id: 1,
   quote_id: null,
   customer_id: null,
