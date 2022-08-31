@@ -3,7 +3,7 @@
     <cart-summary></cart-summary>
     <section>
       <div class="mx-20 xs:!mx-10 flex mt-20 xs:!mt-10 flex-row flex-wrap sm:!mx-5">
-        <div class="wishlist max-h-[500px] overflow-x-hidden overflow-y-scroll p-5" >
+        <div class="wishlist max-h-[500px] overflow-x-hidden overflow-y-scroll p-2" >
           <h1 class="xs:!text-[22px]">{{ $t("cart.my_cart") }}</h1>
           <div class="product xs:!py-[6px] xs:!px-[15px] xs:!h-[40px]">
             <h5>{{ $t("cart.product.product") }}</h5>
