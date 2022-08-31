@@ -36,6 +36,7 @@
                 alt=""
                 @click="mobile_search = !mobile_search">
               <!--              <img-->
+              <!--              <img-->
               <!--                src="@/assets/img/favrite.svg"-->
               <!--                class="w-[21px] h-[16px] mx-[5px] 2xl:hidden xs:block sm:block" alt="">-->
               <nuxt-link
@@ -109,7 +110,9 @@
         <div class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
           <div class="special_card_heading flex items-center">
             <img src="@/assets/img/about_icon.svg" alt="">
-            <h5 class="ml-5">{{ $t('menu_popup.about') }} </h5>
+            <nuxt-link :to="localePath('/about')">
+              <h5 class="ml-5">{{ $t('menu_popup.about') }} </h5>
+            </nuxt-link>
           </div>
           <img src="@/assets/img/back_arrow.svg" alt="">
         </div>
@@ -129,7 +132,9 @@
         <div class="special_card_location flex justify-between flex-row flex-wrap items-center w-[100%]">
           <div class="special_card_heading flex items-center">
             <img src="@/assets/img/team_condition.svg" alt="">
-            <h5 class="ml-5">{{ $t('menu_popup.terms_conditions') }}</h5>
+            <nuxt-link :to="localePath('/terms')">
+              <h5 class="ml-5">{{ $t('menu_popup.terms_conditions') }}</h5>
+            </nuxt-link>
           </div>
           <img src="@/assets/img/back_arrow.svg" alt="">
         </div>

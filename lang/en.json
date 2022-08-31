@@ -10,6 +10,7 @@
   "login_to_checkout": "Login To Checkout",
   "checkout": "Checkout",
   "buy_now": "Buy Now",
+  "terms": "Terms & Conditions",
   "menu_popup": {
     "about": "About",
     "addresses": "Addresses",
@@ -48,8 +49,8 @@
     "download_app": "Download App"
   },
   "pagination": {
-    "prev" : "prev",
-    "next" : "next"
+    "prev": "prev",
+    "next": "next"
   },
   "pages": {
     "login": {
@@ -95,16 +96,38 @@
       "home": "Home",
       "place_order": "Place Order"
     },
-    "payment" : {
+    "payment": {
       "payment": "Payment"
     },
-    "search" : {
+    "search": {
       "search_product": "Search Products"
     },
-    "address" : {
+    "address": {
       "addresses": "Addresses",
       "address": "Address",
       "remove": "Remove"
+    },
+    "about": {
+      "heading": "From Farms or Main Supplier",
+      "about_us": "ABOUT US",
+      "p1": "Avokado is a Saudi Arabian leading online retail for fresh fruits and vegetables delivered directly to your home. We began our services as the pioneer in the category with the mission to bring fresh fruits and vegetable closer and faster to the people in Jeddah city while providing them best quality, unique packaging and memorable service",
+      "p2": "Our great tools in service and technology are facilitating the life of customer by making the basic needs of fruits and vegetables fulfilled at a fingertip. In addition, the wide range and high quality selection are giving us the privilege to be seen specialized in the category and become the first choice for customers",
+      "quality": "QUALITY ASSURANCE",
+      "quality_desc": "Our products are sourced from local and international certified farms and suppliers. All products go through strict quality assurance and packed carefully",
+      "vision": "OUR VISION",
+      "vision_desc": "To be the number one fruits and vegetables destination for end consumer"
+    },
+    "terms": {
+      "heading": "Compensation Policy",
+      "p": "Below are the measurements we use for quality assurance of products, service and the compensation entitlement via claim submission to be within 24 hours from receiving it :",
+      "u1": "The item texture: it may look abnormal by having deformed shape or has some signs of rot (color, smell or liquid).",
+      "u2": "The item to be too ripe and has less than 24 hours to be consumed.",
+      "u3": "The inner part of item: abnormal sign like being discolored, smelly or unusual bacterial sour taste or has a sign of being rotten and cannot be consumed.",
+      "u4": "The item is not matched with the order from Avokado's portal. ",
+      "u5": "Compensation does not include free gifts and samples.",
+      "u6": "Note: The Compensation does not include item's natural taste of being bitter, sweet or sour as it is subjective to personal preferences.",
+      "u7": "Avokado is dedicated to providing quality services to achieve customers' satisfaction with each order. ",
+      "u8": "If a product's condition does not meet the promised quality, Avokado will compensate for credits in the Avokado wallet. The amount of credit will is equal to the amount of the damaged products.  The credit can be used to purchase another product from Avokado's application or website."
     }
   }
 }
