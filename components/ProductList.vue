@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="product && product.id"
-    class="main_card  xs:!pt-[10px] xs:!pl-[10px] xs:!h-[9m0px] xs:!pt[m10px] xs:!pl-1m0px] xs:!h-[190px] sm:!pt-[10px] sm:!pl-[10px] sm:!h-[190px]"
+    class="main_card  xs:!pt-[10px]   xs:!h-[9m0px] xs:!pt[m10px] xs:!pl-1m0px] xs:!h-[190px] sm:!pt-[10px] sm:!pl-[10px] sm:!h-[190px]"
     :class="{'swiper-slide':isInSlider}"
   >
 <!--    <div class="Vectorsvg">-->

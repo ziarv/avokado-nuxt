@@ -1,12 +1,12 @@
 <template>
   <section>
     <div class="mx-20 flex mt-10 flex-row flex-wrap justify-end xs:!mx-10 sm:!mx-5">
-      <div class="sighn_login_btn w-full text-end my-10">
-        <button
-          class="login_sign_up px-[60px] py-[10px] login_block bg-[#ECECEC] text-[#848484] rounded-full">
-          {{ $t("pages.login.login") }}
-        </button>
-      </div>
+<!--      <div class="sighn_login_btn w-full text-end my-10">-->
+<!--        <button-->
+<!--          class="login_sign_up px-[60px] py-[10px] login_block bg-[#ECECEC] text-[#848484] rounded-full">-->
+<!--          {{ $t("pages.login.login") }}-->
+<!--        </button>-->
+<!--      </div>-->
       <div class="back_ground_img w-full h-[100%]">
         <div
           class="address_menual w-[50%] h-[100%] flex flex-row shadow-2xl flex-wrap bg-[#FFFFFF] rounded-[20px] signup_none_1 ">

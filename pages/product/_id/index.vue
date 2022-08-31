@@ -73,18 +73,13 @@
 
           </div>
           <h5 class="w-[100%] text-[22px] xs:!text-[14px] sm:!text-[16px] text-[#7CB118] font-bold mb-5">
-            {{ product.price_tax_inc }}
-            {{ product.currency_symbol.toUpperCase() }}
+           <span> {{ product.price_tax_inc }}
+            {{ product.currency_symbol.toUpperCase() }}</span>
             <span>/{{ product.avokadoAttributes.avokado_item_unit }}</span>
           </h5>
-          <span class="w-[100%] text-[14px] xs:!text-[12px] sm:!text-[12px] flex text-[#B7B7B7] mb-5">
-<!--            <img-->
-            <!--            src="@/assets/img/Star.svg" alt="">-->
-            <!--                    <span class="mx-1 text-[#000000]">4.9</span>(200)-->
-                </span>
           <p
-v-if="product.availableQuantity > 0"
-             class="w-[100%] flex items-center xs:!text-[10px] sm:!text-[10px] mb-5"><img
+            v-if="product.availableQuantity > 0"
+            class="w-[100%] flex items-center xs:!text-[10px] sm:!text-[10px] mb-5"><img
             src="@/assets/img/circle.svg"
             class="mr-4 xs:!w-[10px] xs:!mr-[0.5rem] sm:!mr-[0.5rem] sm:!w-[10px]" alt="">
             In
@@ -126,6 +121,7 @@ v-if="product.availableQuantity > 0"
 import {mapActions} from "vuex";
 import Swiper from 'swiper/swiper-bundle.min';
 import 'swiper/swiper-bundle.min.css';
+
 export default {
   name: "ShowProduct",
   data() {

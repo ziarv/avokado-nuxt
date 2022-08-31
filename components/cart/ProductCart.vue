@@ -13,11 +13,11 @@
     <div class="product_btn xs:!w-[23%]">
       <button class="add_product addShow_product xs:!text-[12px] xs:!py-[0px] xs:!px-[5px]" @click="remove"><i
         class="fa-solid fa-minus"></i></button>
-      <input v-model="qty" type="text" class="add_product addShow_product xs:!w-[25px]">
+      <input v-model="qty" type="text" class="add_product addShow_product xs:!w-[28px] sm:!w-[28px] xs:!rounded-none sm:!rounded-none">
       <button class="add_product addShow_product xs:!text-[12px] xs:!py-[0px] xs:!px-[5px]" @click="add"><i
         class="fa-solid fa-plus"></i></button>
     </div>
-    <div class="product_btn_remove xs:!w-[10%]">
+    <div class="product_btn_remove xs:!w-[10%] xs:!hidden sm:!hidden">
       <button @click="removeItem()"><i class="fa-solid fa-xmark xs:!text-[14px]"></i></button>
     </div>
   </div>
