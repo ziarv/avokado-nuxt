@@ -1632,7 +1632,7 @@
 
   .product_1 > div:nth-child(2) {
     display: flex;
-    width: 67%;
+    /*width: 67%;*/
     flex-flow: row wrap;
   }
 
