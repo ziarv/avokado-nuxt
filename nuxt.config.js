@@ -1,5 +1,6 @@
 export default {
   loading: false,
+  basePath: '/shop',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Avokado.sa',
