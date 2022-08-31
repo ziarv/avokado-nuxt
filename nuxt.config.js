@@ -107,5 +107,10 @@ export default {
         autoprefixer: {}
       }
     }
+  },
+  generate: {
+    minify: {
+      collapseWhitespace: false
+    }
   }
 }
