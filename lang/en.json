@@ -128,6 +128,11 @@
       "u6": "Note: The Compensation does not include item's natural taste of being bitter, sweet or sour as it is subjective to personal preferences.",
       "u7": "Avokado is dedicated to providing quality services to achieve customers' satisfaction with each order. ",
       "u8": "If a product's condition does not meet the promised quality, Avokado will compensate for credits in the Avokado wallet. The amount of credit will is equal to the amount of the damaged products.  The credit can be used to purchase another product from Avokado's application or website."
+    },
+    "thanks": {
+      "order_number": "رقم الطلب :",
+      "thanks": "شكرا!",
+      "thanks_description": "تم استلام طلبك بنجاح"
     }
   }
 }

@@ -3,7 +3,7 @@
     <cart-summary></cart-summary>
     <section>
       <div class="mx-20 xs:!mx-10 flex mt-20 xs:!mt-10 flex-row flex-wrap sm:!mx-5">
-        <div class="wishlist max-h-[500px] overflow-x-hidden overflow-y-scroll p-2" >
+        <div class="wishlist max-h-[500px] overflow-x-hidden overflow-y-scroll p-2">
           <h1 class="xs:!text-[22px]">{{ $t("cart.my_cart") }}</h1>
           <div class="product xs:!py-[6px] xs:!px-[15px] xs:!h-[40px]">
             <h5>{{ $t("cart.product.product") }}</h5>
@@ -15,25 +15,15 @@
           <product-cart v-for="(product,index) in cart_items" :key="index" :product="product"></product-cart>
         </div>
         <div class="continue_shopping">
-
           <nuxt-link :to="localePath(`/`)" class="xs:!text-[14px]">
             <img src="@/assets/img/Vector_2.svg" class="xs:!w-[14px] xs:!h-[14px]" alt="">
             {{ $t("continue_shopping") }}
           </nuxt-link>
-          <nuxt-link
-            v-if="customer.customerId"
-            :to="localePath(`/checkout`)"
-            :class="{disabled: cart_data.sub_total < minimum_order_amount}"
-            class="px-[45px] rounded-full text-[#FFFFFF] mt-2 mb-20 xs:!mb-0 text-base py-[8px] bg-[#7CB118] shadow-2xl xs:!pt-[3px] xs:!pb-[3px] xs:!pl-[25px] xs:!pr-[25px] xs:!text-[10px] xs:!h-[30px]">
+          <button
+            class="px-[45px] rounded-full text-[#FFFFFF] mt-2 mb-20 xs:!mb-0 text-base py-[8px] bg-[#7CB118] shadow-2xl xs:!pt-[3px] xs:!pb-[3px] xs:!pl-[25px] xs:!pr-[25px] xs:!text-[10px] xs:!h-[30px]"
+            @click="goToCheckout">
             {{ $t("checkout") }}
-          </nuxt-link>
-          <nuxt-link
-            v-else
-            :to="localePath(`/login`)"
-            class="px-[45px] rounded-full text-[#FFFFFF] mt-2 mb-20 xs:!mb-0 text-base py-[8px] bg-[#7CB118] shadow-2xl xs:!pt-[3px] xs:!pb-[3px] xs:!pl-[25px] xs:!pr-[25px] xs:!text-[10px] xs:!h-[30px]">
-            {{ $t("login_to_checkout") }}
-          </nuxt-link>
-
+          </button>
         </div>
       </div>
     </section>
@@ -67,7 +57,22 @@ export default {
     await this.getMinimumOrderAmount();
   },
   methods: {
-    ...mapActions('cart', ['getCartAction', 'getMinimumOrderAmount'])
+    ...mapActions('cart', ['getCartAction', 'getMinimumOrderAmount']),
+    goToCheckout() {
+      if (this.customer.customerId) {
+        if (this.cart_data.sub_total < this.minimum_order_amount) {
+          this.$toast.warning(this.$t("cart.minimum_order_amount_is")+ " " + this.minimum_order_amount +" "+ this.$t("currency_code"));
+          return;
+        }
+        this.$router.push({
+          path: this.localePath(`/checkout`)
+        });
+      } else {
+        this.$router.push({
+          path: this.localePath(`/login`)
+        });
+      }
+    },
   }
 }
 </script>

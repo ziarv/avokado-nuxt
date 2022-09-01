@@ -16,7 +16,6 @@
             {{ $t('pages.checkout.home') }}
           </nuxt-link>
           <button
-            :disabled="cart_items.length === 0 || cart_data.sub_total < min_order_amount"
             class="px-[45px] rounded-full text-[#FFFFFF] mt-2 mb-20 sm:!mb-0 xs:!mb-0 text-base py-[8px] bg-[#7CB118] shadow-2xl xs:!pt-[3px] xs:!pb-[3px] xs:!pl-[25px] xs:!pr-[25px] xs:!text-[10px] xs:!h-[30px]"
             @click="$emit('placeOrder')">
             {{ $t('pages.checkout.place_order') }}

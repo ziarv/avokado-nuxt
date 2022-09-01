@@ -92,8 +92,8 @@ export default {
     baseURL: process.env.BASE_URL
   },
   proxy: {
-    '/v3': {target: 'https://avokado.sa'},
-    '/jeddah-en': {target: 'https://avokado.sa'}
+    '/v3': {target: 'https://staging.avokado.sa'},
+    '/jeddah-en': {target: 'https://staging.avokado.sa'}
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

@@ -15,11 +15,11 @@
           </div>
           <div
             class="option_setting_px flex items-center input-set 2xl:mx-[48px] xs:mx-[0px] sm:mx-[0px] relative p-[9px] w-[56.7%] 2xl:bg-[#ECECEC] xs:bg-[transparent] sm:bg-[transparent] rounded-[2px] h-[42px] flex-row">
-            <form action="" class="inline" @submit.prevent="searchKeyword">
+            <form action="" class="block m-auto w-[100%]" @submit.prevent="searchKeyword">
               <input
                 v-model="keyword"
                 type="text"
-                class="font-light bg-[transparent] text-[#ADADAD] h-[100%] placeholder:text-[#ADADAD] xs:hidden sm:hidden"
+                class="w-[100%] font-light bg-[transparent] text-[#ADADAD] h-[100%] placeholder:text-[#ADADAD] xs:hidden sm:hidden"
                 :placeholder="$t('search_for_items')">
             </form>
             <div class="none_input" :class="{block_input: mobile_search}">

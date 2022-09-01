@@ -5,7 +5,8 @@
         <nuxt-link
           :to="localePath(`/cart`)"
           class="text-xl text-lime-600 flex justify-between w-36 xs:!w-24 xs:!text-[14px] items-center">
-          <img src="@/assets/img/li_chevron-right.svg" alt="li_chevron" class="xs:!w-[14px] xs:!h-[14px]"> {{ $t('pages.checkout.back_to_cart') }}
+          <img src="@/assets/img/li_chevron-right.svg" alt="li_chevron" class="xs:!w-[14px] xs:!h-[14px]">
+          {{ $t('pages.checkout.back_to_cart') }}
         </nuxt-link>
       </div>
     </section>
@@ -66,6 +67,9 @@ export default {
     customer() {
       return this.$store.state.local.customer;
     },
+    min_order_amount() {
+      return this.$store.state.cart.minOrderAmount;
+    },
   },
   mounted() {
 
@@ -99,6 +103,14 @@ export default {
       this.comment = note
     },
     placeOrder() {
+      if (this.cart_items.length <= 0) {
+        this.$toast.warning("Empty Cart");
+        return;
+      }
+      if (this.cart_data.sub_total < this.min_order_amount) {
+        this.$toast.warning(this.$t("cart.minimum_order_amount_is") + " " + this.minimum_order_amount + " " + this.$t("currency_code"));
+        return;
+      }
       const order = {
         delivery_date: this.delivery.data,
         deliver_time_interval: this.delivery.time,
@@ -107,18 +119,20 @@ export default {
         payment_method: this.payment_method
       };
       if (!this.address_id) {
-        this.$toast.success("Please Select Address.");
+        this.$toast.warning("Please Select Address.");
         return;
       }
       if (!this.delivery.data || !this.delivery.time) {
-        this.$toast.success("Please Select Delivery Details.");
+        this.$toast.warning("Please Select Delivery Details.");
         return;
       }
       if (!this.payment_method) {
-        this.$toast.success("Please Select Payment Method.");
+        this.$toast.warning("Please Select Payment Method.");
         return;
       }
+      this.$store.commit('UPDATE_LOADING', true);
       this.cartOrderSave(order).then(() => {
+        this.$store.commit('UPDATE_LOADING', false);
         if (this.order_save.status.toString() === "200") {
           if (this.order_save.order.checkout_id) {
             this.$router.push({

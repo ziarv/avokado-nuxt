@@ -49,9 +49,9 @@ export default {
       this.$store.commit('local/UPDATE_TMP_PAYMENT_METHOD', null);
       this.$store.commit('local/UPDATE_TMP_ORDER_SAVE_RESPONSE', null);
       const script = document.createElement("script");
-      // script.src = `https://test.oppwa.com/v1/paymentWidgets.js?checkoutId=${this.order.checkout_id}`;
+      script.src = `https://test.oppwa.com/v1/paymentWidgets.js?checkoutId=${this.order.checkout_id}`;
       // if (process.env.BASE_URL === "https://avokado.sa") {
-      script.src = `https://oppwa.com/v1/paymentWidgets.js?checkoutId=${this.order.checkout_id}`;
+      // script.src = `https://oppwa.com/v1/paymentWidgets.js?checkoutId=${this.order.checkout_id}`;
       // }
       script.async = true;
       document.body.appendChild(script);
