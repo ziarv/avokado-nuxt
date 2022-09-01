@@ -37,23 +37,23 @@
       {{ product.price_tax_inc }}
       {{ product.currency_symbol.toUpperCase() }}
     </p>
-    <div class="buy_now_1">
+    <div class="buy_now_1 swiper-no-swiping">
       <button
         :class="{active: qty > 0}"
-        class="minus xs:!w-[30px] xs:!h-[30px] xs:!text-[20pxsmxs:!w-[30xm] xs:!h-[30xm] xs:!text-[20px] sm:!w-[30px] sm:!h-[30px] sm:!text-[20px]"
+        class="minus swiper-no-swiping xs:!w-[30px] xs:!h-[30px] xs:!text-[20pxsmxs:!w-[30xm] xs:!h-[30xm] xs:!text-[20px] sm:!w-[30px] sm:!h-[30px] sm:!text-[20px]"
         @click="remove">
-        <i class="fa-solid fa-minus"></i>
+        <i class="fa-solid fa-minus swiper-no-swiping"></i>
       </button>
       <input
         v-model="qty"
         :class="{active: qty > 0}"
-        class="input_hide xs:!w-[30px] xs:!h-[30px] xs:!text-[20pxsmxs:!w-[30xm] xs:!h-[30xm] xs:!text-[20px] sm:!w-[30px] sm:!h-[30px] sm:!text-[20px]"
+        class="input_hide swiper-no-swiping xs:!w-[30px] xs:!h-[30px] xs:!text-[20pxsmxs:!w-[30xm] xs:!h-[30xm] xs:!text-[20px] sm:!w-[30px] sm:!h-[30px] sm:!text-[20px]"
         type="number">
       <button
 
-        class="plus click xs:!w-[30px] xs:!h-[30px] xs:!text-[20pxsmxs:!w-[30xm] xs:!h-[30xm] xs:!text-[20px] sm:!w-[30px] sm:!h-[30px] sm:!text-[20px]"
+        class="plus click swiper-no-swiping xs:!w-[30px] xs:!h-[30px] xs:!text-[20pxsmxs:!w-[30xm] xs:!h-[30xm] xs:!text-[20px] sm:!w-[30px] sm:!h-[30px] sm:!text-[20px]"
         @click="add">
-        <i class="fa-solid fa-plus"></i>
+        <i class="fa-solid fa-plus swiper-no-swiping"></i>
       </button>
     </div>
   </div>

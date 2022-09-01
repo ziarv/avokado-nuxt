@@ -6,8 +6,8 @@
       <div ref="swiper" class="swiper mySwiper_7">
         <div class="swiper-wrapper">
           <product-list
-v-for="(product,index) in products" :key="index" :product="product"
-                        :is-in-slider="true"></product-list>
+            v-for="(product,index) in products" :key="index" :product="product"
+            :is-in-slider="true"></product-list>
         </div>
         <div
           class="swiper-button-next xs:!w-[20px] xs:!h-[20px] xs:!top-[83%] sm:!w-[20px] sm:!h-[20px] sm:!top-[83%] sm:!w-[20px] sm:!h-[20px] sm:!top-[83%]">
@@ -38,8 +38,9 @@ export default {
       type: Boolean
     },
     category: {
-      default:  () => {},
-      type:   Object
+      default: () => {
+      },
+      type: Object
     }
   },
   data() {
@@ -68,9 +69,12 @@ export default {
       // eslint-disable-next-line no-new
       this.slider = new Swiper(this.$refs.swiper, {
         slidesPerView: 2,
-        spaceBetween: 20,
-        loop: true,
-        loopFillGroupWithBlank: true,
+        speed: 400,
+        preventClicksPropagation: false,
+        spaceBetween: 25,
+        freeMode: true,
+        preventClicks :true,
+        a11y: false,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
