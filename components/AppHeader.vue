@@ -41,9 +41,9 @@
               <!--                class="w-[21px] h-[16px] mx-[5px] 2xl:hidden xs:block sm:block" alt="">-->
               <nuxt-link
                 :to="localePath('/cart')">
-                <img
-                  src="@/assets/img/shopping.svg"
-                  class="w-[20px] h-[14px] mx-[5px] 2xl:hidden xs:block sm:block" alt="">
+                <span class="w-[20px] h-[14px] mx-[5px] 2xl:hidden xs:block sm:block">
+                 <i class="fas fa-shopping-cart"></i>
+                </span>
               </nuxt-link>
             </div>
           </div>
@@ -69,7 +69,9 @@
           <div class="flex laiba-iqbal_09 w-[50%] xs:w-[50%] sm:w-[50%] items-center">
 
             <nuxt-link :to="localePath('/cart')">
-              <img src="@/assets/img/shopping.svg" class="w-[27px] h-[25px] mx-[5px] xs:hidden sm:hidden" alt="">
+                 <span class="w-[27px] h-[25px] mx-[5px] xs:hidden sm:hidden">
+        <i class="fas fa-shopping-cart"></i>
+                </span>
             </nuxt-link>
             <div
               v-if="customer.customerId"
