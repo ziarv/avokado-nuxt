@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section v-if="products && products.length > 0">
     <div
       class="2xl:mx-20 2xl:flex 2xl:flex-row 2xl:flex-wrap xs:flex xs:flex-wrap sm:flex sm:flex-wrap justify-center xs:!mx-5 sm:!mx-5 sm:!mx-5 explore_categories">
       <h1 class="xs:!text-[16px] xs:!mb-[30px] sm:!text-[20px] sm:!mb-[30px]"> {{ category.name }} </h1>

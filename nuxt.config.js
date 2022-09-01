@@ -48,7 +48,10 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxtjs/eslint-module',
-    '@nuxt/postcss8'
+    '@nuxt/postcss8',
+    ['@nuxtjs/google-analytics', {
+      id: 'GTM-W978XXM'
+    }]
     // '@nuxtjs/fontawesome'
     // '@nuxt/image'
   ],

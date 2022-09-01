@@ -134,5 +134,8 @@
       "thanks": "شكرا!",
       "thanks_description": "تم استلام طلبك بنجاح"
     }
+  },
+  "messages": {
+    "quantity_not_available": "Quantity Not Available."
   }
 }

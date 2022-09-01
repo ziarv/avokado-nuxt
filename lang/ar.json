@@ -130,9 +130,12 @@
       "u8": "يعوض العميل / العملية عن المنتج الذي \"لا\" تتوفر فيه شروط الجودة برصيد بقيمة (المنتجات المتضرره) في محفظته يمكنه استخدامه لمشتريات أخرى."
     },
     "thanks": {
-      "order_number" : "Order Number:",
-      "thanks" : "Thank You!",
-      "thanks_description" : "Your Order Has Been Received."
+      "order_number": "Order Number:",
+      "thanks": "Thank You!",
+      "thanks_description": "Your Order Has Been Received."
     }
+  },
+  "messages": {
+    "quantity_not_available": "الكمية غير متوفرة"
   }
 }

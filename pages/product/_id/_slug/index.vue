@@ -42,7 +42,7 @@
             <p
               v-if="product.availableQuantity > 0"
               class="w-[100%] flex items-center xs:!text-[10px] sm:!text-[10px] mb-5"><img
-              src="@/assets/img/circle.svg"
+              src="~/assets/img/circle.svg"
               class="mr-4 xs:!w-[10px] xs:!mr-[0.5rem] sm:!mr-[0.5rem] sm:!w-[10px]" alt="">
               In Stock
             </p>
@@ -80,7 +80,7 @@
           <p
             v-if="product.availableQuantity > 0"
             class="w-[100%] flex items-center xs:!text-[10px] sm:!text-[10px] mb-5"><img
-            src="@/assets/img/circle.svg"
+            src="~/assets/img/circle.svg"
             class="mr-4 xs:!w-[10px] xs:!mr-[0.5rem] sm:!mr-[0.5rem] sm:!w-[10px]" alt="">
             In
             Stock</p>
@@ -160,10 +160,6 @@ export default {
     ...mapActions('products', ['fetchSingleById']),
     ...mapActions('cart', ['removeCartProduct', 'addCartAction']),
     add() {
-      if (this.qty_in_cart.toString() === this.product.availableQuantity.toString()) {
-        this.$toast.warning(this.$t("messages.quantity_not_available"));
-        return false;
-      }
       this.addCartAction({product_id: this.product.id, qty: 1})
         .then(() => {
           this.qty++;

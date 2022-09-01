@@ -83,7 +83,7 @@
   right: 0;
   position: absolute;
   padding: 5px 10px;
-  background: #5bdd5a;
+  background: #7CB118;
   font-weight: bolder;
   border-radius: 50px;
   box-shadow: 0 0 20px #000;
@@ -100,7 +100,7 @@
   box-shadow: 0 0 20px #000;
   border-radius: 50px;
   border: 1px solid transparent;
-  padding: 20px;
+  padding: 10px;
   background: white;
 }
 

@@ -10,13 +10,13 @@
         <img
           v-if="cart_items.length > 0"
           class="w-[100%]"
-          src="@/assets/img/full_box.png"
+          src="@/assets/img/full.png"
           alt="My Basket"
           style="display: block"
         />
         <img
           v-else
-          src="@/assets/img/empty_box.png"
+          src="@/assets/img/empty.png"
           alt="My Basket"
           class="w-[100%]"
           style="display: block"
