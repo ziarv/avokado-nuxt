@@ -1,0 +1,44 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Deploying
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }  }
+          script: |
+            # Copy and build new version
+            sudo su app_user
+            cd /var/www/html
+
+            cp -r avokado-nuxt  avokado-nuxt-new
+#            cd  avokado-nuxt-new
+#            git checkout main
+#            git fetch --all
+#            git reset --hard origin/main
+#            npm install
+#            npm run build
+#
+#
+#            # Replace current version with the new one
+#            cd ..
+#            mv avokado-nuxt avokado-nuxt-old
+#            mv avokado-nuxt-new avokado-nuxt
+#
+#            # Restart server
+#            cd avokado-nuxt
+#            pm2 kill
+#            pm2 start
+#            rm -rf ../avokado-nuxt-old
