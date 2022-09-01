@@ -72,6 +72,10 @@ export default {
     '@nuxtjs/pwa',
     ['nuxt-vuex-localstorage', {
       localStorage: ['local']
+    }],
+    ['@netsells/nuxt-hotjar', {
+      id: '3117347',
+      sv: '6'
     }]
   ],
   i18n: {
