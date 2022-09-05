@@ -219,7 +219,7 @@ input {
   display: flex;
   flex-flow: row wrap;
   align-content: space-between;
-  height: 360px !important;
+  /*height: 360px !important;*/
   padding: 12px 0px 0px 30px;
   border-radius: 10px;
   width: 22%;

@@ -32,8 +32,7 @@ export default {
   },
   mounted() {
     if (this.$i18n.locale !== this.lang) {
-      // this.$i18n.setLocale(this.lang);
-      // location.reload();
+      this.$i18n.setLocale(this.lang);
     }
   }
 }
