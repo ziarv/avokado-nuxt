@@ -8,7 +8,7 @@
             <h1 class="mb-8">{{ $t('pages.categories.name') }}</h1>
             <div v-for="(item, index) in menu" :key="index" class="fresh_fruit flex items-center">
               <img :src="item.menu_icon" alt="">
-              <nuxt-link :to="localePath(`/category/${item.id}`)">
+              <nuxt-link :to="localePath(`/category/${item.id}?cid=${category.id}`)">
                 <p>{{ item.name }}</p>
               </nuxt-link>
             </div>

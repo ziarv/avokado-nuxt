@@ -10,7 +10,7 @@
     <!--           class="xs:!w-[14px] xs:!h-[12px] xs:!mr-[8px] sm:!w-[14px] sm:!h-[12px] sm:!mr-[8px]">-->
     <!--    </div>-->
     <div class="img-card xs:!pr-[10px mxs:!pr-[10px] sm:!pr-[10px]">
-      <nuxt-link :to="localePath(`/product/${product.id}/${product.products_slug}`)">
+      <nuxt-link :to="urlProduct()">
         <img
           :src="product.images.thumbnail"
           class="prodImage xs:!w-[87px] xs:!h-[87px] sm:!w-[87px mxs:!h-[87px] sm:!w-[87px] sm:!h-[87px]"
@@ -21,12 +21,14 @@
       {{ product.category_name }}
     </span>
     <p class="xs:!text-[10px] xs:!text-[10px] sm:!text-[12px]">
-      <nuxt-link :to="localePath(`/product/${product.id}/${product.products_slug}`)">
+      <nuxt-link :to="urlProduct()">
         {{ product.name }}
       </nuxt-link>
     </p>
     <div class="star">
-      <p class="m-0 p-0 xs:!text-[8px mxs:!text-[8px] sm:!text-[8px]">{{ product.avokadoAttributes.avokado_item_unit }}</p>
+      <p class="m-0 p-0 xs:!text-[8px mxs:!text-[8px] sm:!text-[8px]">{{
+          product.avokadoAttributes.avokado_item_unit
+        }}</p>
       <!--      <img-->
       <!--        v-for="index in 4" :key="index" src="@/assets/img/star_fill.svg"-->
       <!--        class="xs:!w-[11px] xs:!h-[11px] sm:!w-[11px] sm:!h-[11px]" alt="">-->
@@ -34,8 +36,8 @@
       <!--      <span class="xs:!text-[8px mxs:!text-[8px] sm:!text-[8px]">(4)</span>-->
     </div>
     <p
-v-if="product.priceDiscountedIncTax"
-       class="xs:!text-[12px xs:!text-[12px] sm:!text-[12px sm:!text-[14px] sm:!text-[14px]">
+      v-if="product.priceDiscountedIncTax"
+      class="xs:!text-[12px xs:!text-[12px] sm:!text-[12px sm:!text-[14px] sm:!text-[14px]">
       <span class="line-through">
         {{ product.price_tax_inc }} {{ product.currency_symbol.toUpperCase() }} </span> -
       {{ product.priceDiscountedIncTax }}
@@ -107,6 +109,9 @@ export default {
   },
   methods: {
     ...mapActions('cart', ['addCartAction']),
+    urlProduct() {
+      return this.localePath(`/product/${this.product.id}/${this.product.products_slug}?pid=${this.product.id}`);
+    },
     add() {
       if (this.qty_in_cart.toString() === this.product.availableQuantity.toString()) {
         this.$toast.warning(this.$t("messages.quantity_not_available"));

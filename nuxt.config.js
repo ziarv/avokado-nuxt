@@ -5,11 +5,15 @@ export default {
   loading: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Avokado.sa',
+    title: 'Avokado',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1.0'},
-      {hid: 'description', name: 'description', content: ''},
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Avokado | excellent service provides fresh vegetables, fruits, herbs, dates, oil, honey, healthy snacks, and many more to your doorstep. 100% fresh, same day delivery, daily deals, points and immediate awards. Order Now'
+      },
       {name: 'format-detection', content: 'telephone=no'}
     ],
     script: [
@@ -70,6 +74,7 @@ export default {
     '@nuxtjs/i18n',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/sitemap',
     ['nuxt-vuex-localstorage', {
       localStorage: ['local']
     }],
@@ -121,6 +126,19 @@ export default {
   generate: {
     minify: {
       collapseWhitespace: false
+    }
+  },
+  sitemap: {
+    hostname: 'https://avokado.sa/',
+    gzip: true,
+    exclude: [
+      '/secret',
+      '/admin/**'
+    ],
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date()
     }
   }
 }

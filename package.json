@@ -22,6 +22,7 @@
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/i18n": "^7.2.3",
     "@nuxtjs/pwa": "^3.3.5",
+    "@nuxtjs/sitemap": "^2.4.0",
     "aos": "^2.3.4",
     "core-js": "^3.19.3",
     "crypto-js": "^4.1.1",
