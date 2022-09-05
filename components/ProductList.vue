@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="product && product.id"
-    class="main_card  xs:!pt-[10px]   xs:!h-[9m0px] xs:!pt[m10px] xs:!pl-1m0px] xs:!h-[190px] sm:!pt-[10px] sm:!pl-[10px] sm:!h-[190px]"
+    class="main_card xs:!pt-[10px] xs:!pt[m10px] xs:!pl-1m0px] sm:!pt-[10px] sm:!pl-[10px]"
     :class="{'swiper-slide':isInSlider}"
   >
     <!--    <div class="Vectorsvg">-->
@@ -26,7 +26,7 @@
       </nuxt-link>
     </p>
     <div class="star">
-      <p class="m-0 p-0">{{ product.avokadoAttributes.avokado_item_unit }}</p>
+      <p class="m-0 p-0 xs:!text-[8px mxs:!text-[8px] sm:!text-[8px]">{{ product.avokadoAttributes.avokado_item_unit }}</p>
       <!--      <img-->
       <!--        v-for="index in 4" :key="index" src="@/assets/img/star_fill.svg"-->
       <!--        class="xs:!w-[11px] xs:!h-[11px] sm:!w-[11px] sm:!h-[11px]" alt="">-->
