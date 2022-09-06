@@ -125,10 +125,9 @@
                   type="email" :placeholder="$t('pages.login.email')">
               </div>
               <div class="relative mb-5">
-                <label for="" class="w-full text-[18px] block mt-5 mb-0">{{ $t('pages.login.ref_cde') }}</label>
+                <label for="" class="w-full text-[18px] block mt-5 mb-0">{{ $t('pages.login.ref_code') }}</label>
                 <input
                   v-model="customer.ref_code"
-                  required
                   class="w-[100%] bg-[#ECECEC] py-[16px] rounded-md text=[#848484] placeholder:text=[#848484] pr-[22px] outline-none mt-4"
                   type="email" :placeholder="$t('pages.login.ref_cde')">
               </div>
@@ -245,7 +244,7 @@ export default {
         }
         if (
           this.otp_verify_response.customerId === "" &&
-          this.otp_verify_response.existingCustomer === 0
+          this.otp_verify_response.existingCustomer === "0"
         ) {
           this.is_login = false;
           this.is_verify = false;
