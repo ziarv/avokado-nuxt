@@ -5,8 +5,8 @@
     </div>
     <div class="w-[80%] m-auto mb-5">
       <h1 class="text-3xl sm:text-2xl md:text-2xl  text-center">{{ $t("pages.about.heading") }} </h1>
-      <p  class="text-2xl sm:text-1xl md:text-1xl ">{{ $t("pages.about.p1") }}</p>
-      <p  class="text-2xl sm:text-1xl md:text-1xl ">{{ $t("pages.about.p2") }}</p>
+      <p class="text-2xl sm:text-1xl md:text-1xl ">{{ $t("pages.about.p1") }}</p>
+      <p class="text-2xl sm:text-1xl md:text-1xl ">{{ $t("pages.about.p2") }}</p>
     </div>
     <div class="w-[80%] m-auto mb-5">
       <h1 class="text-3xl sm:text-2xl md:text-2xl text-center">{{ $t("pages.about.quality") }} </h1>
@@ -23,5 +23,10 @@
 
 export default {
   name: 'AboutPage',
+  head() {
+    return {
+      title: this.$t("pages.about.about_us")
+    };
+  },
 }
 </script>

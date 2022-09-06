@@ -11,9 +11,9 @@
 
             <img
 :src="category.menu_icon" class="cursor-pointer xs:!w-[45] xs:!h-[45] sm:!w-[45] sm:!h-[45]"
-                 alt="" @click="$router.push({path:localePath(`/category/${category.id}?cid=${category.id}`)})">
+                 alt="" @click="$router.push({path:localePath(`/category/${category.id}/${category.category_slug}?cid=${category.id}`)})">
 
-            <nuxt-link :to="localePath(`/category/${category.id}?cid=${category.id}`)">
+            <nuxt-link :to="localePath(`/category/${category.id}/${category.category_slug}?cid=${category.id}`)">
               <p class="xs:!text-[12px] sm:!text-[14px]">{{ category.name }}</p>
             </nuxt-link>
           </div>

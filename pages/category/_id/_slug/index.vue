@@ -8,7 +8,7 @@
             <h1 class="mb-8">{{ $t('pages.categories.name') }}</h1>
             <div v-for="(item, index) in menu" :key="index" class="fresh_fruit flex items-center">
               <img :src="item.menu_icon" alt="">
-              <nuxt-link :to="localePath(`/category/${item.id}?cid=${category.id}`)">
+              <nuxt-link :to="localePath(`/category/${item.id}/${category.category_slug}?cid=${item.id}`)">
                 <p>{{ item.name }}</p>
               </nuxt-link>
             </div>
@@ -105,6 +105,26 @@ export default {
       id: this.$route.params.id
     }
   },
+  async fetch() {
+    const payload = {
+      id: this.id,
+      page: this.page,
+      context: this
+    }
+    await this.fetchByCategoryId(payload);
+  },
+  head() {
+    return {
+      title: this.category.category_name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.category.category_name
+        }
+      ]
+    };
+  },
   computed: {
     total_pages() {
       return this.$store.state.category.totalPages;
@@ -132,13 +152,8 @@ export default {
     }
   },
   mounted() {
-    this.page = this.$route.query.page ? parseInt(this.$route.query.page) : 1;
-    const payload = {
-      id: this.id,
-      page: this.page,
-    }
     this.fetchHomeData();
-    this.fetchByCategoryId(payload);
+    this.page = this.$route.query.page ? parseInt(this.$route.query.page) : 1;
   },
   methods: {
     ...mapActions('category', ['fetchByCategoryId']),

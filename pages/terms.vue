@@ -24,5 +24,10 @@
 
 export default {
   name: 'AboutPage',
+  head() {
+    return {
+      title: "Terms & Conditions"
+    };
+  },
 }
 </script>

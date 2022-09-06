@@ -1,6 +1,6 @@
 <template>
-  <div v-if="product.id">
-    <section>
+  <div>
+    <section v-if="product.id">
       <div
         class="mx-20 flex mt-20 xs:!mt-4 sm:!mt-5 xs:!mx-5 sm:!mx-5 flex-row flex-wrap justify-between xs:!mb-10 sm:!mb-10">
         <div class="product_slider w-[49%] xs:!w-[100%] sm:!w-[100%] h-[100%] relative">
@@ -131,6 +131,22 @@ export default {
       id: this.$route.params.id
     }
   },
+  async fetch() {
+    await this.fetchSingleById({id: this.id, context: this})
+  },
+  head() {
+    return {
+      title: this.product.name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.product.description
+        }
+      ]
+    };
+  }
+  ,
   computed: {
     cart_items() {
       return this.$store.state.cart.cart_items;
@@ -147,14 +163,16 @@ export default {
     product() {
       return this.$store.state.products.single;
     }
-  },
-  watch: {},
+  }
+  ,
+  watch: {}
+  ,
   mounted() {
     this.qty = this.qty_in_cart;
-    this.fetchSingleById(this.id)
-      .then(() => {
-        this.initSlider();
-      });
+    // this.fetchSingleById(this.id)
+    //   .then(() => {
+    this.initSlider();
+    // });
   },
   methods: {
     ...mapActions('products', ['fetchSingleById']),

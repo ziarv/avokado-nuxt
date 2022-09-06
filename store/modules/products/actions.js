@@ -1,9 +1,10 @@
 import * as types from "./mutation-types";
 import {KEY} from "@/constants";
 
-export const fetchSingleById = ({commit, rootState}, id) => {
+export const fetchSingleById = ({commit, rootState}, obj) => {
+  commit(types.UPDATE_SINGLE_BY_ID, []);
   // return new Promise((resolve, reject) => {
-  return window.$nuxt.$axios.post(`/jeddah-en/api-v2/product/get`, {
+  return obj.context.$axios.post(`/jeddah-en/api-v2/product/get`, {
     key: KEY,
     country_id: rootState.country_id,
     city_id: rootState.local.city_id,
@@ -11,7 +12,7 @@ export const fetchSingleById = ({commit, rootState}, id) => {
     warehouse_id: rootState.local.warehouse_id,
     storeLanguageId: rootState.local.storeLanguageId,
     requestSource: rootState.requestSource,
-    pid: id
+    pid: obj.id
   })
     .then(response => {
       commit(types.UPDATE_SINGLE_BY_ID, response.data.product_details);
