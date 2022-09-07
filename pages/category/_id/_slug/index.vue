@@ -144,6 +144,7 @@ export default {
       const payload = {
         id: this.id,
         page: pageNo,
+        context:this,
       }
       this.fetchByCategoryId(payload);
       if (window) {
@@ -160,8 +161,9 @@ export default {
     ...mapActions('home', ['fetchHomeData']),
     updateRoutePage() {
       this.$router.push({
-        path: this.localePath("/category/" + this.id),
+        path: this.localePath("/category/" + this.id + "/" + this.category.category_slug),
         query: {
+          cid: this.id,
           page: this.page
         }
       });
