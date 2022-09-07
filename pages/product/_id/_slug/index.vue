@@ -128,7 +128,7 @@ export default {
     return {
       qty: 0,
       slider: null,
-      id: this.$route.params.id
+      id: isNaN(this.$route.params.id) ? this.$route.query.pid : this.$route.params.id
     }
   },
   async fetch() {

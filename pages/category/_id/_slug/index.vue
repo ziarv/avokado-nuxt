@@ -102,7 +102,7 @@ export default {
     return {
       slider: null,
       page: 1,
-      id: this.$route.params.id
+      id: isNaN(this.$route.params.id) ? this.$route.query.cid : this.$route.params.id
     }
   },
   async fetch() {
