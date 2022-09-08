@@ -7,9 +7,7 @@
     <div class="overflow-hidden ml-[80px] mr-[80px] sm:m-0 mb-3">
       <div class="swiper-wrapper ">
         <div class="swiper-slide m-1 mb-3">
-          <nuxt-link :to="localePath('/category/2')">
-            <img src="@/assets/img/banners/mid.jpg" alt="banner1">
-          </nuxt-link>
+          <img src="@/assets/img/banners/mid.jpg" alt="mid">
         </div>
       </div>
     </div>
@@ -18,7 +16,7 @@
     <div class="overflow-hidden ml-[80px] mr-[80px] sm:m-0 mb-3">
       <div class="swiper-wrapper ">
         <div class="swiper-slide m-1 mb-3">
-          <img src="@/assets/img/banners/bottom.jpg" alt="banner1">
+          <img src="@/assets/img/banners/bottom.jpg" alt="bottom">
         </div>
       </div>
     </div>
