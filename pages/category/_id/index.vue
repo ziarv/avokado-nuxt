@@ -13,8 +13,10 @@ export default {
     }
   },
   mounted() {
+    const id = isNaN(this.$route.params.id) ? this.$route.query.cid : this.$route.params.id
+
     this.$router.push({
-      path: this.localePath(`/category/${this.$route.params.id}/slug?cid=${this.$route.params.id}`)
+      path: this.localePath(`/category/${id}/slug?cid=${id}`)
     })
   },
 }
