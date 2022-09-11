@@ -510,7 +510,7 @@ input::-webkit-inner-spin-button {
 }
 
 .main_content > div > .main_card {
-  height: 320px !important;
+  /*height: 320px !important;*/
 }
 
 .fresh_fruit:hover > p {

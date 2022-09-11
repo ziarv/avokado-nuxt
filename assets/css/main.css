@@ -660,7 +660,7 @@
   }
 
   .main_content > div > .main_card {
-    height: 200px !important;
+    /*height: 200px !important;*/
     width: 31% !important;
     margin: 15px 0px;
   }
