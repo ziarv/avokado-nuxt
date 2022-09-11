@@ -117,6 +117,10 @@ export default {
         this.$toast.warning(this.$t("messages.quantity_not_available"));
         return false;
       }
+      if (parseInt(this.qty_in_cart) >= parseInt(this.product.max_allowed_qty)) {
+        this.$toast.warning("Maximum Allowed Quantity for purchase is " + this.product.max_allowed_qty);
+        return false;
+      }
       this.addCartAction({product_id: this.product.id, qty: 1})
         .then(() => {
           this.qty++;

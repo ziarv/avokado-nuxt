@@ -48,10 +48,10 @@
             </p>
             <div class="product_btn xs:!w-[23%]">
               <button
-                :disabled="qty <= 0" class="add_product addShow_product xs:!text-[12px] xs:!py-[0px] xs:!px-[5px]"
+                :disabled="qty_in_cart <= 0" class="add_product addShow_product xs:!text-[12px] xs:!py-[0px] xs:!px-[5px]"
                 @click="remove">
                 <i class="fa-solid fa-minus"></i></button>
-              <input v-model="qty" type="text" class="add_product addShow_product xs:!w-[25px]">
+              <input v-model="qty_in_cart" type="text" class="add_product addShow_product xs:!w-[25px]">
               <button class="add_product addShow_product xs:!text-[12px] xs:!py-[0px] xs:!px-[5px]" @click="add">
                 <i class="fa-solid fa-plus"></i>
               </button>
@@ -178,13 +178,21 @@ export default {
     ...mapActions('products', ['fetchSingleById']),
     ...mapActions('cart', ['removeCartProduct', 'addCartAction']),
     add() {
+      if (this.qty_in_cart.toString() === this.product.availableQuantity.toString()) {
+        this.$toast.warning(this.$t("messages.quantity_not_available"));
+        return false;
+      }
+      if (parseInt(this.qty_in_cart) >= parseInt(this.product.max_allowed_qty)) {
+        this.$toast.warning("Maximum Allowed Quantity for purchase is " + this.product.max_allowed_qty);
+        return false;
+      }
       this.addCartAction({product_id: this.product.id, qty: 1})
         .then(() => {
           this.qty++;
         });
     },
     async remove() {
-      if (this.qty <= 0) {
+      if (this.qty_in_cart <= 0) {
         return;
       }
       await this.addCartAction({product_id: this.product.id, qty: -1})
