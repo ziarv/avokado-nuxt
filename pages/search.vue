@@ -33,6 +33,7 @@ export default {
   watch: {
     '$route.query.keyword'() {
       this.query = this.$route.query.keyword;
+      this.fetchSingleBySearch(this.query);
     }
   },
   mounted() {
