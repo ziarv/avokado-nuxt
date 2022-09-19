@@ -1223,6 +1223,7 @@
     width: 22px;
     height: 22px;
   }
+
   #side_bar_time,
   #side_bar_date,
   #side_bar_promo,
@@ -1250,7 +1251,6 @@
   /*.main_card {*/
   /*  height: 190px !important;*/
   /*}*/
-
   .best_card {
     width: 100% !important;
   }
@@ -1600,7 +1600,7 @@
     display: none;
   }
 
-  .swiper > .swiper-button-prev{
+  .swiper > .swiper-button-prev {
     display: none;
   }
 
@@ -1708,7 +1708,7 @@
     display: none;
   }
 
-  .show >  .product_btn {
+  .show > .product_btn {
     /*position: absolute;*/
     /*top: 40%;*/
     /*right: 0%;*/

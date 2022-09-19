@@ -1886,4 +1886,14 @@ input::-webkit-inner-spin-button {
   width: 74%;
 }
 
+
+.mySwiper_1 {
+  padding: 0 12px 80px!important;
+}
+
+.mySwiper_1, .mySwiper_7, .mySwiper_12 {
+  padding: 0 12px 20px!important;
+}
+
+
 /*Zia*/
