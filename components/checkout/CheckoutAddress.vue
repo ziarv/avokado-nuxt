@@ -1,13 +1,13 @@
 <template>
   <section>
-    <div class="mx-20 flex xs:!mx-10 sm:!mx-10">
+    <div class="mx-20 flex sm:!mx-10 sm:!mx-10">
       <div class="wishlist">
-        <h1 class="xs:!text-[16px]">{{ $t('pages.checkout.checkout') }}</h1>
+        <h1 class="sm:!text-[16px]">{{ $t('pages.checkout.checkout') }}</h1>
         <div class="checkout_para flex w-full justify-between items-center">
-          <p class="text-xl font-normal my-6 xs:!hidden">
+          <p class="text-xl font-normal my-6 sm:!hidden">
             {{ $t('pages.checkout.select_address') }}
           </p>
-          <nuxt-link :to="localePath(`/addresses/add`)" class="text-xl text-lime-600 uppercase xs:!text-[12px]">
+          <nuxt-link :to="localePath(`/addresses/add`)" class="text-xl text-lime-600 uppercase sm:!text-[12px]">
             {{ $t('pages.checkout.add_new_address') }}
           </nuxt-link>
         </div>
@@ -16,18 +16,18 @@
             <div class="location_home flex items-center">
               <div class="product_img mr-5">
                 <img
-                  src="@/assets/img/location_home.svg" class="xs:!h-[40px] xs:!w-[40px] xs:!ml-0"
+                  src="@/assets/img/location_home.svg" class="sm:!h-[40px] sm:!w-[40px] sm:!ml-0"
                   alt="">
               </div>
               <div class="product_name">
-                <h6 class="font-bold text-xl xs:!text-[16px]">{{ $t('pages.checkout.address') }}</h6>
-                <p class="text-[#848484] text-lg xs:!text-[16px]">{{ selectedAddress }}</p>
+                <h6 class="font-bold text-xl sm:!text-[16px]">{{ $t('pages.checkout.address') }}</h6>
+                <p class="text-[#848484] text-lg sm:!text-[16px]">{{ selectedAddress }}</p>
               </div>
             </div>
-            <div class="product_quality location_home_2 flex justify-end mr-5 xs:!mr-2.5">
+            <div class="product_quality location_home_2 flex justify-end mr-5 sm:!mr-2.5">
               <img
                 src="@/assets/img/li_chevron-down_green.svg" :class="{product_main_4:showCard}"
-                class="xs:!w-[19px] xs:!h-[11px]" alt="">
+                class="sm:!w-[19px] sm:!h-[11px]" alt="">
             </div>
           </div>
           <div class="product_main_1" :class="{product_main_2:showCard}">
@@ -36,11 +36,11 @@
               @click="selectAddress(address)">
               <div class="location_home flex items-center">
                 <div class="product_img mr-5">
-                  <img src="@/assets/img/location_home.svg" class="xs:!h-[40px] xs:!w-[40px] xs:!ml-0" alt="">
+                  <img src="@/assets/img/location_home.svg" class="sm:!h-[40px] sm:!w-[40px] sm:!ml-0" alt="">
                 </div>
                 <div class="product_name">
-                  <h6 class="font-bold text-xl xs:!text-[16px]">{{ address.type }}</h6>
-                  <p class="text-[#848484] text-lg xs:!text-[16px]"> {{ address.street }}</p>
+                  <h6 class="font-bold text-xl sm:!text-[16px]">{{ address.type }}</h6>
+                  <p class="text-[#848484] text-lg sm:!text-[16px]"> {{ address.street }}</p>
                 </div>
               </div>
             </div>

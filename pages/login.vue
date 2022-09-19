@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="mx-20 flex mt-10 flex-row flex-wrap justify-end xs:!mx-10 sm:!mx-5">
+    <div class="mx-20 flex mt-10 flex-row flex-wrap justify-end sm:!mx-10 sm:!mx-5">
 <!--      <div class="sighn_login_btn w-full text-end my-10">-->
 <!--        <button-->
 <!--          class="login_sign_up px-[60px] py-[10px] login_block bg-[#ECECEC] text-[#848484] rounded-full">-->

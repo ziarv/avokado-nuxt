@@ -2,10 +2,10 @@
   <div>
     <cart-summary></cart-summary>
     <section>
-      <div class="mx-20 xs:!mx-10 flex mt-20 xs:!mt-10 flex-row flex-wrap sm:!mx-5">
+      <div class="mx-20 sm:!mx-10 flex mt-20 sm:!mt-10 flex-row flex-wrap sm:!mx-5">
         <div class="wishlist max-h-[500px] overflow-x-hidden overflow-y-scroll p-2">
-          <h1 class="xs:!text-[22px]">{{ $t("cart.my_cart") }}</h1>
-          <div class="product xs:!py-[6px] xs:!px-[15px] xs:!h-[40px]">
+          <h1 class="sm:!text-[22px]">{{ $t("cart.my_cart") }}</h1>
+          <div class="product sm:!py-[6px] sm:!px-[15px] sm:!h-[40px]">
             <h5>{{ $t("cart.product.product") }}</h5>
             <h5>{{ $t("cart.product.name") }}</h5>
             <h5>{{ $t("cart.product.price") }}</h5>
@@ -15,12 +15,12 @@
           <product-cart v-for="(product,index) in cart_items" :key="index" :product="product"></product-cart>
         </div>
         <div class="continue_shopping">
-          <nuxt-link :to="localePath(`/`)" class="xs:!text-[14px]">
-            <img src="@/assets/img/Vector_2.svg" class="xs:!w-[14px] xs:!h-[14px]" alt="">
+          <nuxt-link :to="localePath(`/`)" class="sm:!text-[14px]">
+            <img src="@/assets/img/Vector_2.svg" class="sm:!w-[14px] sm:!h-[14px]" alt="">
             {{ $t("continue_shopping") }}
           </nuxt-link>
           <button
-            class="px-[45px] rounded-full text-[#FFFFFF] mt-2 mb-20 xs:!mb-0 text-base py-[8px] bg-[#7CB118] shadow-2xl xs:!pt-[3px] xs:!pb-[3px] xs:!pl-[25px] xs:!pr-[25px] xs:!text-[10px] xs:!h-[30px]"
+            class="px-[45px] rounded-full text-[#FFFFFF] mt-2 mb-20 sm:!mb-0 text-base py-[8px] bg-[#7CB118] shadow-2xl sm:!pt-[3px] sm:!pb-[3px] sm:!pl-[25px] sm:!pr-[25px] sm:!text-[10px] sm:!h-[30px]"
             @click="goToCheckout">
             {{ $t("checkout") }}
           </button>

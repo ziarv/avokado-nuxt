@@ -1,8 +1,8 @@
 <template>
   <section v-if="products && products.length > 0">
     <div
-      class="2xl:mx-20 2xl:flex 2xl:flex-row 2xl:flex-wrap xs:flex xs:flex-wrap sm:flex sm:flex-wrap justify-center xs:!mx-5 sm:!mx-5 sm:!mx-5 explore_categories">
-      <h1 class="xs:!text-[16px] xs:!mb-[30px] sm:!text-[20px] sm:!mb-[30px]"> {{ category.name }} </h1>
+      class="2xl:mx-20 2xl:flex 2xl:flex-row 2xl:flex-wrap sm:flex sm:flex-wrap sm:flex sm:flex-wrap justify-center sm:!mx-5 sm:!mx-5 sm:!mx-5 explore_categories">
+      <h2 class="sm:!text-[16px] sm:!mb-[30px] sm:!text-[20px] sm:!mb-[30px]"> {{ category.name }} </h2>
       <div ref="swiper" class="swiper mySwiper_7">
         <div class="swiper-wrapper">
           <product-list
@@ -10,12 +10,12 @@
             :is-in-slider="true"></product-list>
         </div>
         <div
-          class="swiper-button-next xs:!w-[20px] xs:!h-[20px] xs:!top-[83%] sm:!w-[20px] sm:!h-[20px] sm:!top-[83%] sm:!w-[20px] sm:!h-[20px] sm:!top-[83%]">
-          <i class="xs:!text-[12px xs:!text-[12px] sm:!text-[12px sm:!text-[14px] fa-solid fa-arrow-right"></i>
+          class="swiper-button-next sm:!w-[20px] sm:!h-[20px] sm:!top-[83%] sm:!w-[20px] sm:!h-[20px] sm:!top-[83%] sm:!w-[20px] sm:!h-[20px] sm:!top-[83%]">
+          <i class="sm:!text-[12px sm:!text-[12px] sm:!text-[12px sm:!text-[14px] fa-solid fa-arrow-right"></i>
         </div>
         <div
-          class="swiper-button-prev xs:!w-[20px] xs:!h-[20px] xs:!top-[83%] sm:!w-[20px] sm:!h-[20px] sm:!top-[83%] xs:!right-[40px] sm:!right-[40px]">
-          <i class="xs:!text-[12px xs:!text-[12px] sm:!text-[12px sm:!text-[14px] fa-solid fa-arrow-left"></i>
+          class="swiper-button-prev sm:!w-[20px] sm:!h-[20px] sm:!top-[83%] sm:!w-[20px] sm:!h-[20px] sm:!top-[83%] sm:!right-[40px] sm:!right-[40px]">
+          <i class="sm:!text-[12px sm:!text-[12px] sm:!text-[12px sm:!text-[14px] fa-solid fa-arrow-left"></i>
         </div>
       </div>
     </div>

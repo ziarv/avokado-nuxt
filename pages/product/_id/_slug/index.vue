@@ -2,8 +2,8 @@
   <div>
     <section v-if="product.id">
       <div
-        class="mx-20 flex mt-20 xs:!mt-4 sm:!mt-5 xs:!mx-5 sm:!mx-5 flex-row flex-wrap justify-between xs:!mb-10 sm:!mb-10">
-        <div class="product_slider w-[49%] xs:!w-[100%] sm:!w-[100%] h-[100%] relative">
+        class="mx-20 flex mt-20 sm:!mt-4 sm:!mt-5 sm:!mx-5 sm:!mx-5 flex-row flex-wrap justify-between sm:!mb-10 sm:!mb-10">
+        <div class="product_slider w-[49%] sm:!w-[100%] sm:!w-[100%] h-[100%] relative">
           <div ref="swiper" class="swiper mySwiper_12 mySwiper_5">
             <div class="swiper-wrapper">
               <div class="cards product_slider_1 swiper-slide justify-center">
@@ -24,10 +24,10 @@
           </div>
         </div>
         <div
-          class="product_slider_09 px-[12px] py-12 xs:!py-4 sm:!py-4 w-[48%] xs:!w-[100%] sm:!w-[100%] rounded-[20px] bg-[#FFFFFF]">
+          class="product_slider_09 px-[12px] py-12 sm:!py-4 sm:!py-4 w-[48%] sm:!w-[100%] sm:!w-[100%] rounded-[20px] bg-[#FFFFFF]">
           <div
-            class="product_slider_09_heading flex flex-row flex-wrap justify-between px-[20px] xs:!px-[0px] sm:!px-[0px]">
-            <h1 class="text-[32px] xs:!text-[24px] sm:!text-[26px] xs:!mb-2.5 sm:!mb-2.5 font-['futur-extra'] mb-5">
+            class="product_slider_09_heading flex flex-row flex-wrap justify-between px-[20px] sm:!px-[0px] sm:!px-[0px]">
+            <h1 class="text-[32px] sm:!text-[24px] sm:!text-[26px] sm:!mb-2.5 sm:!mb-2.5 font-['futur-extra'] mb-5">
               {{ product.name }}
               <small class="!text-[18px]"> {{ product.avokadoAttributes.avokado_item_unit }}</small>
             </h1>
@@ -35,79 +35,90 @@
               <!--              <img src="@/assets/img/heart_dil.svg" alt="">-->
               <!--              <img src="@/assets/img/share.svg" alt="">-->
             </div>
-            <h5 class="w-[100%] text-[22px] xs:!text-[14px] sm:!text-[16px] text-[#7CB118] font-bold mb-5">
+            <h5 v-if="product.priceDiscountedIncTax" class="w-[100%] text-[22px] sm:!text-[14px] sm:!text-[16px] text-[#7CB118] font-bold mb-5">
+                <span class="line-through">
+             {{ product.price_tax_inc }} {{ product.currency_symbol.toUpperCase() }} </span> -
+              {{ product.priceDiscountedIncTax }}
+              {{ product.currency_symbol.toUpperCase() }}
+            </h5>
+            <h5 v-else class="w-[100%] text-[22px] sm:!text-[14px] sm:!text-[16px] text-[#7CB118] font-bold mb-5">
               {{ product.price_tax_inc }}
               {{ product.currency_symbol.toUpperCase() }}
             </h5>
             <p
               v-if="product.availableQuantity > 0"
-              class="w-[100%] flex items-center xs:!text-[10px] sm:!text-[10px] mb-5"><img
+              class="w-[100%] flex items-center sm:!text-[10px] sm:!text-[10px] mb-5"><img
               src="~/assets/img/circle.svg"
-              class="mr-4 xs:!w-[10px] xs:!mr-[0.5rem] sm:!mr-[0.5rem] sm:!w-[10px]" alt="">
+              class="mr-4 sm:!w-[10px] sm:!mr-[0.5rem] sm:!mr-[0.5rem] sm:!w-[10px]" alt="">
               In Stock
             </p>
-            <div class="product_btn xs:!w-[23%]">
+            <div class="product_btn sm:!w-[23%]">
               <button
-                :disabled="qty_in_cart <= 0" class="add_product addShow_product xs:!text-[12px] xs:!py-[0px] xs:!px-[5px]"
+                :disabled="qty_in_cart <= 0" class="add_product addShow_product sm:!text-[12px] sm:!py-[0px] sm:!px-[5px]"
                 @click="remove">
                 <i class="fa-solid fa-minus"></i></button>
-              <input v-model="qty_in_cart" type="text" class="add_product addShow_product xs:!w-[25px]">
-              <button class="add_product addShow_product xs:!text-[12px] xs:!py-[0px] xs:!px-[5px]" @click="add">
+              <input v-model="qty_in_cart" type="text" class="add_product addShow_product sm:!w-[25px]">
+              <button class="add_product addShow_product sm:!text-[12px] sm:!py-[0px] sm:!px-[5px]" @click="add">
                 <i class="fa-solid fa-plus"></i>
               </button>
             </div>
-            <hr class="w-[100%] mb-7 xs:!mb-3 sm:!mb-3">
-            <h4 class="w-[100%] text-[22px] xs:!text-[14px] sm:!text-[14px] text-[#000000] font-bold mb-5">
+            <hr class="w-[100%] mb-7 sm:!mb-3 sm:!mb-3">
+            <h4 class="w-[100%] text-[22px] sm:!text-[14px] sm:!text-[14px] text-[#000000] font-bold mb-5">
               Quick Overview
             </h4>
-            <p class="w-[100%] text-[#838383] text-[16px] xs:!text-[12px] sm:!text-[12px]">
+            <p class="w-[100%] text-[#838383] text-[16px] sm:!text-[12px] sm:!text-[12px]">
               {{ product.description }}
             </p>
           </div>
         </div>
         <div class="show">
-          <h1 class="text-[32px] xs:!text-[24px] sm:!text-[26px] xs:!mb-2.5 sm:!mb-2.5 font-['futur-extra'] mb-5">
+          <h1 class="text-[32px] sm:!text-[24px] sm:!text-[26px] sm:!mb-2.5 sm:!mb-2.5 font-['futur-extra'] mb-5">
             {{ product.name }}
           </h1>
           <div class="product_slider_09_heading_icon">
 
           </div>
-          <h5 class="w-[100%] text-[22px] xs:!text-[14px] sm:!text-[16px] text-[#7CB118] font-bold mb-5">
-           <span> {{ product.price_tax_inc }}
-            {{ product.currency_symbol.toUpperCase() }}</span>
-            <span>/{{ product.avokadoAttributes.avokado_item_unit }}</span>
+          <h5 v-if="product.priceDiscountedIncTax" class="w-[100%] text-[22px] sm:!text-[14px] sm:!text-[16px] text-[#7CB118] font-bold mb-5">
+                <span class="line-through">
+             {{ product.price_tax_inc }} {{ product.currency_symbol.toUpperCase() }} </span> -
+            {{ product.priceDiscountedIncTax }}
+            {{ product.currency_symbol.toUpperCase() }}
+          </h5>
+          <h5 v-else class="w-[100%] text-[22px] sm:!text-[14px] sm:!text-[16px] text-[#7CB118] font-bold mb-5">
+            {{ product.price_tax_inc }}
+            {{ product.currency_symbol.toUpperCase() }}
           </h5>
           <p
             v-if="product.availableQuantity > 0"
-            class="w-[100%] flex items-center xs:!text-[10px] sm:!text-[10px] mb-5"><img
+            class="w-[100%] flex items-center sm:!text-[10px] sm:!text-[10px] mb-5"><img
             src="~/assets/img/circle.svg"
-            class="mr-4 xs:!w-[10px] xs:!mr-[0.5rem] sm:!mr-[0.5rem] sm:!w-[10px]" alt="">
+            class="mr-4 sm:!w-[10px] sm:!mr-[0.5rem] sm:!mr-[0.5rem] sm:!w-[10px]" alt="">
             In
             Stock</p>
-          <div class="product_btn xs:!w-[23%]">
+          <div class="product_btn sm:!w-[23%]">
             <button
-              :disabled="qty <= 0" class="add_product addShow_product xs:!text-[12px] xs:!py-[0px] xs:!px-[5px]"
+              :disabled="qty <= 0" class="add_product addShow_product sm:!text-[12px] sm:!py-[0px] sm:!px-[5px]"
               @click="remove">
               <i class="fa-solid fa-minus"></i></button>
-            <input v-model="qty" type="text" class="add_product addShow_product xs:!w-[25px]">
-            <button class="add_product addShow_product xs:!text-[12px] xs:!py-[0px] xs:!px-[5px]" @click="add">
+            <input v-model="qty" type="text" class="add_product addShow_product sm:!w-[25px]">
+            <button class="add_product addShow_product sm:!text-[12px] sm:!py-[0px] sm:!px-[5px]" @click="add">
               <i class="fa-solid fa-plus"></i>
             </button>
           </div>
         </div>
-        <!-- <hr class="w-[100%] mb-7 xs:!mb-3 sm:!mb-3"> -->
+        <!-- <hr class="w-[100%] mb-7 sm:!mb-3 sm:!mb-3"> -->
         <div>
           <h4
-            class="w-[100%] text-[22px] xs:!text-[14px] sm:!text-[14px] text-[#000000] font-bold mb-5 situation">
+            class="w-[100%] text-[22px] sm:!text-[14px] sm:!text-[14px] text-[#000000] font-bold mb-5 situation">
             Overview
           </h4>
         </div>
 
         <div
-          class="product_slider_boot situation_heandle px-[12px] py-12 xs:!py-4 sm:!py-4 w-[48%] xs:!w-[100%] sm:!w-[100%] rounded-[20px] bg-[#FFFFFF]">
+          class="product_slider_boot situation_heandle px-[12px] py-12 sm:!py-4 sm:!py-4 w-[48%] sm:!w-[100%] sm:!w-[100%] rounded-[20px] bg-[#FFFFFF]">
           <div
-            class="product_slider_09_heading flex flex-row flex-wrap justify-between px-[20px] xs:!px-[0px] sm:!px-[0px]">
-            <p class="w-[100%] text-[#838383] text-[16px] xs:!text-[12px] sm:!text-[12px]">
+            class="product_slider_09_heading flex flex-row flex-wrap justify-between px-[20px] sm:!px-[0px] sm:!px-[0px]">
+            <p class="w-[100%] text-[#838383] text-[16px] sm:!text-[12px] sm:!text-[12px]">
               {{ product.description }}
             </p>
           </div>

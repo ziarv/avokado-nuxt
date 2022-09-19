@@ -1,16 +1,26 @@
 <template>
 
   <div
-v-if="promo_banners && promo_banners.top && promo_banners.top.length > 0" ref="swiper_main"
-       class="overflow-hidden">
+    ref="swiper_main"
+    class="overflow-hidden">
     <div class="swiper-wrapper">
-      <div v-for="(banner,index) in promo_banners.top" :key="index" class="swiper-slide m-1 mb-3">
-        <img :src="banner.image" alt="Avokado.sa">
+      <div class="swiper-slide m-1 mb-3">
+        <img src="@/assets/img/banners/banner.jpg" alt="Avokado.sa">
       </div>
     </div>
-    <!--      <div class="swiper-button-next swiper-btn"></div>-->
-    <!--      <div class="swiper-button-prev swiper-btn"></div>-->
+
   </div>
+  <!--  -->
+  <!--  <div-->
+  <!--v-if="promo_banners && promo_banners.top && promo_banners.top.length > 0" ref="swiper_main"-->
+  <!--       class="overflow-hidden">-->
+  <!--    <div class="swiper-wrapper">-->
+  <!--      <div v-for="(banner,index) in promo_banners.top" :key="index" class="swiper-slide m-1 mb-3">-->
+  <!--        <img :src="banner.image" alt="Avokado.sa">-->
+  <!--      </div>-->
+  <!--    </div>-->
+
+<!--  </div>-->
 </template>
 
 <script>

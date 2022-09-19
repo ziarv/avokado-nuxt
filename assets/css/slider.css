@@ -95,7 +95,7 @@
 }
 
 .mySwiper_6 > .swiper-wrapper > .main_card {
-  height: 100% !important;
+  /*height: 100% !important;*/
   box-shadow: 0px 0px 12px #0000003b;
   margin: 0px;
 }

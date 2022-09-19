@@ -4,22 +4,20 @@
     <explore-category></explore-category>
     <shop-by-recommendation></shop-by-recommendation>
     <!--    <promo-slider :slider="promo_banners.middle"></promo-slider>-->
-    <div class="overflow-hidden ml-[80px] mr-[80px] sm:m-0 mb-3">
-      <div class="swiper-wrapper ">
-        <div class="swiper-slide m-1 mb-3">
-          <img src="@/assets/img/banners/mid.jpg" alt="mid">
-        </div>
+    <div class="container">
+      <div class="w-full m-1 mb-3">
+        <img src="@/assets/img/banners/mid.jpg"  class="w-full" alt="bottom">
       </div>
     </div>
     <product-section v-for="(item, index) in menu" :key="index" :category="item"></product-section>
     <!--    <promo-slider :slider="promo_banners.bottom"></promo-slider>-->
-    <div class="overflow-hidden ml-[80px] mr-[80px] sm:m-0 mb-3">
-      <div class="swiper-wrapper ">
-        <div class="swiper-slide m-1 mb-3">
-          <img src="@/assets/img/banners/bottom.jpg" alt="bottom">
-        </div>
+
+    <div class="container">
+      <div class="w-full m-1 mb-3">
+        <img src="@/assets/img/banners/newbottom.jpg" class="w-full" alt="bottom">
       </div>
     </div>
+
     <key-values></key-values>
   </div>
 </template>

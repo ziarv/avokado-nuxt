@@ -1,12 +1,12 @@
 <template>
   <div>
     <section>
-      <div class="mx-20 flex flex-row flex-wrap xs:!mx-10 sm:!mx-10">
+      <div class="mx-20 flex flex-row flex-wrap sm:!mx-10 sm:!mx-10">
         <div class="delivery_schedule flex flex-row flex-wrap w-full">
-          <h1 class="w-full text-[32px] font-['futur-extra'] my-5 xs:!text-[16px]">{{ $t('pages.checkout.delivery_schedule') }}</h1>
+          <h1 class="w-full text-[32px] font-['futur-extra'] my-5 sm:!text-[16px]">{{ $t('pages.checkout.delivery_schedule') }}</h1>
           <div class="delivery_schedule_btn flex w-full">
             <button
-              class="slot_none rounded-md mr-5 bg-[#7CB118] text-[#FFFFFF] py-[15px] px-[50px] xs:!px-[19px] xs:!text-[14px]"
+              class="slot_none rounded-md mr-5 bg-[#7CB118] text-[#FFFFFF] py-[15px] px-[50px] sm:!px-[19px] sm:!text-[14px]"
               @click="showDeliverDates">
               {{ $t('pages.checkout.select_delivery_schedule') }}
             </button>

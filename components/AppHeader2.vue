@@ -1,90 +1,46 @@
 <template>
   <div>
-    <header class="2xl:py-[10px] sm:py-[0px] sm:py-[0px]">
-      <div
-        class="2xl:mx-20 2xl:flex header_inner 2xl:flex-row 2xl:flex-wrap sm:flex sm:flex-wrap sm:flex sm:flex-wrap sm:flex-col-reverse sm:mx-0 sm:flex-col-reverse sm:mx-0">
-        <div
-          class="px_main_bara flex flex-row  2xl:w-[50%] sm:px-10 sm:w-full sm:px-10 sm:w-full items-center sm:justify-between sm:justify-between">
-          <button id="hame_buger" type="button" class="block ml-2 mr-2" @click="userSidebar">
-            <img src="@/assets/img/ham_buger.svg" alt="ham_buger"/>
-          </button>
-          <div class="col-4 sm:w-[80px] sm:w-[80px]">
-            <nuxt-link :to="localePath('/')">
-              <img src="@/assets/img/logo_en.png" class="max-w-[150px]" alt="avokad logo">
-            </nuxt-link>
-          </div>
-          <div
-            class="option_setting_px flex items-center input-set 2xl:mx-[48px] sm:mx-[0px] sm:mx-[0px] relative p-[9px] w-[56.7%] 2xl:bg-[#ECECEC] sm:bg-[transparent] sm:bg-[transparent] rounded-[2px] h-[42px] flex-row">
-            <form action="" class="block m-auto w-[100%]" @submit.prevent="searchKeyword">
-              <input
-                v-model="keyword"
-                type="text"
-                class="w-[100%] font-light bg-[transparent] text-[#ADADAD] h-[100%] placeholder:text-[#ADADAD] sm:hidden sm:hidden"
-                :placeholder="$t('search_for_items')">
-            </form>
-            <div class="none_input" :class="{block_input: mobile_search}">
-              <form action="" @submit.prevent="searchKeyword">
-                <input v-model="keyword" type="text" :placeholder="$t('search_for_items')">
-              </form>
-            </div>
-            <div
-              class="search-icon 2xl:!w-[55px] xl:!w-[85px] 2xl:bg-[#7CB118] sm:bg-[transparent] sm:bg-[transparent] flex items-center justify-center rounded-tl-[0px] rounded-tr-[2px] rounded-br-[2px] rounded-bl-[0px] w-[85px] h-[100%] absolute right-[0%] top-[0%]">
-              <img src="@/assets/img/search_icon.svg" class="w-[24px] h-[24px] sm:hidden sm:hidden" alt="">
-              <img
-                src="@/assets/img/search_icon_black.svg"
-                class="search_icon_black w-[14px] sm:mx-[5px] sm:mx-[5px] h-[14px] 2xl:hidden sm:block sm:block"
-                alt=""
-                @click="mobile_search = !mobile_search">
-              <!--              <img-->
-              <!--              <img-->
-              <!--                src="@/assets/img/favrite.svg"-->
-              <!--                class="w-[21px] h-[16px] mx-[5px] 2xl:hidden sm:block sm:block" alt="">-->
-              <nuxt-link
-                :to="localePath('/cart')">
-                <span class="w-[20px] h-[14px] mx-[5px] 2xl:hidden sm:block sm:block">
-                 <i class="fas fa-shopping-cart"></i>
-                </span>
-              </nuxt-link>
-            </div>
+    <div class="top_header flex justify-center flex-row flex-wrap">
+      <div class="container flex justify-between flex-row flex-wrap sm:flex-col">
+        <div class="flex items-center justify-between flex-row flex-wrap">
+          <p class="text-[#000000]">Deliver to:</p>
+          <div class="location-links">
+            <a href="#" class="text-[#A3CE51]">Riyadh</a>
+            <a href="#" class="text-[#E55B7F] Jeddah">Jeddah</a>
+            <a href="#" class="text-[#A3CE51]">Makkah</a>
           </div>
         </div>
-        <div
-          class="bara_px_setting flex flex-row   items-center 2xl:w-[50%] sm:w-full sm:px-10 sm:w-full sm:bg-[#7CB118] sm:bg-[#7CB118] sm:px-10">
-          <div class="flex h-[24px] sm:w-[50%] sm:w-[50%]">
-           <span
-             class="flex location-img w-[50%] font-[600] items-center sm:text-[#FFFFFF] sm:text-[10px] sm:text-[#FFFFFF] sm:text-[13px]">
-             <img src="@/assets/img/location-icon.svg" class="w-[20px] h-[24px] mr-[10px] sm:hidden sm:hidden" alt="">
-             <span class="w-[140px]">{{ $t("deliver_to") }}</span>
-           </span>
-            <select
-              v-model="city_id"
-              class="w-[51%] font-bold bg-[transparent] 2xl:text-[#7CB118] sm:text-[#FFFFFF] sm:text-[10px] sm:text-[#FFFFFF] sm:text-[13px]"
-              @change="updateLocation()">
-              <option v-for="(location,index) in service_locations" :key="index" :value="location.id">
-                {{ location.city_name_en }}
-              </option>
+        <div class="relative h-[35px] grow sm:m-4 m-2">
+          <input
+            type="text"
+            class="w-[100%] border-[1px] h-[100%] border-[solid] bg-[#fff] border-[#E6E6E6] outline-none px-[25px] py-[9px] placeholder:text-[#CCCCCC] text-[#CCCCCC] text-[15px]"
+            placeholder="Search for items..."/>
+          <button class="bg-[#a3ce51] w-[40px] h-[100%] p-[8px] absolute top-0 right-0"><img
+            src="@/assets/img/search_icon.svg" class="h-[100%] w-[100%]" alt=""></button>
+        </div>
+        <div class="text-end flex justify-end items-center">
+          <a href="#" class="text-[#A3CE51] Log_in">Log in</a>
+          <span class="w-[25px] h-[25px] cursor-pointer"><img src="@/assets/img/shopping_bag.svg" alt=""></span>
+        </div>
+      </div>
+    </div>
 
-            </select>
-          </div>
-          <div class="flex laiba-iqbal_09 w-[50%] sm:w-[50%] sm:w-[50%] items-center">
-
-            <nuxt-link :to="localePath('/cart')">
-                 <span class="w-[27px] h-[25px] mx-[5px] sm:hidden sm:hidden">
-        <i class="fas fa-shopping-cart"></i>
-                </span>
-            </nuxt-link>
-            <div
-              v-if="customer.customerId"
-              class="laiba-iqbal 2xl:w-[52%] justify-end ml-[15px] flex items-center sm:w-[100%] sm:w-[100%]">
-              <p class="mr-1">{{ customer.customerData.firstName }} {{ customer.customerData.lastName }}</p>
-              <i class="text-red-700 fa fa-sign-out cursor-pointer" @click="logoutUser"></i>
-            </div>
-            <div
-              v-else
-              class="laiba-iqbal 2xl:w-[52%] justify-end ml-[15px] flex items-center sm:w-[100%] sm:w-[100%]">
-              <nuxt-link :to="localePath('/login')">{{ $t('login') }}</nuxt-link>
-            </div>
-          </div>
+    <header class="flex flex-row flex-wrap justify-center">
+      <div class="container flex flex-row flex-wrap justify-between">
+        <div class="text-center flex sm:justify-center sm:w-full">
+          <img src="@/assets/img/logo.svg" class="w-[200px]" alt="">
+        </div>
+        <nav class="items-center top-nav sm:mb-4 sm:mt-4">
+          <ul>
+            <li><a href="#"> Vegetable </a></li>
+            <li><a href="#">Fruits </a></li>
+            <li><a href="#">Chopped</a></li>
+            <li><a href="#">Juice</a></li>
+            <li><a href="#">Recipies</a></li>
+          </ul>
+        </nav>
+        <div class="heading flex items-center">
+          <h1>Daily Offers</h1>
         </div>
       </div>
     </header>
@@ -194,7 +150,7 @@
 import {mapActions} from "vuex";
 
 export default {
-  name: "AppHeader",
+  name: "AppHeader2",
   data() {
     return {
       user_sidebar: false,

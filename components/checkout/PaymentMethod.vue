@@ -1,23 +1,23 @@
 <template>
   <div>
     <section>
-      <div class="mx-20 flex flex-row flex-wrap xs:!mx-10 sm:!mx-10">
+      <div class="mx-20 flex flex-row flex-wrap sm:!mx-10 sm:!mx-10">
         <div class="promo_code">
-          <h1 class="xs:!text-[16px]">{{ $t('pages.checkout.payment_method') }}</h1>
+          <h1 class="sm:!text-[16px]">{{ $t('pages.checkout.payment_method') }}</h1>
           <a id="payment_methood" href="javascript:void(0)">
             <div class="promo_code_input" @click="showPaymentMethods">
               <div class="promo_code_input_1">
-                <img v-if="selectedPaymentMethod && selectedPaymentMethod.value === 'madapay'"  class="w-[35px] h-[30px] xs:!w-[25px] xs:!h-[25px]" src="@/assets/img/payment/madapay.webp" alt="">
-                <img v-else-if="selectedPaymentMethod && selectedPaymentMethod.value === 'stcpay'"  class="w-[35px] h-[30px]  xs:!w-[25px] xs:!h-[25px]" src="@/assets/img/payment/stcpay.webp" alt="">
-                <img v-else-if="selectedPaymentMethod && selectedPaymentMethod.value === 'hyperpay_creditcard'"  class="w-[35px] h-[30px]  xs:!w-[25px] xs:!h-[25px]" src="@/assets/img/payment/hyperpay_creditcard.webp" alt="">
-                <img v-else-if="selectedPaymentMethod && selectedPaymentMethod.value === 'ncbcard'"  class="w-[35px] h-[30px]  xs:!w-[25px] xs:!h-[25px]" src="@/assets/img/payment/ncbcard.png" alt="">
-                <img v-else-if="selectedPaymentMethod && selectedPaymentMethod.value === 'cashondelivery'"  class="w-[35px] h-[30px]  xs:!w-[25px] xs:!h-[25px]" src="@/assets/img/payment/cashondelivery.png" alt="">
-                <img v-else-if="selectedPaymentMethod && selectedPaymentMethod.value === 'codspanpayment'"  class="w-[35px] h-[30px]  xs:!w-[25px] xs:!h-[25px]" src="@/assets/img/payment/codspan.png" alt="">
-                <img v-else src="@/assets/img/payment/cashondelivery.png"  class="w-[35px] h-[30px]  xs:!w-[25px] xs:!h-[25px]" alt="">
-                <p v-if="selectedPaymentMethod" class="xs:!text-[14px]">{{ selectedPaymentMethod.label }}</p>
-                <p v-else class="xs:!text-[14px]">{{ $t('pages.checkout.cash_on_delivery') }}</p>
+                <img v-if="selectedPaymentMethod && selectedPaymentMethod.value === 'madapay'"  class="w-[35px] h-[30px] sm:!w-[25px] sm:!h-[25px]" src="@/assets/img/payment/madapay.webp" alt="">
+                <img v-else-if="selectedPaymentMethod && selectedPaymentMethod.value === 'stcpay'"  class="w-[35px] h-[30px]  sm:!w-[25px] sm:!h-[25px]" src="@/assets/img/payment/stcpay.webp" alt="">
+                <img v-else-if="selectedPaymentMethod && selectedPaymentMethod.value === 'hyperpay_creditcard'"  class="w-[35px] h-[30px]  sm:!w-[25px] sm:!h-[25px]" src="@/assets/img/payment/hyperpay_creditcard.webp" alt="">
+                <img v-else-if="selectedPaymentMethod && selectedPaymentMethod.value === 'ncbcard'"  class="w-[35px] h-[30px]  sm:!w-[25px] sm:!h-[25px]" src="@/assets/img/payment/ncbcard.png" alt="">
+                <img v-else-if="selectedPaymentMethod && selectedPaymentMethod.value === 'cashondelivery'"  class="w-[35px] h-[30px]  sm:!w-[25px] sm:!h-[25px]" src="@/assets/img/payment/cashondelivery.png" alt="">
+                <img v-else-if="selectedPaymentMethod && selectedPaymentMethod.value === 'codspanpayment'"  class="w-[35px] h-[30px]  sm:!w-[25px] sm:!h-[25px]" src="@/assets/img/payment/codspan.png" alt="">
+                <img v-else src="@/assets/img/payment/cashondelivery.png"  class="w-[35px] h-[30px]  sm:!w-[25px] sm:!h-[25px]" alt="">
+                <p v-if="selectedPaymentMethod" class="sm:!text-[14px]">{{ selectedPaymentMethod.label }}</p>
+                <p v-else class="sm:!text-[14px]">{{ $t('pages.checkout.cash_on_delivery') }}</p>
               </div>
-              <p class="xs:!text-[12px]">{{ $t('pages.checkout.payment_change') }}</p>
+              <p class="sm:!text-[12px]">{{ $t('pages.checkout.payment_change') }}</p>
             </div>
           </a>
         </div>

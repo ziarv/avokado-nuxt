@@ -1,67 +1,52 @@
 <template>
   <div
     v-if="product && product.id"
-    class="main_card xs:!pt-[10px] xs:!pt[m10px] xs:!pl-1m0px] sm:!pt-[10px] sm:!pl-[10px]"
+    class="main_card sm:!pt-[10px] sm:!pt[m10px] sm:!pl-1m0px] sm:!pt-[10px] sm:!pl-[10px] relative"
     :class="{'swiper-slide':isInSlider}"
   >
-    <!--    <div class="Vectorsvg">-->
-    <!--      <img-->
-    <!--src="@/assets/img/Vector.svg" alt=""-->
-    <!--           class="xs:!w-[14px] xs:!h-[12px] xs:!mr-[8px] sm:!w-[14px] sm:!h-[12px] sm:!mr-[8px]">-->
-    <!--    </div>-->
-    <div class="img-card xs:!pr-[10px mxs:!pr-[10px] sm:!pr-[10px]">
+    <div  v-if="product.priceDiscountedIncTax" class="discount"> {{ product.discountPercentage }} </div>
+    <div class="img-card sm:!pr-[10px msm:!pr-[10px] sm:!pr-[10px] m-auto">
       <nuxt-link :to="urlProduct()">
         <img
           :src="product.images.thumbnail"
-          class="prodImage xs:!w-[87px] xs:!h-[87px] sm:!w-[87px mxs:!h-[87px] sm:!w-[87px] sm:!h-[87px]"
+          class="prodImage sm:!w-[87px] sm:!h-[87px] sm:!w-[87px msm:!h-[87px] sm:!w-[87px] sm:!h-[87px]"
           alt="">
       </nuxt-link>
     </div>
-    <span class="xs:!text-[8px mxs:!text-[8px] sm:!text-[8px]">
+
+    <p class="text-[#ADADAD] font-[14px] align-baseline">
       {{ product.category_name }}
-    </span>
-    <p class="xs:!text-[10px] xs:!text-[10px] sm:!text-[12px]">
+    </p>
+
+    <p class="name sm:!text-[12px]">
       <nuxt-link :to="urlProduct()">
         {{ product.name }}
       </nuxt-link>
     </p>
-    <div class="star">
-      <p class="m-0 p-0 xs:!text-[8px mxs:!text-[8px] sm:!text-[8px]">{{
-          product.avokadoAttributes.avokado_item_unit
-        }}</p>
-      <!--      <img-->
-      <!--        v-for="index in 4" :key="index" src="@/assets/img/star_fill.svg"-->
-      <!--        class="xs:!w-[11px] xs:!h-[11px] sm:!w-[11px] sm:!h-[11px]" alt="">-->
-      <!--      <img src="@/assets/img/star_blank.svg" class="xs:!w-[11px] xs:!h-[11px] sm:!w-[11px] sm:!h-[11px]" alt="">-->
-      <!--      <span class="xs:!text-[8px mxs:!text-[8px] sm:!text-[8px]">(4)</span>-->
-    </div>
+    <p class="m-0 p-0 text-[14px]">
+      {{ product.avokadoAttributes.avokado_item_unit }}
+    </p>
     <p
       v-if="product.priceDiscountedIncTax"
-      class="xs:!text-[12px xs:!text-[12px] sm:!text-[12px sm:!text-[14px] sm:!text-[14px]">
-      <span class="line-through">
-        {{ product.price_tax_inc }} {{ product.currency_symbol.toUpperCase() }} </span> -
-      {{ product.priceDiscountedIncTax }}
-      {{ product.currency_symbol.toUpperCase() }}
+      class="sm:!text-[12px] price sm:!text-[12px] sm:!text-[12px sm:!text-[14px] sm:!text-[14px]">
+      <span class="line-through">{{ product.price_tax_inc }}   </span> - {{ product.priceDiscountedIncTax }}
+      {{ $t("currency_code") }}
     </p>
-    <p v-else class="xs:!text-[12px xs:!text-[12px] sm:!text-[12px sm:!text-[14px] sm:!text-[14px]">
-      {{ product.price_tax_inc }}
-      {{ product.currency_symbol.toUpperCase() }}
+      <p v-else class="sm:!text-[12px] price sm:!text-[12px] sm:!text-[12px sm:!text-[14px] sm:!text-[14px]">
+        {{ product.price_tax_inc }}
+        {{ $t("currency_code") }}
     </p>
-    <div class="buy_now_1 swiper-no-swiping">
+    <div class="counter swiper-no-swiping">
       <button
-        :class="{active: qty > 0}"
-        class="minus swiper-no-swiping xs:!w-[30px] xs:!h-[30px] xs:!text-[20pxsmxs:!w-[30xm] xs:!h-[30xm] xs:!text-[20px] sm:!w-[30px] sm:!h-[30px] sm:!text-[20px]"
+        v-if=" qty > 0"
         @click="remove">
         <i class="fa-solid fa-minus swiper-no-swiping"></i>
       </button>
       <input
+        v-if=" qty > 0"
         v-model="qty"
-        :class="{active: qty > 0}"
-        class="input_hide swiper-no-swiping xs:!w-[30px] xs:!h-[30px] xs:!text-[20pxsmxs:!w-[30xm] xs:!h-[30xm] xs:!text-[20px] sm:!w-[30px] sm:!h-[30px] sm:!text-[20px]"
         type="number">
       <button
-
-        class="plus click swiper-no-swiping xs:!w-[30px] xs:!h-[30px] xs:!text-[20pxsmxs:!w-[30xm] xs:!h-[30xm] xs:!text-[20px] sm:!w-[30px] sm:!h-[30px] sm:!text-[20px]"
         @click="add">
         <i class="fa-solid fa-plus swiper-no-swiping"></i>
       </button>

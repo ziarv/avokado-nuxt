@@ -37,7 +37,7 @@ export default {
     '@/assets/css/home-section-1.css',
     '@/assets/css/main.css',
     '@/assets/css/direction_change.css',
-    '@/assets/css/custom.css',
+    '@/assets/css/custom.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

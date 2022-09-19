@@ -1,24 +1,24 @@
 <template>
-  <div class="product_1 xs:!h-[80px] overflow-hidden">
-    <div class="product_img xs:!w-[15%]">
-      <img :src="product.thumbnail" class="xs:!w-[40px] xs:!h-[40px] xs:!ml-[0px]" alt="">
+  <div class="product_1 sm:!h-[80px] overflow-hidden">
+    <div class="product_img sm:!w-[15%]">
+      <img :src="product.thumbnail" class="sm:!w-[40px] sm:!h-[40px] sm:!ml-[0px]" alt="">
     </div>
-    <div class="product_name xs:!w-[25%]">
-      <p v-if="$i18n.locale === 'ar'" class="xs:!text-[12px]">{{ product.name_ar }}</p>
-      <p v-else  class="xs:!text-[12px]">{{ product.name }}</p>
+    <div class="product_name sm:!w-[25%]">
+      <p v-if="$i18n.locale === 'ar'" class="sm:!text-[12px]">{{ product.name_ar }}</p>
+      <p v-else  class="sm:!text-[12px]">{{ product.name }}</p>
     </div>
-    <div class="product_price xs:!w-[20%]">
-      <p class="xs:!text-[12px]">{{ product.price_vat }} {{ $t("currency_code") }}</p>
+    <div class="product_price sm:!w-[20%]">
+      <p class="sm:!text-[12px]">{{ product.price_vat }} {{ $t("currency_code") }}</p>
     </div>
-    <div class="product_btn xs:!w-[23%]">
-      <button class="add_product addShow_product xs:!text-[12px] xs:!py-[0px] xs:!px-[5px]" style="border-bottom-right-radius: 0 !important; " @click="remove"><i
+    <div class="product_btn sm:!w-[23%]">
+      <button class="add_product addShow_product sm:!text-[12px] sm:!py-[0px] sm:!px-[5px]" style="border-bottom-right-radius: 0 !important; " @click="remove"><i
         class="fa-solid fa-minus"></i></button>
-      <input v-model="qty" type="text" class="add_product addShow_product xs:!w-[28px] sm:!w-[28px] xs:!rounded-none sm:!rounded-none">
-      <button class="add_product addShow_product xs:!text-[12px] xs:!py-[0px] xs:!px-[5px]" style="border-top-left-radius: 0 !important; " @click="add"><i
+      <input v-model="qty" type="text" class="add_product addShow_product sm:!w-[28px] sm:!w-[28px] sm:!rounded-none sm:!rounded-none">
+      <button class="add_product addShow_product sm:!text-[12px] sm:!py-[0px] sm:!px-[5px]" style="border-top-left-radius: 0 !important; " @click="add"><i
         class="fa-solid fa-plus"></i></button>
     </div>
-    <div class="product_btn_remove xs:!w-[10%] xs:!hidden sm:!hidden">
-      <button @click="removeItem()"><i class="fa-solid fa-xmark xs:!text-[14px]"></i></button>
+    <div class="product_btn_remove sm:!w-[10%] sm:!hidden sm:!hidden">
+      <button @click="removeItem()"><i class="fa-solid fa-xmark sm:!text-[14px]"></i></button>
     </div>
   </div>
 </template>

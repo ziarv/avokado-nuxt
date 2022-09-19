@@ -1,8 +1,8 @@
 <template>
   <section>
     <div
-      class="2xl:mx-20 2xl:flex 2xl:flex-row 2xl:flex-wrap xs:flex xs:flex-wrap sm:flex sm:flex-wrap justify-center xs:!mx-5 sm:!mx-5 explore_categories">
-      <h1 class="xs:!text-[16px] xs:!mb-[30px] sm:!text-[20px] sm:!mb-[30px]">{{ $t("explore_categories") }}</h1>
+      class="2xl:mx-20 2xl:flex 2xl:flex-row 2xl:flex-wrap sm:flex sm:flex-wrap sm:flex sm:flex-wrap justify-center sm:!mx-5 sm:!mx-5 explore_categories">
+      <h2 class="sm:!text-[16px] sm:!mb-[30px] sm:!text-[20px] sm:!mb-[30px]">{{ $t("explore_categories") }}</h2>
       <div ref="swiper" class="swiper mySwiper_1">
         <div v-if="menu.length > 0" class="swiper-wrapper">
           <div
@@ -10,20 +10,20 @@
             :style="{'background-color': category.menu_icon_background_color}" class="card swiper-slide">
 
             <img
-:src="category.menu_icon" class="cursor-pointer xs:!w-[45] xs:!h-[45] sm:!w-[45] sm:!h-[45]"
+:src="category.menu_icon" class="cursor-pointer sm:!w-[45] sm:!h-[45] sm:!w-[45] sm:!h-[45]"
                  alt="" @click="$router.push({path:localePath(`/category/${category.id}/${category.category_slug}?cid=${category.id}`)})">
 
             <nuxt-link :to="localePath(`/category/${category.id}/${category.category_slug}?cid=${category.id}`)">
-              <p class="xs:!text-[12px] sm:!text-[14px]">{{ category.name }}</p>
+              <p class="sm:!text-[12px] sm:!text-[14px]">{{ category.name }}</p>
             </nuxt-link>
           </div>
         </div>
-        <div class="swiper-button-next xs:!w-[20px] xs:!h-[20px] xs:!top-[80%] sm:!w-[20px] sm:!h-[20px] sm:!top-[80%]">
-          <i class="xs:!text-[12px xs:!text-[12px] sm:!text-[12px sm:!text-[14px] fa-solid fa-arrow-right"></i>
+        <div class="swiper-button-next sm:!w-[20px] sm:!h-[20px] sm:!top-[80%] sm:!w-[20px] sm:!h-[20px] sm:!top-[80%]">
+          <i class="sm:!text-[12px sm:!text-[12px] sm:!text-[12px sm:!text-[14px] fa-solid fa-arrow-right"></i>
         </div>
         <div
-          class="swiper-button-prev xs:!w-[20px] xs:!h-[20px] xs:!top-[80%] sm:!w-[20px] sm:!h-[20px] sm:!top-[80%] xs:!right-[40px] sm:!right-[40px]">
-          <i class="xs:!text-[12px xs:!text-[12px] sm:!text-[12px sm:!text-[14px] fa-solid fa-arrow-left"></i>
+          class="swiper-button-prev sm:!w-[20px] sm:!h-[20px] sm:!top-[80%] sm:!w-[20px] sm:!h-[20px] sm:!top-[80%] sm:!right-[40px] sm:!right-[40px]">
+          <i class="sm:!text-[12px sm:!text-[12px] sm:!text-[12px sm:!text-[14px] fa-solid fa-arrow-left"></i>
         </div>
       </div>
     </div>

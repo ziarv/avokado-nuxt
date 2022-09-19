@@ -1,11 +1,11 @@
 <template>
   <div>
     <section>
-      <div class="mx-20 flex my-10 xs:!mx-10 xs:!my-10 sm:!mx-10">
+      <div class="mx-20 flex my-10 sm:!mx-10 sm:!my-10 sm:!mx-10">
         <nuxt-link
           :to="localePath(`/cart`)"
-          class="text-xl text-lime-600 flex justify-between w-36 xs:!w-24 xs:!text-[14px] items-center">
-          <img src="@/assets/img/li_chevron-right.svg" alt="li_chevron" class="xs:!w-[14px] xs:!h-[14px]">
+          class="text-xl text-lime-600 flex justify-between w-36 sm:!w-24 sm:!text-[14px] items-center">
+          <img src="@/assets/img/li_chevron-right.svg" alt="li_chevron" class="sm:!w-[14px] sm:!h-[14px]">
           {{ $t('pages.checkout.back_to_cart') }}
         </nuxt-link>
       </div>

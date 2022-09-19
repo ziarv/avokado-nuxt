@@ -1200,7 +1200,7 @@
   }
 
   .main_card {
-    height: 100% !important;
+    /*height: 100% !important;*/
   }
 
   .img-card {
@@ -1217,7 +1217,12 @@
 }
 
 @media (max-width: 420px) {
-
+  .main_card > .counter > button,
+  .main_card > .counter > input {
+    font-size: 1rem;
+    width: 22px;
+    height: 22px;
+  }
   #side_bar_time,
   #side_bar_date,
   #side_bar_promo,
