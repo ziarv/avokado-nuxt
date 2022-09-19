@@ -1812,3 +1812,9 @@
     margin-bottom: 20px;
   }
 }
+
+@media (max-width: 420px) {
+  .mySwiper_1, .mySwiper_7, .mySwiper_12 {
+    padding: 0 12px 20px !important;
+  }
+}
