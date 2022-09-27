@@ -57,30 +57,9 @@
             <div class="heading flex flex-row flex-wrap justify-between mx-4">
               <h1> {{ category.category_name }}</h1>
             </div>
-
-
             <product-list v-for="(product,index) in products" :key="index" :product="product"></product-list>
           </div>
-
-
-          <div class="flex justify-center">
-            <paginate
-              v-model="page"
-              :page-count="parseInt(total_pages)"
-              :click-handler="updateRoutePage"
-              :prev-text="$t('pagination.prev')"
-              :next-text="$t('pagination.next')"
-              :container-class="'my-pagination'"
-              :page-class="''"
-              :page-link-class="''"
-              :prev-class="''"
-              :next-class="''"
-              :prev-link-class="''"
-              :next-link-class="''"
-            >
-            </paginate>
-          </div>
-
+          <infinite-loading @infinite="infiniteHandler"></infinite-loading>
         </div>
       </div>
     </section>
@@ -91,27 +70,24 @@
 import {mapActions} from "vuex";
 import Swiper from 'swiper/swiper-bundle.min';
 import 'swiper/swiper-bundle.min.css';
+// import * as types from "~/store/modules/category/mutation-types";
 // import Paginate from "vuejs-paginate";
 
-const Paginate = process.client ? require('vuejs-paginate') : undefined
+// const Paginate = process.client ? require('vuejs-paginate') : undefined
 
 export default {
   name: "CategoryIndex",
-  components: {Paginate},
+  // components: {Paginate},
   data() {
     return {
       slider: null,
-      page: 1,
+      page: 0,
+      products: [],
       id: isNaN(this.$route.params.id) ? this.$route.query.cid : this.$route.params.id
     }
   },
   async fetch() {
-    const payload = {
-      id: this.id,
-      page: this.page,
-      context: this
-    }
-    await this.fetchByCategoryId(payload);
+
   },
   head() {
     return {
@@ -129,9 +105,9 @@ export default {
     total_pages() {
       return this.$store.state.category.totalPages;
     },
-    products() {
-      return this.$store.state.category.products;
-    },
+    // products() {
+    //   return this.$store.state.category.products;
+    // },
     menu() {
       return this.$store.state.home.menu;
     },
@@ -140,33 +116,29 @@ export default {
     }
   },
   watch: {
-    "$route.query.page"(pageNo) {
-      const payload = {
-        id: this.id,
-        page: pageNo,
-        context:this,
-      }
-      this.fetchByCategoryId(payload);
-      if (window) {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-      }
-    }
   },
   mounted() {
+    this.$store.commit('category/FETCH_CATEGORY_ID_DATA', []);
+    this.$store.commit('category/FETCH_PAGINATION_DATA', []);
     this.fetchHomeData();
-    this.page = this.$route.query.page ? parseInt(this.$route.query.page) : 1;
   },
   methods: {
     ...mapActions('category', ['fetchByCategoryId']),
     ...mapActions('home', ['fetchHomeData']),
-    updateRoutePage() {
-      this.$router.push({
-        path: this.localePath("/category/" + this.id + "/" + this.category.category_slug),
-        query: {
-          cid: this.id,
-          page: this.page
+    infiniteHandler($state) {
+      const payload = {
+        id: this.id,
+        page: ++this.page,
+        context: this
+      }
+      this.fetchByCategoryId(payload).then(response => {
+        if (response.data && response.data.products && response.data.products.length > 0) {
+          this.products.push(...response.data.products)
+          $state.loaded();
+        } else {
+          $state.complete();
         }
-      });
+      })
     },
     async initSlider() {
       await this.$nextTick();

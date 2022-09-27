@@ -60,7 +60,9 @@
         </div>
         <div class="application">
           <h5 class="sm:!text-[16px] m-0">{{ $t("footer.download_app") }}</h5>
-          <img src="@/assets/qr.jpeg" class="w-[150px] h-[150px]" alt="">
+          <a href="https://play.google.com/store/apps/details?id=com.akio.avokado" target="_blank"><img src="@/assets/img/play-store.png" class="w-[150px]" alt=""></a>
+          <a href="https://apps.apple.com/sa/app/avokado-%D8%A7%D9%81%D9%88%D9%83%D8%A7%D8%AF%D9%88/id1265492118" target="_blank"><img src="@/assets/img/apple-store.png" class="w-[150px]" alt=""></a>
+          <a href="https://l.ead.me/bclu5B" target="_blank"><img src="@/assets/qr.jpeg" class="w-[150px] h-[150px]" alt=""></a>
           <!--          <a href="https://play.google.com/store/apps/details?id=com.akio.avokado" target="_blank">-->
           <!--            <img src="@/assets/img/apple-store.png" class="sm:!h-[34px]" alt="">-->
           <!--          </a>-->

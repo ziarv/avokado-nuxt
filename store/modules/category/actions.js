@@ -11,11 +11,7 @@ export const fetchByCategoryId = ({commit, rootState}, payload) => {
     storeLanguageId: rootState.local.storeLanguageId,
     requestSource: rootState.requestSource,
     categoryId: payload.id
-  })
-    .then(response => {
-      commit(types.FETCH_CATEGORY_ID_DATA, response.data.products);
-      commit(types.FETCH_PAGINATION_DATA, response.data);
-    });
+  });
 };
 export const fetchSliderByCategoryId = ({commit, rootState}, id) => {
   const params = {
