@@ -3,44 +3,82 @@
     <div class="top_header flex justify-center flex-row flex-wrap">
       <div class="container flex justify-between flex-row flex-wrap sm:flex-col">
         <div class="flex items-center justify-between flex-row flex-wrap">
-          <p class="text-[#000000]">Deliver to:</p>
+          <p class="text-[#000000] mr-[10px]">{{ $t('deliver_to') }}</p>
           <div class="location-links">
-            <a href="#" class="text-[#A3CE51]">Riyadh</a>
-            <a href="#" class="text-[#E55B7F] Jeddah">Jeddah</a>
-            <a href="#" class="text-[#A3CE51]">Makkah</a>
+            <a
+              v-for="(location,index) in service_locations"
+              :key="index" href="javascript:void(0)"
+              class="text-[#A3CE51]"
+              :class="{'!text-[#E55B7F]' : location.id.toString() === cityId.toString() }"
+              @click="selectLocation(location)"
+            >
+              <span v-if="$i18n.locale === 'ar'" >{{ location.city_name_ar }}</span>
+              <span  v-else >{{ location.city_name_en }}</span>
+            </a>
           </div>
         </div>
-        <div class="relative h-[35px] grow sm:m-4 m-2">
-          <input
-            type="text"
-            class="w-[100%] border-[1px] h-[100%] border-[solid] bg-[#fff] border-[#E6E6E6] outline-none px-[25px] py-[9px] placeholder:text-[#CCCCCC] text-[#CCCCCC] text-[15px]"
-            placeholder="Search for items..."/>
-          <button class="bg-[#a3ce51] w-[40px] h-[100%] p-[8px] absolute top-0 right-0"><img
-            src="@/assets/img/search_icon.svg" class="h-[100%] w-[100%]" alt=""></button>
+        <div class="relative h-[35px] grow sm:m-4 m-2 mx-[2%] ">
+          <form method="GET" @submit.prevent="searchKeyword">
+            <input
+              v-model="keyword"
+              type="text"
+              class="w-[100%] border-[1px] h-[100%] border-[solid] bg-[#fff] border-[#E6E6E6] outline-none px-[25px] py-[9px] placeholder:text-[#CCCCCC] text-[#CCCCCC] text-[15px]"
+              :placeholder="$t('search_for_items')"
+              required
+            >
+            <button class="bg-[#a3ce51] search_btn w-[40px] p-[8px] absolute top-0 right-0" style="height: inherit">
+              <img src="@/assets/img/search_icon.svg" class="h-[100%] w-[100%]" alt="search_icon">
+            </button>
+          </form>
         </div>
-        <div class="text-end flex justify-end items-center">
-          <a href="#" class="text-[#A3CE51] Log_in">Log in</a>
-          <span class="w-[25px] h-[25px] cursor-pointer"><img src="@/assets/img/shopping_bag.svg" alt=""></span>
+        <div class="flex items-center justify-between">
+          <div class="hidden sm:block">
+            <nuxt-link :to="localePath('/')">
+              <img src="@/assets/img/logo.svg" class="w-[150px] h-[40px]" alt="">
+            </nuxt-link>
+          </div>
+          <div class="flex items-center top-icons">
+            <div class="">
+              <span  v-if="customer.customerId"><a href="javascript:void(0)" class="text-[#A3CE51]" @click="logoutUser">{{ $t("logout") }}</a></span>
+              <span v-else><nuxt-link :to="localePath('/login')" class="text-[#A3CE51]">{{ $t('login') }}</nuxt-link></span>
+            </div>
+            <div class="">
+              <nuxt-link :to="localePath('/cart')">
+                <img src="@/assets/img/shopping_bag.svg" class="w-[35px]" alt="shopping_bag">
+              </nuxt-link>
+            </div>
+            <div class=" hidden text-[#A3CE51]" style="visibility: hidden">
+              <a href="#">Daily Offers</a>
+            </div>
+            <div class="" @click="userSidebar">
+              <img src="@/assets/img/ham_buger.svg" class="w-[35px]" alt="shopping_bag">
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <header class="flex flex-row flex-wrap justify-center">
+    <header class="flex header_seccond flex-row flex-wrap justify-center sm:p-0">
       <div class="container flex flex-row flex-wrap justify-between">
-        <div class="text-center flex sm:justify-center sm:w-full">
-          <img src="@/assets/img/logo.svg" class="w-[200px]" alt="">
+        <div class="text-center flex sm:justify-center sm:w-full sm:hidden">
+          <nuxt-link :to="localePath('/')">
+            <img src="@/assets/img/logo.svg" class="w-[200px]" alt="">
+          </nuxt-link>
         </div>
-        <nav class="items-center top-nav sm:mb-4 sm:mt-4">
+        <nav class="items-center top-nav sm:!hidden">
           <ul>
-            <li><a href="#"> Vegetable </a></li>
-            <li><a href="#">Fruits </a></li>
-            <li><a href="#">Chopped</a></li>
-            <li><a href="#">Juice</a></li>
-            <li><a href="#">Recipies</a></li>
+            <li v-for="(category,index) in menu" :key="index">
+              <nuxt-link
+                :to="localePath(`/category/${category.id}/${category.category_slug}?cid=${category.id}`)"
+                :class="{'!text-[#E55B7F]' : category.id == $route.query.cid }"
+              >
+                {{ category.name }}
+              </nuxt-link>
+            </li>
           </ul>
         </nav>
-        <div class="heading flex items-center">
-          <h1>Daily Offers</h1>
+        <div class="flex items-center md:hidden">
+          <a href="#" class="text-[#da374a]" style="visibility: hidden">Daily Offers</a>
         </div>
       </div>
     </header>
@@ -163,11 +201,17 @@ export default {
     service_locations() {
       return this.$store.state.home.service_locations;
     },
+    menu() {
+      return this.$store.state.home.menu;
+    },
     cityId() {
       return this.$store.state.local.city_id;
     },
     customer() {
       return this.$store.state.local.customer;
+    },
+    location_selected() {
+      return this.$store.state.local.location_selected;
     },
   },
   async mounted() {
@@ -179,6 +223,13 @@ export default {
   methods: {
     ...mapActions('home', ['fetchServiceLocation']),
     ...mapActions('cart', ['getCartAction']),
+
+    selectLocation(location) {
+      this.$store.commit('local/UPDATE_CITY_ID', location.id);
+      this.$store.commit('local/UPDATE_WAREHOUSE_ID', location.warehouse_id);
+      this.$store.commit('local/UPDATE_LOCATION_SELECTED', true);
+      window.location.reload();
+    },
     switchLang(lang) {
       this.$i18n.setLocale(lang)
       this.$store.commit('local/UPDATE_LANG', lang)

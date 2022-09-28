@@ -273,10 +273,6 @@
     height: 85% !important;
   }
 
-  .cardse {
-    height: 60%;
-  }
-
   .new_item {
     background-position: left 50% top 25%, right 0% top 0%;
     background-size: 104% 120%, 25%;
@@ -585,22 +581,6 @@
   .card > img {
     width: 65% !important;
     height: 100% !important;
-  }
-
-  .cardse {
-    width: 90% !important;
-    height: 76% !important;
-  }
-
-  .cardse > img {
-    width: 100% !important;
-    height: 100% !important;
-  }
-
-  .buy_now > a {
-    padding: 3px 5px 3px 5px !important;
-    width: 100px !important;
-    height: 30px !important;
   }
 
   .new_item {

@@ -9,7 +9,7 @@
 
 <script>
 // import AOS from 'aos'
-import AppHeader from "~/components/AppHeader";
+import AppHeader from "~/components/AppHeader2";
 import AppFooter from "~/components/AppFooter";
 import 'aos/dist/aos.css'
 import AppLoading from "~/components/Loading";

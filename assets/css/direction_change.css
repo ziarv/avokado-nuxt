@@ -179,6 +179,17 @@
   left: 0 !important;
 }
 
+[dir="rtl"]  #side_bar_time > div:nth-child(1),
+[dir="rtl"]  #side_bar_pay > div:nth-child(1),
+[dir="rtl"]  #side_bar_promo > div:nth-child(1),
+[dir="rtl"]  #side_bar_id > div:nth-child(1),
+[dir="rtl"]  #side_bar_id_pl > div:nth-child(1),
+[dir="rtl"]  #side_bar_id_menu > div:nth-child(1),
+[dir="rtl"]  #side_bar_date > div:nth-child(1) {
+  border-radius: 0 20px 20px 0 !important;
+}
+
+
 [dir="rtl"] .swiper-button-prev {
   right: auto !important;
   left: 50px !important;
@@ -240,6 +251,10 @@
   bottom: 0;
   right: initial;
   left: 0;
+}
+[dir="rtl"] .search_btn {
+  right: initial;
+  left: 0 !important;
 }
 
 @media (max-width: 400px) {

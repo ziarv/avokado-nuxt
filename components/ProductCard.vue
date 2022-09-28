@@ -1,27 +1,42 @@
 <template>
   <div v-if="product && product.id" class="cards swiper-slide sm:!h-[150px] sm:!h-[150px]">
     <div class="cardse">
-      <nuxt-link :to="urlProduct()">
-        <img
-          :src="product.images.thumbnail"
-          class="sm:!w-[150px] sm:!h-[120px] sm:!w-[150px] sm:!h-[120px]" alt="">
-      </nuxt-link>
-      <p class="sm:!text-[14px msm:!text-[14px] sm:!pt-[20px]">
+      <div>
         <nuxt-link :to="urlProduct()">
-          {{product.name}}
+          <img
+            :src="product.images.thumbnail"
+            class="sm:!w-[150px] sm:!h-[120px] sm:!w-[150px] sm:!h-[120px]" alt="">
         </nuxt-link>
-      </p>
-    </div>
-    <div class="buy_now">
-      <nuxt-link
-        :to="urlProduct()"
-        class="sm:!text-[10px msm:!text-[10px] sm:!pt-[0px] sm:!pb-[0px] sm:!pl-[3px] sm:!pr-[0px] sm:!w-[60px] sm:!h-[20px] sm:!text-[12px] sm:!pt-[0px] sm:!pb-[0px] sm:!pl-[3px] sm:!pr-[0px] sm:!w-[60px] sm:!h-[20px]">
-        {{$t("buy_now")}}
-        <span class="sm:!ml-[3px]">
-          <img src="@/assets/img/li_arrow-right.svg" class="sm:!w-[8px] sm:!h-[7px] sm:!w-[8px] sm:!h-[7px]" alt="">
+      </div>
+      <div class="flex flex-col flex-1 justify-between">
+        <div>
+          <p class="text-[20px] sm:!text-[14px] font-bold">
+            <nuxt-link :to="urlProduct()">
+              {{ product.name }}
+            </nuxt-link>
+          </p>
+          <p class="text-[18px] sm:!text-[12px]">
+            <span v-if="product.priceDiscountedIncTax">
+              <span class="line-through">{{ product.price_tax_inc }}   </span> - {{ product.priceDiscountedIncTax }} {{ $t("currency_code") }}
+            </span>
+            <span v-else>
+               {{ product.price_tax_inc }}
+        {{ $t("currency_code") }}
+            </span>
+          </p>
+        </div>
+        <div class="buy_now">
+          <nuxt-link
+            :to="urlProduct()">
+            {{ $t("buy_now") }}
+            <span class="sm:!ml-[3px]">
+          <img src="@/assets/img/li_arrow-right.svg" alt="">
         </span>
-      </nuxt-link>
+          </nuxt-link>
+        </div>
+      </div>
     </div>
+
   </div>
 </template>
 
@@ -31,10 +46,11 @@ export default {
   props: {
     product: {
       type: Object,
-      default: () => {}
+      default: () => {
+      }
     }
   },
-  methods:{
+  methods: {
     urlProduct() {
       return this.localePath(`/product/${this.product.id}/${this.product.products_slug}?pid=${this.product.id}`);
     }

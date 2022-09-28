@@ -59,7 +59,12 @@
             </div>
             <product-list v-for="(product,index) in products" :key="index" :product="product"></product-list>
           </div>
-          <infinite-loading @infinite="infiniteHandler"></infinite-loading>
+          <infinite-loading @infinite="infiniteHandler">
+            <div slot="noMore"></div>
+            <div slot="noResults"></div>
+            <div slot="error"></div>
+            <div slot="errorBtnText"></div>
+          </infinite-loading>
         </div>
       </div>
     </section>

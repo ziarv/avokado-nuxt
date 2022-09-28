@@ -37,6 +37,7 @@ export default {
     '@/assets/css/home-section-1.css',
     '@/assets/css/main.css',
     '@/assets/css/direction_change.css',
+    '@/assets/css/home-v2.css',
     '@/assets/css/custom.css'
   ],
 
