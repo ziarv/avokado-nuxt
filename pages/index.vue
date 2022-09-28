@@ -25,7 +25,7 @@
 <script>
 import {mapActions} from "vuex";
 import AppSlider from "~/components/AppSlider";
-import ExploreCategory from "~/components/ExploreCategory";
+import ExploreCategory from "~/components/ExploreCategory2";
 import ShopByRecommendation from "~/components/ShopByRecommendation";
 import ProductSection from "~/components/ProductSection";
 // import PromoSlider from "~/components/PromoSlider";
