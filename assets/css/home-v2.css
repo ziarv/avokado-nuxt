@@ -83,7 +83,7 @@
 
 .bannerPgination {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .bannerPgination > span {
@@ -97,17 +97,17 @@
 .juices {
   display: flex;
   /* flex-flow: row wrap; */
-  justify-content: end;
+  justify-content: flex-end;
   margin-top: 5px;
 }
 
 .juices a {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: flex-end;
   /*z-index: 100;*/
   margin: 5px;
-  background-size: 50%;
+
 }
 
 .juices > a:nth-child(1) {
@@ -116,6 +116,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   padding: 10px 10px;
+
   width: 15%;
 }
 
@@ -137,6 +138,7 @@
   background-image: url(../img/fruit.png);
   background-repeat: no-repeat;
   background-position: left 0% top 0%;
+  background-size: 30% 90%;
   padding: 0 !important;
   flex-grow: 1;
   height: 100px;
@@ -146,7 +148,8 @@
   background-color: #f3c333;
   background-image: url(../img/apple.png);
   background-repeat: no-repeat;
-  background-position: left -20% top 40%;
+  background-position: left 0% top 0%;
+  background-size: 20% 90%;
   padding: 10px 10px;
   flex-grow: 3;
   height: 100px;
@@ -332,7 +335,7 @@
 
 .footer-links > ul > li > a {
   display: flex;
-  justify-content: start;
+  justify-content: flex-end;
   flex-flow: row wrap;
   align-items: center;
   margin: 15px 0px;
@@ -373,7 +376,7 @@
 .footer_application > .application:nth-child(2) {
   display: flex;
   flex-flow: row wrap;
-  justify-content: start;
+  justify-content: flex-end;
 }
 
 .footer_application > .application:nth-child(2) > a:nth-child(1) {
