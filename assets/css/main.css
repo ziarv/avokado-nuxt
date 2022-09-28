@@ -927,9 +927,6 @@
     padding: 0px 12px 70px 12px !important;
   }
 
-  .mySwiper_7 {
-    padding: 0px 12px 80px 12px !important;
-  }
 
   .subscribe_img > img {
     object-fit: fill !important;
@@ -1250,16 +1247,6 @@
     background-size: 120%, 25% !important;
   }
 
-  .mySwiper_7 {
-    padding: 0px 12px 80px 12px !important;
-  }
-
-  .mySwiper_1,
-  .mySwiper_7,
-  .mySwiper_12 {
-    padding: 0px 12px 40px 12px !important;
-  }
-
   .footer_icon > div {
     width: 28px;
     height: 28px;
@@ -1356,10 +1343,6 @@
     height: 275px;
   }
 
-  .mySwiper_6 > .swiper-button-prev,
-  .mySwiper_6 > .swiper-button-next {
-    top: 90% !important;
-  }
 
   .mySwiper_4 {
     left: 18% !important;
@@ -1382,10 +1365,6 @@
     height: 100% !important;
   }
 
-  .product_slider > .mySwiper_12 > .swiper-button-prev,
-  .product_slider > .mySwiper_12 > .swiper-button-next {
-    top: 82% !important;
-  }
 
   .product_slider_09_heading_icon {
     width: 30%;
@@ -1574,14 +1553,6 @@
 
   .wishlist > .delivery_address ~ .product_ongoing ~ .give_a_friend {
     width: 85%;
-  }
-
-  .swiper > .swiper-button-next {
-    display: none;
-  }
-
-  .swiper > .swiper-button-prev {
-    display: none;
   }
 
   .product_1 > .product_btn {
@@ -1790,11 +1761,5 @@
 
   .cardse_first > img {
     margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 420px) {
-  .mySwiper_1, .mySwiper_7, .mySwiper_12 {
-    padding: 0 12px 20px !important;
   }
 }

@@ -13,48 +13,10 @@
               </nuxt-link>
             </div>
           </div>
-          <!--          <div class="side_bar sm:!w-[47.5%] sm:!w-[47.5%]">-->
-          <!--            <h1>Filter Price Range</h1>-->
-          <!--            <div class="wrap my-5">-->
-          <!--              <div class='slider'>-->
-          <!--                <input id="r" type="range" class="progress" value='0' min="0" max="5000" step="1">-->
-          <!--              </div>-->
-          <!--              <div class='slider'>-->
-          <!--                <input id="srange" type="range" class="progress" value='5000' max="5000" step="1">-->
-          <!--                &lt;!&ndash; <input id="s" type="range"  value='5000' max="5000" step="1"/> &ndash;&gt;-->
-          <!--              </div>-->
-          <!--            </div>-->
-          <!--            <p>0 SAR-200 SAR</p>-->
-          <!--            <h1>Customer Rating</h1>-->
-          <!--            <div class="listing_star">-->
-          <!--              <div class="star_img">-->
-          <!--                <img src="@/assets/img/Vector_1.svg" alt="">-->
-          <!--                <img src="@/assets/img/Vector_1.svg" alt="">-->
-          <!--                <img src="@/assets/img/Vector_1.svg" alt="">-->
-          <!--                <img src="@/assets/img/Vector_1.svg" alt="">-->
-          <!--              </div>-->
-          <!--              <span>& up</span>-->
-          <!--            </div>-->
-          <!--            <div class="listing_star">-->
-          <!--              <div class="star_img">-->
-          <!--                <img src="@/assets/img/Star_1.svg" alt="">-->
-          <!--                <img src="@/assets/img/Star_1.svg" alt="">-->
-          <!--                <img src="@/assets/img/Star_1.svg" alt="">-->
-          <!--              </div>-->
-          <!--              <span>& up</span>-->
-          <!--            </div>-->
-          <!--            <div class="listing_star">-->
-          <!--              <div class="star_img">-->
-          <!--                <img src="@/assets/img/Star_1.svg" alt="">-->
-          <!--                <img src="@/assets/img/Star_1.svg" alt="">-->
-          <!--              </div>-->
-          <!--              <span>& up</span>-->
-          <!--            </div>-->
-          <!--          </div>-->
         </div>
         <div class="main_content w-[76%] sm:!w-[100%] sm:mt-[50px]">
           <div class="flex flex-row flex-wrap justify-between">
-            <div class="heading flex flex-row flex-wrap justify-between mx-4">
+            <div v-if="category" class="heading flex flex-row flex-wrap justify-between mx-4">
               <h1> {{ category.category_name }}</h1>
             </div>
             <product-list v-for="(product,index) in products" :key="index" :product="product"></product-list>
@@ -87,6 +49,7 @@ export default {
       slider: null,
       page: 0,
       products: [],
+      category: [],
       id: isNaN(this.$route.params.id) ? this.$route.query.cid : this.$route.params.id
     }
   },
@@ -114,9 +77,6 @@ export default {
     // },
     menu() {
       return this.$store.state.home.menu;
-    },
-    category() {
-      return this.$store.state.category.response;
     }
   },
   watch: {
@@ -137,6 +97,7 @@ export default {
       }
       this.fetchByCategoryId(payload).then(response => {
         if (response.data && response.data.products && response.data.products.length > 0) {
+          this.category = response.data;
           this.products.push(...response.data.products)
           $state.loaded();
         } else {

@@ -138,7 +138,6 @@
   background-image: url(../img/fruit.png);
   background-repeat: no-repeat;
   background-position: left 0% top 0%;
-  background-size: 30% 90%;
   padding: 0 !important;
   flex-grow: 1;
   height: 100px;
@@ -149,7 +148,6 @@
   background-image: url(../img/apple.png);
   background-repeat: no-repeat;
   background-position: left 0% top 0%;
-  background-size: 20% 90%;
   padding: 10px 10px;
   flex-grow: 3;
   height: 100px;

@@ -9,14 +9,8 @@
             v-for="(product,index) in products" :key="index" :product="product"
             :is-in-slider="true"></product-list>
         </div>
-        <div
-          class="swiper-button-next sm:!w-[20px] sm:!h-[20px] sm:!top-[83%] sm:!w-[20px] sm:!h-[20px] sm:!top-[83%] sm:!w-[20px] sm:!h-[20px] sm:!top-[83%]">
-          <i class="sm:!text-[12px sm:!text-[12px] sm:!text-[12px sm:!text-[14px] fa-solid fa-arrow-right"></i>
-        </div>
-        <div
-          class="swiper-button-prev sm:!w-[20px] sm:!h-[20px] sm:!top-[83%] sm:!w-[20px] sm:!h-[20px] sm:!top-[83%] sm:!right-[40px] sm:!right-[40px]">
-          <i class="sm:!text-[12px sm:!text-[12px] sm:!text-[12px sm:!text-[14px] fa-solid fa-arrow-left"></i>
-        </div>
+        <div class="swiper-button-next"><img src="@/assets/img/right_arrow.svg" alt="slider_img"></div>
+        <div class="swiper-button-prev"><img src="@/assets/img/left_arrow.svg" alt="slider_img"></div>
       </div>
     </div>
   </section>

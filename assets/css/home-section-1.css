@@ -76,94 +76,12 @@ input {
 
 }
 
-.mySwiper_1 > .swiper-wrapper > .card:nth-child(1n) {
-  background-color: #FFE6CB;
-}
-
-.mySwiper_1 > .swiper-wrapper > .card:nth-child(2n) {
-  background-color: #C8FFE5;
-}
-
-.mySwiper_1 > .swiper-wrapper > .card:nth-child(3n) {
-  background-color: #FFF4C3;
-}
-
-.mySwiper_1 > .swiper-wrapper > .card:nth-child(4n) {
-  background-color: #E4FFB9;
-}
-
-.mySwiper_1 > .swiper-wrapper > .card:nth-child(5n) {
-  background-color: #FFE5BF;
-}
-
-.swiper-button-next {
-  color: transparent !important;
-  background-color: #ECECEC;
-  border-radius: 25px;
-  width: 30px !important;
-  height: 30px !important;
-  left: auto !important;
-  right: 12px !important;
-  top: 80% !important;
-  box-shadow: 0px 6px 12px #00000036;
-}
-
-.swiper-button-next:hover {
-  background-color: #7CB118;
-}
-
-.swiper-button-prev {
-  color: transparent !important;
-  background-color: #ECECEC;
-  border-radius: 25px;
-  width: 30px !important;
-  height: 30px !important;
-  left: auto !important;
-  right: 50px !important;
-  top: 80% !important;
-  box-shadow: 0px 6px 12px #00000036;
-}
-
-.swiper-button-prev > i {
-  font-size: 20px;
-  color: #838383;
-}
-
-.swiper-button-next > i {
-  font-size: 20px;
-  color: #838383;
-}
-
-.swiper-button-prev::after {
-  content: " " !important;
-}
-
-.swiper-button-next::after {
-  content: " " !important;
-}
-
-.swiper-button-prev:hover {
-  background-color: #7CB118;
-}
-
-.swiper-button-prev:hover i {
-  color: #FFFFFF;
-}
-
-.swiper-button-next:hover i {
-  color: #FFFFFF;
-}
-
-.mySwiper_1 {
-  padding: 0px 12px 125px 12px !important;
-}
-
 .cards {
   background-color: #FFFFFF;
   border-radius: 10px;
   padding: 12px;
   height: 220px !important;
-  box-shadow: 0px 6px 12px #00000036;
+  box-shadow: 0 2px 4px #00000036;
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: flex-start;
@@ -223,7 +141,7 @@ input {
   width: 22%;
   background: #FFFFFF;
   margin: 0 0;
-  box-shadow: 0 6px 12px #00000036;
+  box-shadow: 0 2px 4px #00000036;
 }
 
 .main_card > img {
@@ -446,7 +364,7 @@ input::-webkit-inner-spin-button {
 .side_bar {
   background-color: #FFFFFF;
   border-radius: 10px;
-  box-shadow: 0px 1px 28px #0000003b;
+  /*box-shadow: 0px 1px 28px #0000003b;*/
   padding: 20px 20px;
 }
 
@@ -1271,17 +1189,8 @@ input::-webkit-inner-spin-button {
   height: 420px;
 }
 
-.product_slider > .mySwiper_12 > .swiper-button-prev {
-  right: auto;
-  left: 12px !important;
-  top: 92% !important;
-}
 
-.product_slider > .mySwiper_12 > .swiper-button-next {
-  left: auto;
-  right: 12px !important;
-  top: 92% !important;
-}
+
 
 .product_slider_09 {
   box-shadow: 0px 6px 12px #00000036;
@@ -1704,14 +1613,6 @@ input::-webkit-inner-spin-button {
   color: #FFFFFF !important;
 }
 
-.mySwiper_7 {
-  padding: 0px 12px 140px 12px !important;
-}
-
-.mySwiper_7 > .swiper-wrapper > .main_card {
-  margin: 0px 0px;
-}
-
 .mobile_number > span:nth-child(3) {
   background-color: #A0A4AA;
   width: 1px;
@@ -1888,8 +1789,8 @@ input::-webkit-inner-spin-button {
 }
 
 
-.mySwiper_1 {
-  padding: 0 12px 80px !important;
+.swiper {
+  padding: 50px 0px !important;
 }
 
 /*Zia*/
