@@ -65,7 +65,7 @@
             <img src="@/assets/img/logo.svg" class="w-[200px]" alt="">
           </nuxt-link>
         </div>
-        <nav class="items-center top-nav sm:!hidden">
+        <nav class="items-center top-nav">
           <ul>
             <li v-for="(category,index) in menu" :key="index">
               <nuxt-link
