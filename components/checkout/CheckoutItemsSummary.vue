@@ -1,7 +1,7 @@
 <template>
   <section>
-    <div class="mx-20 flex mt-20 flex-row flex-wrap sm:!mx-10 sm:!mt-10 sm:!mx-10">
-      <div class="wishlist  max-h-[500px] overflow-x-hidden overflow-y-scroll">
+    <div class="mx-20 sm:mx-10">
+      <div class="wishlist max-h-[500px] overflow-x-hidden overflow-y-scroll">
         <h1 class="sm:!text-[16px]">{{ $t("pages.checkout.order_list") }}</h1>
         <div class="product product_1098 sm:!py-[6px] sm:!px-[15px] sm:!h-[40px]">
           <h5>{{ $t("pages.checkout.product") }}</h5>

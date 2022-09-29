@@ -923,9 +923,7 @@
     height: 82px !important;
   }
 
-  .mySwiper_1 {
-    padding: 0px 12px 70px 12px !important;
-  }
+
 
 
   .subscribe_img > img {
@@ -1210,12 +1208,13 @@
   #side_bar_pay {
     position: fixed !important;
     top: auto !important;
-    bottom: 0% !important;
-    right: 0% !important;
+    bottom: 0 !important;
+    right: 0 !important;
     height: 60vh !important;
     max-height: 100vh !important;
     width: 100% !important;
-    display: none;
+    visibility: hidden;
+    display: block;
     z-index: 100;
     border-radius: 10px !important;
     overflow-y: auto;
@@ -1360,10 +1359,10 @@
     height: 363px !important;
   }
 
-  .product_slider_1 > div > img {
-    width: 100% !important;
-    height: 100% !important;
-  }
+  /*.product_slider_1 > div > img {*/
+  /*  width: 100% !important;*/
+  /*  height: 100% !important;*/
+  /*}*/
 
 
   .product_slider_09_heading_icon {

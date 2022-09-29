@@ -1,8 +1,10 @@
 <template>
   <div>
     <app-slider></app-slider>
+    <explore-category2></explore-category2>
     <explore-category></explore-category>
     <shop-by-recommendation></shop-by-recommendation>
+
     <!--    <promo-slider :slider="promo_banners.middle"></promo-slider>-->
     <div class="container">
       <div class="w-full m-1 mb-3">
@@ -25,7 +27,8 @@
 <script>
 import {mapActions} from "vuex";
 import AppSlider from "~/components/AppSlider";
-import ExploreCategory from "~/components/ExploreCategory2";
+import ExploreCategory from "~/components/ExploreCategory";
+import ExploreCategory2 from "~/components/ExploreCategory2";
 import ShopByRecommendation from "~/components/ShopByRecommendation";
 import ProductSection from "~/components/ProductSection";
 // import PromoSlider from "~/components/PromoSlider";
@@ -39,6 +42,7 @@ export default {
     ProductSection,
     ShopByRecommendation,
     ExploreCategory,
+    ExploreCategory2,
     AppSlider,
     // PromoSlider,
     KeyValues,

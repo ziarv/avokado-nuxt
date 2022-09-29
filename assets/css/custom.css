@@ -32,7 +32,9 @@
   border: 1px solid #76a220;
 }
 
-.my-pagination > li:hover:not(.active) {background-color: #ddd;}
+.my-pagination > li:hover:not(.active) {
+  background-color: #ddd;
+}
 
 .my-pagination > li:first-child {
   border-top-left-radius: 5px;
@@ -65,9 +67,6 @@
 }
 
 
-
-
-
 .right-floating-btn {
   float: right;
   padding: 10px;
@@ -94,6 +93,7 @@
   height: 120px;
   border-radius: 50%;
 }
+
 .floatingCart img {
   width: 100px;
   height: 100px;
@@ -103,4 +103,6 @@
   padding: 10px;
   background: white;
 }
+
+
 

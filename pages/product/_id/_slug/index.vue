@@ -2,7 +2,7 @@
   <div>
     <section v-if="product.id">
       <div
-        class="mx-20 flex mt-20 sm:!mt-4 sm:!mt-5 sm:!mx-5 sm:!mx-5 flex-row flex-wrap justify-between sm:!mb-10 sm:!mb-10">
+        class="mx-20 flex mt-10 sm:!mt-4 sm:!mt-5 sm:!mx-5 sm:!mx-5 flex-row flex-wrap justify-between sm:!mb-10 sm:!mb-10">
         <div class="product_slider w-[49%] sm:!w-[100%] sm:!w-[100%] h-[100%] relative">
           <div ref="swiper" class="swiper mySwiper_12 mySwiper_5">
             <div class="swiper-wrapper">
@@ -13,14 +13,14 @@
                   <div class="cardse_sec">
                   </div>
                 </div>
-                <div class="cardse">
-                  <img :src="product.images.thumbnail" alt="thumbnail">
+                <div class="cardse justify-center">
+                  <img :src="product.images.thumbnail" class="m-auto !object-contain" alt="thumbnail">
                 </div>
               </div>
 
             </div>
-            <div class="swiper-button-next"><i class="fa-solid fa-arrow-right"></i></div>
-            <div class="swiper-button-prev"><i class="fa-solid fa-arrow-left"></i></div>
+            <div class="swiper-button-next"><img src="@/assets/img/right_arrow.svg" alt="slider_img"></div>
+            <div class="swiper-button-prev"><img src="@/assets/img/left_arrow.svg" alt="slider_img"></div>
           </div>
         </div>
         <div

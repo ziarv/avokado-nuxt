@@ -116,8 +116,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   padding: 10px 10px;
-
-  width: 15%;
+  width: 35%;
 }
 
 .juice-col {
@@ -374,7 +373,6 @@
 .footer_application > .application:nth-child(2) {
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-end;
 }
 
 .footer_application > .application:nth-child(2) > a:nth-child(1) {

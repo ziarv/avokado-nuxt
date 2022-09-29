@@ -71,6 +71,13 @@ export default {
       return this.$store.state.local.customer;
     }
   },
+  watch: {
+    addresses(address) {
+      if(address[0] && address[0] !== undefined){
+        this.selectAddress(address[0])
+      }
+    }
+  },
   mounted() {
     this.fetchAddresses(this.customer.customerId);
   },

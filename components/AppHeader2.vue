@@ -12,8 +12,8 @@
               :class="{'!text-[#E55B7F]' : location.id.toString() === cityId.toString() }"
               @click="selectLocation(location)"
             >
-              <span v-if="$i18n.locale === 'ar'" >{{ location.city_name_ar }}</span>
-              <span  v-else >{{ location.city_name_en }}</span>
+              <span v-if="$i18n.locale === 'ar'">{{ location.city_name_ar }}</span>
+              <span v-else>{{ location.city_name_en }}</span>
             </a>
           </div>
         </div>
@@ -39,8 +39,12 @@
           </div>
           <div class="flex items-center top-icons">
             <div class="">
-              <span  v-if="customer.customerId"><a href="javascript:void(0)" class="text-[#A3CE51]" @click="logoutUser">{{ $t("logout") }}</a></span>
-              <span v-else><nuxt-link :to="localePath('/login')" class="text-[#A3CE51]">{{ $t('login') }}</nuxt-link></span>
+              <span v-if="customer.customerId"><a href="javascript:void(0)" class="text-[#A3CE51]" @click="logoutUser">{{
+                  $t("logout")
+                }}</a></span>
+              <span v-else><nuxt-link :to="localePath('/login')" class="text-[#A3CE51]">{{
+                  $t('login')
+                }}</nuxt-link></span>
             </div>
             <div class="">
               <nuxt-link :to="localePath('/cart')">
@@ -50,7 +54,7 @@
             <div class=" hidden text-[#A3CE51]" style="visibility: hidden">
               <a href="#">Daily Offers</a>
             </div>
-            <div class="" @click="userSidebar">
+            <div class="cursor-pointer" @click="userSidebar">
               <img src="@/assets/img/ham_buger.svg" class="w-[35px]" alt="shopping_bag">
             </div>
           </div>
@@ -58,7 +62,7 @@
       </div>
     </div>
 
-    <header class="flex header_seccond flex-row flex-wrap justify-center sm:p-0">
+    <header class="flex header_seccond flex-row flex-wrap justify-center sm:p-0 sm:hidden">
       <div class="container flex flex-row flex-wrap justify-between">
         <div class="text-center flex sm:justify-center sm:w-full sm:hidden">
           <nuxt-link :to="localePath('/')">
@@ -234,7 +238,7 @@ export default {
       this.$i18n.setLocale(lang)
       this.$store.commit('local/UPDATE_LANG', lang)
       this.$store.commit('local/UPDATE_LANG_ID', lang === 'ar' ? 2 : 1)
-      this.user_sidebar = false;
+      this.userSidebar();
     },
     searchKeyword() {
       this.$router.push({
@@ -252,7 +256,7 @@ export default {
     },
     userSidebar() {
       this.user_sidebar = !this.user_sidebar;
-      document.body.classList.remove('overflow_hide');
+      document.body.classList.toggle('overflow_hide');
     },
     updateLocation() {
       const city = this.service_locations.filter((item) => {
