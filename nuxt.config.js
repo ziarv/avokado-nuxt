@@ -45,8 +45,7 @@ export default {
   plugins: [
     {src: '~/plugins/vue-toast-notification.js', mode: 'client'},
     {src: '~/plugins/axios.js', mode: 'client'},
-    {src: '~/plugins/infiniteloading.js', ssr: false},
-    {src: '~/plugins/fix-local-storage.js', ssr: false}
+    {src: '~/plugins/infiniteloading.js', ssr: false}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
