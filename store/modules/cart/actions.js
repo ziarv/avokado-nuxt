@@ -1,4 +1,5 @@
 import * as types from "./mutation-types";
+import {APP_VERSION} from '@/constants';
 
 export const getCartAction = ({commit, rootState}) => {
   const params = {
@@ -196,7 +197,7 @@ export const cartOrderSave = ({commit, rootState}, orderData) => {
     storeLanguageId: rootState.local.storeLanguageId,
     requestSource: rootState.requestSource,
     device_name: "Web " + window.navigator.platform,
-    app_version: "3.0",
+    app_version: APP_VERSION,
     version: "3",
     device_os_version: window.navigator.appVersion,
     extra_info: "Vendor " + window.navigator.vendor,

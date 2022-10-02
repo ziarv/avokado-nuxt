@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="menu && menu.length >= 0" class="juices">
+    <div v-if="menu && menu.length >= 0" class="juices sm:!hidden">
       <nuxt-link
         v-if="menu[0] !== undefined"
         :to="localePath(`/category/${menu[0].id}/${menu[0].category_slug}?cid=${menu[0].id}`)"

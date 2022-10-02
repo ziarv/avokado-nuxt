@@ -7,7 +7,7 @@
       <div ref="swiper" class="swiper mySwiper_1">
         <div  class="swiper-wrapper">
           <div
-            v-for="(category,index) in menu.slice(5)" :key="index"
+            v-for="(category,index) in menu" :key="index"
             :style="{'background-color': category.menu_icon_background_color}" class="card swiper-slide">
 
             <img
