@@ -48,6 +48,7 @@ export default {
     {src: '~/plugins/infiniteloading.js', ssr: false},
     {src: '~/plugins/fix-local-storage.js', ssr: false}
   ],
+
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 

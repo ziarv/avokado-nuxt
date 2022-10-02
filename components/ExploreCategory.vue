@@ -1,7 +1,7 @@
 <template>
   <section>
     <div
-      v-if="menu.length > 5"
+      v-if="menu.length > 0"
       class="hidden sm:!flex flex-wrap justify-center mx-5 explore_categories">
       <h2 class="sm:!text-[20px]">{{ $t("explore_categories") }}</h2>
       <div ref="swiper" class="swiper mySwiper_1">
