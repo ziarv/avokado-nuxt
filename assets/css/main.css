@@ -1213,8 +1213,7 @@
     height: 60vh !important;
     max-height: 100vh !important;
     width: 100% !important;
-    visibility: hidden;
-    display: block;
+    display: none;
     z-index: 100;
     border-radius: 10px !important;
     overflow-y: auto;
