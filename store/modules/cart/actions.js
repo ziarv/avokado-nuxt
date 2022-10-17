@@ -50,10 +50,12 @@ export const addCartAction = ({commit, rootState}, product) => {
     })
     .then(response => {
       const quoteData = response.data;
-      commit(types.UPDATE_CART_DATA, quoteData);
-      commit(types.UPDATE_QUOTE_ID, quoteData.quote_id);
-      commit('local/UPDATE_QUOTE_ID', quoteData.quote_id, {root: true})
-      commit(types.UPDATE_CART_ITEMS_DATA, quoteData.cart);
+      if (quoteData.quote_id && quoteData.cart) {
+        commit(types.UPDATE_CART_DATA, quoteData);
+        commit(types.UPDATE_QUOTE_ID, quoteData.quote_id);
+        commit('local/UPDATE_QUOTE_ID', quoteData.quote_id, {root: true})
+        commit(types.UPDATE_CART_ITEMS_DATA, quoteData.cart);
+      }
     });
 
 }
