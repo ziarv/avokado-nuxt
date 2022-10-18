@@ -50,6 +50,9 @@ export const addCartAction = ({commit, rootState}, product) => {
     })
     .then(response => {
       const quoteData = response.data;
+      if (quoteData.status.toString() !== '200') {
+        window.$nuxt.$toast.warning(quoteData.message);
+      }
       if (quoteData.quote_id && quoteData.cart) {
         commit(types.UPDATE_CART_DATA, quoteData);
         commit(types.UPDATE_QUOTE_ID, quoteData.quote_id);
