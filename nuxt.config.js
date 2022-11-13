@@ -84,7 +84,16 @@ export default {
     ['@netsells/nuxt-hotjar', {
       id: '3117347',
       sv: '6'
-    }]
+    }],
+
+      ['nuxt-facebook-pixel-module', {
+        /* module options */
+        track: 'PageView',
+        pixelId: '3420485271506748',
+        autoPageView: true,
+        disabled: false
+      }],
+
   ],
   i18n: {
     locales: [{

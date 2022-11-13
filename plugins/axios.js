@@ -21,6 +21,9 @@ export default function ({$axios, redirect}) {
     if (error.response && error.response.data && error.response.data.message) {
       window.$nuxt.$toast.warning(error.response.data.message);
     }
+    if (error.response && error.response.data && error.response.data.error && error.response.data.error.length > 0) {
+      window.$nuxt.$toast.warning(error.response.data.error[0]);
+    }
     window.$nuxt.$store.commit('UPDATE_LOADING', false);
   });
 }
